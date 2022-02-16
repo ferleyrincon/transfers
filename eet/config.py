@@ -67,17 +67,17 @@ class Constants(BaseConstants):
     # If <role_fixed = True>, roles are assigned ex ante depending on the player's id's.
     # If <player.id_in_group = 1>, the participant is assigned the role of the active player,
     # if <player.id_in_group = 2>, the participant is assigned the role of the passive player.
-    role_fixed = True
+    role_fixed = "False"
 
     # If <role_uncertain = True>, each player decides in the role of the active player.
     # Only after both players in a group have made their decisions it is randomly determined which
     # player's decisions are relevant for payout, i.e., who is the active and who the passive player.
-    role_uncertain = False
+    role_uncertain = "True"
 
     # If <role_double = True>, each player decides in the role of the active player.
     # At the same time, each player is assigned the role of a passive player as well.
     # That is, subjects get two payoffs: one as an active and one as a passive player.
-    role_double = False
+    role_double = "False"
 
 
     # ::: Group Matching ::: #
