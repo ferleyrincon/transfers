@@ -4,8 +4,18 @@ SESSION_CONFIGS = [
     dict(
        name='eet',
        display_name="eet",
-       num_demo_participants=4,
+       num_demo_participants=2,
        app_sequence=['eet']
+    ),dict(
+       name='allocations',
+       display_name="allocations",
+       num_demo_participants=1,
+       app_sequence=['allocations']
+    ),dict(
+       name='eet_transfers',
+       display_name="eet_transfers",
+       num_demo_participants=2,
+       app_sequence=['eet_transfers']
     ),
 ]
 
