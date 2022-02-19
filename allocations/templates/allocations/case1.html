@@ -1,0 +1,127 @@
+{% extends "global/Page.html" %} {% load otree static %} 
+{% load user_agents %}
+
+{% block content %}
+    <h1>CASO  
+        {% if camila %}
+            HIJA ÚNICA
+        {% else %}
+            HIJO ÚNICO
+        {% endif %} </h1>
+
+    <p> Por favor suponga que {% if camila %}
+            Camila
+        {% else %}
+            Camilo
+        {% endif %} es {% if camila %}
+            hija única
+        {% else %}
+            hijo único
+        {% endif %}.
+
+        Los padres de  {% if camila %}
+            Camila
+        {% else %}
+            Camilo
+        {% endif %}  tienen 65 años, y ya no pueden trabajar. 
+        Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones y tampoco tienen otros ahorros. </p> 
+        <p><u>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas. </u></p> 
+
+    <h3>PREGUNTA 1.</h3>
+        <p>
+            {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debe decidir entre:
+        </p>
+
+        <p><b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.</p>
+        <p><b>Opción B:</b> Darle una cantidad de dinero semanal a sus padres para ellos busquen a alguien que los ayude.</p>
+
+        <p>
+            <i>Por favor marque sólo el círculo que está debajo del monto de dinero a partir del cual 
+            cree que {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debería dedicar 8 horas a la semana a ayudar sus padres <b>-Opción A-</b> 
+            en lugar de darles dinero para que ellos busquen a alguien que los ayude <b>-Opción B-</b>.</i>
+        </p>
+
+        <p>
+            La cantidad de dinero en la Opción <b>B</b> va a ir variando de $0 a $90.000. Entre más alto el valor, 
+            quiere decir que usted cree que {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debería estar dispuesto a hacer una transferencia de 
+            dinero más alta, en vez de dedicar las 8 horas a la semana.
+        </p>
+
+        <h3>PREGUNTA 2.</h3>
+        <p>
+        {% if camila %}
+            Camila
+        {% else %}
+            Camilo
+        {% endif %} debe decidir entre:
+        </p>
+
+        <p><b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.</p>
+        <p><b>Opción B:</b> Pagarle a un familiar para que ayude a sus padres durante 8 horas a la semana.</p>
+
+        <p>
+            <i>Por favor marque sólo el círculo que está debajo del monto de dinero a partir del cual 
+            cree que {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debería dedicar 8 horas a la semana a ayudar sus padres <b>-Opción A-</b> 
+            en lugar de pagarle a un familiar para que los ayude <b>-Opción B-</b>.</i>
+        </p>
+
+        <p>
+            La cantidad de dinero en la Opción <b>B</b> va a ir variando de $0 a $90.000. Entre más alto el valor, 
+            quiere decir que usted cree que {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debería estar dispuesto a pagar una mayor cantidad de dinero a un familiar 
+            para que ayude a los padres, en vez de dedicar las 8 horas a la semana.
+        </p>
+
+        <h3>PREGUNTA 3.</h3>
+        <p> Ahora {% if camila %}
+            Camila
+        {% else %}
+            Camilo
+        {% endif %} debe decidir entre:
+        </p>
+
+        <p><b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.</p>
+        <p><b>Opción B:</b> Pagar a una persona profesional para que ayude a sus padres durante 8 horas a la semana.</p>
+
+        <p>
+            <i>Por favor marque sólo el círculo que está debajo del monto de dinero a partir del cual 
+            cree que {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debería dedicar 8 horas a la semana a ayudar sus padres <b>-Opción A-</b> 
+            en lugar de pagarle a alguien profesional para que los ayude <b>-Opción B-</b>.</i>
+        </p>
+
+        <p>
+            La cantidad de dinero en la Opción <b>B</b> va a ir variando de $0 a $90.000. Entre más alto el valor, 
+            quiere decir que usted cree que {% if camila %}
+                Camila
+            {% else %}
+                Camilo
+            {% endif %} debería estar dispuesto a pagar una mayor cantidad de dinero a una persona 
+            profesional para que ayude a los padres, en vez de dedicar las 8 horas a la semana.
+        </p>
+
+    <p> Haga <I>clic</I> en "Siguiente" para continuar.</p>
+    {% next_button %} 
+    {% endblock %}

@@ -1,0 +1,120 @@
+{% extends "global/Page.html" %} {% load otree static %} 
+{% load user_agents %}
+
+{% block content %}
+    <h1>CASO  
+        {% if daniela %}
+            {% if manuela %}
+                HERMANAS
+            {% else %}
+                HERMANOS
+            {% endif %}
+        {% else %}
+            HERMANOS    
+        {% endif %} </h1>
+
+    <p> Por favor suponga que {% if daniela %}
+            Daniela
+        {% else %}
+            Daniel
+        {% endif %} y {% if manuela %}
+            Manuela
+        {% else %}
+            Manuel
+        {% endif %} son {% if daniela %}
+            {% if manuela %}
+                hermanas
+            {% else %}
+                hermanos
+            {% endif %}
+        {% else %}
+        hermanos   
+        {% endif %}. {% if daniela %}
+            Daniela
+        {% else %}
+            Daniel
+        {% endif %} gana $1’400.000 al mes  y {% if manuela %}
+            Manuela
+        {% else %}
+            Manuel
+        {% endif %} gana $2’800.000 al mes. Sus padres tienen 65 años y ya no pueden trabajar. 
+        Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones y tampoco tienen otros ahorros.</p> 
+        <p><u>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas. </u></p> 
+
+    <h3>PREGUNTA 4.</h3>
+        <p>
+            ¿Cuánto dinero cree que debería poner cada hijo para completar los $600.000 mensuales 
+            si cada uno dedica 4 horas a la semana? 
+        </p>
+
+        <p>
+            <u>Por favor escriba su respuesta sobre las líneas que están encima de cada nombre, 
+            la suma de los dos aportes debe ser igual a 600 mil.</u>
+        </p>
+    
+    <h3>PREGUNTA 5.</h3>
+        <p>
+            En caso de que {% if daniela %}
+                Daniela
+            {% else %}
+                Daniel
+            {% endif %} sea quien dedique las 8 horas a la semana necesarias para ayudar a los padres. 
+            ¿Cuánto dinero cree que debería poner cada hijo para completar los $600.000 mensuales?
+        </p>
+
+        <p>
+            <u>Por favor escriba su respuesta sobre las líneas que están encima de cada nombre, 
+            la suma de los dos aportes debe ser igual a 600 mil.</u>
+        </p>
+
+        <h3>PREGUNTA 6.</h3>
+        <p>
+            En caso de que {% if manuela %}
+                Manuela
+            {% else %}
+                Manuel
+            {% endif %} sea quien dedique las 8 horas a la semana necesarias para ayudar a los padres. 
+            ¿Cuánto dinero cree que debería poner cada hijo para completar los $600.000 mensuales?
+        </p>
+
+        <p>
+            <u>Por favor escriba su respuesta sobre las líneas que están encima de cada nombre, 
+            la suma de los dos aportes debe ser igual a 600 mil.</u>
+        </p>
+
+        <h3>PREGUNTA 7.</h3> 
+        <p>{% if daniela %}
+            Daniela
+        {% else %}
+            Daniel
+        {% endif %} gana $1’400.000 al mes  y {% if manuela %}
+            Manuela
+        {% else %}
+            Manuel
+        {% endif %} han acordado dedicar 4 horas semanales cada uno para ayudar a los padres. Ahora suponga que {% if manuela %}
+            Manuela
+        {% else %}
+            Manuel
+        {% endif %} gana todos los meses $1’400.000. Por otro lado, aunque {% if daniela %}
+            Daniela
+        {% else %}
+            Daniel
+        {% endif %} en promedio se gana $2’800.000, su ingreso CAMBIA todos los meses por el tipo de trabajo que tiene.
+        Hay meses en los que {% if daniela %}
+            Daniela
+        {% else %}
+            Daniel
+        {% endif %} puede ganar sólo $1’100.000, y otros meses en los que puede ganar hasta $4’500.000.</p>
+        
+        <p>¿Cuánto dinero cree que debería poner cada hijo para completar los $600.000 mensuales?</p>
+        <p>
+            <u>Por favor escriba su respuesta sobre las líneas que están encima de cada nombre, 
+            la suma de los dos aportes debe ser igual a 600 mil.</u>
+        </p>
+
+        {{ formfields }}
+
+
+    <p> Haga <I>clic</I> en "Siguiente" para continuar.</p>
+    {% next_button %} 
+    {% endblock %}
