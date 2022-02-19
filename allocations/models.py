@@ -38,11 +38,11 @@ class Constants(BaseConstants):
     }
 
 class Subsession(BaseSubsession):
-    camila = models.BooleanField(Null=1)
-    daniela = models.BooleanField(Null=1)
-    manuela = models.BooleanField(Null=1)
-    julia = models.BooleanField(Null=1)
-    luisa = models.BooleanField(Null=1)
+    camila = models.BooleanField()
+    daniela = models.BooleanField()
+    manuela = models.BooleanField()
+    julia = models.BooleanField()
+    luisa = models.BooleanField()
 
 class Group(BaseGroup):
     pass
