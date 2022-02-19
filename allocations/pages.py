@@ -2,17 +2,30 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+class consent(Page):
+    form_model = 'player'
+    form_fields = ['consent','consent_account']
 
-class MyPage(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
+class welcome(Page):
+    form_model = 'player'
+    form_fields = ['identificador']
+
+    def is_displayed(self):
+        return self.round_number == 1
+
+class case1(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
+class case2(WaitPage):
     pass
 
 
-class Results(Page):
+class case3(Page):
     pass
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [consent, welcome, case1, case2, case3]
