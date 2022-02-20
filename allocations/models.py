@@ -36,6 +36,11 @@ class Constants(BaseConstants):
         "r3" :  [57 , 90],
     # More than 90 years: warning about the possibility of identity theft. 
     }
+    camila = random.choice([True, False])
+    daniela = random.choice([True, False])
+    manuela = random.choice([True, False])
+    julia = random.choice([True, False])
+    luisa = random.choice([True, False])
 
 class Subsession(BaseSubsession):
     camila = models.BooleanField()
@@ -43,6 +48,18 @@ class Subsession(BaseSubsession):
     manuela = models.BooleanField()
     julia = models.BooleanField()
     luisa = models.BooleanField()
+
+
+def creating_session(self):
+        """Esta función define los valores iniciales para cada ronda
+        incluye la subsession y demás clases.
+        Este método se ejecuta al comiezo de la sesion tantas veces como
+        rondas haya"""
+        self.camila = Constants.camila
+        self.daniela = Constants.daniela
+        self.manuela = Constants.manuela
+        self.julia = Constants.julia
+        self.luisa = Constants.luisa
 
 class Group(BaseGroup):
     pass
