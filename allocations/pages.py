@@ -4,7 +4,7 @@ from .models import Constants
 
 class consent(Page):
     form_model = 'player'
-    form_fields = ['consent','consent_account']
+    form_fields = ['p1_2','p1_2','p1_3','p1_4','p1_5','p1_6','p1_7','p1_8','p1_9','p1_10']
 
     def is_displayed(self):
         return self.round_number == 1
