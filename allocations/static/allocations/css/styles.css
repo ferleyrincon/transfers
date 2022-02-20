@@ -4,7 +4,7 @@
 
 .otree-body {
     min-width: 560px;
-    max-width: 720px;
+    max-width: 940px;
     margin: 0 auto 2.5rem;
 }
 
@@ -35,6 +35,13 @@ h2 {
 
 .card {
     margin-bottom: 1.5rem;
+}
+
+.card_table{
+    margin-bottom: 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 0;
 }
 
 .table {
@@ -81,4 +88,21 @@ h2 {
 input[type="radio"] {
     margin: auto 0.5rem;
     vertical-align: middle;
+}
+
+.intermedio{
+    margin-top: 35px;
+}
+
+.slider{
+    border-radius: 5px;
+    min-width: 250px;
+    width:100%;
+    background: #d3d3d3;
+    outline: none;
+    transition: opacity .2s;
+}
+
+.table_question{
+    width: 100%;
 }

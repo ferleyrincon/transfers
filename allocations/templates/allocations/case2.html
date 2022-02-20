@@ -1,5 +1,10 @@
 {% extends "global/Page.html" %} {% load otree static %} 
 
+{% block scripts %}
+    <!-- custom style sheet-->
+    <link href="{% static 'allocations/css/styles.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
     <h1>CASO  
         {% if daniela %}
@@ -51,8 +56,47 @@
             la suma de los dos aportes debe ser igual a 600 mil.</u>
         </p>
         <!--slider --> 
+        <div class="card_table" id="h-slider-div" style="text-align: center;">
+            <table class="table_question">
+                <tr>
+                    <td style="text-align: center;"><b id="d_pa">$</b></td>
+                    <td style="text-align: center; width: 45%; min-width: 250px;" rowspan="2">
+                        <input type="range" min="0" max="600000" value="300000" step="10000" id="sliderDinero" class="slider" name="p4">
+                    </td>
+                    <td style="text-align: center;"><b id="d_pb">$</b></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">{% if daniela %}
+            Daniela
+        {% else %}
+            Daniel{% endif %}<br>Gana 1.4 Millones</td>
+                    <td style="text-align: center;">{% if manuela %}
+            Manuela
+        {% else %}
+            Manuel
+        {% endif %}<br>Gana 2.8 Millones</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            var value_slider = document.getElementById("sliderDinero");
+            var dinero_pa = document.getElementById("d_pa");
+            var dinero_pb = document.getElementById("d_pb");
+
+            dinero_pa.innerHTML = "$ "+numberWithPoints(value_slider.value);
+            dinero_pb.innerHTML = "$ "+numberWithPoints(600000-value_slider.value);
+            sliderDinero.oninput = function() {
+                dinero_pa.innerHTML = "$ "+numberWithPoints(value_slider.value);
+                dinero_pb.innerHTML = "$ "+numberWithPoints(600000-value_slider.value);
+            }
+
+            function numberWithPoints(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+        </script>
     
-    <h3>PREGUNTA 5.</h3>
+    <h3 class="intermedio">PREGUNTA 5.</h3>
         <p>
             En caso de que {% if daniela %}
                 Daniela
@@ -67,7 +111,7 @@
             la suma de los dos aportes debe ser igual a 600 mil.</u>
         </p>
 
-        <h3>PREGUNTA 6.</h3>
+        <h3 class="intermedio">PREGUNTA 6.</h3>
         <p>
             En caso de que {% if manuela %}
                 Manuela
@@ -82,7 +126,7 @@
             la suma de los dos aportes debe ser igual a 600 mil.</u>
         </p>
 
-        <h3>PREGUNTA 7.</h3> 
+        <h3 class="intermedio">PREGUNTA 7.</h3> 
         <p>{% if daniela %}
             Daniela
         {% else %}

@@ -4,6 +4,8 @@
 {# *** SCRIPTS *** #}
 {# ****************************************************************************************************************** #}
 {% block scripts %}
+    <!-- custom style sheet-->
+    <link href="{% static 'allocations/css/styles.css' %}" rel="stylesheet">
     <!-- consistency -->
         <script src="{% static 'allocations/js/consistency.js' %}"></script>
 {% endblock %}
@@ -66,7 +68,7 @@
             {% endif %} debería estar dispuesto a hacer una transferencia de 
             dinero más alta, en vez de dedicar las 8 horas a la semana.
         </p>
-        <div class="card" id="y-list">
+        <div class="card_table" id="x-list">
             <table class="table">
                 <thead>
                     <tr>
@@ -171,7 +173,7 @@
             </table>
         </div>
 
-        <h3>PREGUNTA 2.</h3>
+        <h3 class="intermedio">PREGUNTA 2.</h3>
         <p>
         {% if camila %}
             Camila
@@ -203,7 +205,7 @@
             para que ayude a los padres, en vez de dedicar las 8 horas a la semana.
         </p>
 
-        <h3>PREGUNTA 3.</h3>
+        <h3 class="intermedio">PREGUNTA 3.</h3>
         <p> Ahora {% if camila %}
             Camila
         {% else %}

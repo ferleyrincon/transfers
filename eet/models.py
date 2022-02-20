@@ -287,15 +287,17 @@ class Group(BaseGroup):
 
             # --- rows, decisions, and id's to pay
             # --------------------------------------------------------------------------------------------------------
-            p1_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p1.list_to_pay - 1]
+            p1_list_to_pay = int(p1.list_to_pay)
+            p1_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p1_list_to_pay - 1]
                              if j[0] == p1.choice_to_pay]
             p1_row_to_pay[0].append(p1.decision_to_pay)
             p1_row_to_pay[0].append(p1.id_in_group)
 
             p2_row_to_pay = []
 
+            p2_list_to_pay = int(p2.list_to_pay)
             if Constants.role_uncertain or Constants.role_double:
-                p2_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p2.list_to_pay - 1]
+                p2_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p2_list_to_pay - 1]
                                  if j[0] == p2.choice_to_pay]
                 p2_row_to_pay[0].append(p2.decision_to_pay)
                 p2_row_to_pay[0].append(p2.id_in_group)
