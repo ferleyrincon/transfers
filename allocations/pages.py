@@ -17,15 +17,24 @@ class welcome(Page):
         return self.round_number == 1
 
 class case1(Page):
-    pass
+    def vars_for_template(self): 
+        return {
+            "camila" : Constants.camila
+        }
 
 
-class case2(WaitPage):
-    pass
-
+class case2(Page):
+    def vars_for_template(self): 
+        return {
+            "daniela" : Constants.daniela,
+            "manuela" : Constants.manuela
+        }
 
 class case3(Page):
-    pass
-
+    def vars_for_template(self): 
+        return {
+            "julia" : Constants.julia,
+            "luisa" : Constants.luisa
+        }
 
 page_sequence = [consent, welcome, case1, case2, case3]

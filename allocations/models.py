@@ -69,3 +69,15 @@ class Player(BasePlayer):
     consent = models.BooleanField(blank=True)
     consent_account = models.BooleanField(blank=True)
     identificador = models.StringField(label='Para iniciar por favor ingrese las iniciales de su primer nombre y apellido seguido de su fecha de nacimiento. Por ejemplo, si usted se llama Lina Ríos y usted nació el 11 de febrero de 1995, debe ingresar LR11021995. Escriba todo en mayúscula. Este código es importante para asegurar su participación en el resto de la actividad y la realización de los pagos.')
+
+    c1_1 =  models.StringField()
+    c1_2 =  models.StringField()
+    c1_3 =  models.StringField()
+    c1_4 =  models.StringField()
+    c1_5 =  models.StringField()
+    c1_6 =  models.StringField()
+    c1_7 =  models.StringField()
+    c1_8 =  models.StringField()
+    c1_9 =  models.StringField()
+    c1_10 =  models.StringField()
+
