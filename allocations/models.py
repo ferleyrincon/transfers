@@ -81,4 +81,33 @@ class Player(BasePlayer):
     p1_9 =  models.StringField()
     p1_10 =  models.StringField()
 
+    p2_1 =  models.StringField()
+    p2_2 =  models.StringField()
+    p2_3 =  models.StringField()
+    p2_4 =  models.StringField()
+    p2_5 =  models.StringField()
+    p2_6 =  models.StringField()
+    p2_7 =  models.StringField()
+    p2_8 =  models.StringField()
+    p2_9 =  models.StringField()
+    p2_10 =  models.StringField()
+
+    p3_1 =  models.StringField()
+    p3_2 =  models.StringField()
+    p3_3 =  models.StringField()
+    p3_4 =  models.StringField()
+    p3_5 =  models.StringField()
+    p3_6 =  models.StringField()
+    p3_7 =  models.StringField()
+    p3_8 =  models.StringField()
+    p3_9 =  models.StringField()
+    p3_10 =  models.StringField()
+
+    p4 =  models.IntegerField()
+    p5 =  models.IntegerField()
+    p6 =  models.IntegerField()
+    p7_1 =  models.IntegerField()
+    p7_2 =  models.StringField(label='Escriba una solución adicional:')
+
+
 
