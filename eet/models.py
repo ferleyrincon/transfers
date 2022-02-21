@@ -287,17 +287,19 @@ class Group(BaseGroup):
 
             # --- rows, decisions, and id's to pay
             # --------------------------------------------------------------------------------------------------------
-            p1_list_to_pay = int(p1.list_to_pay)
-            p1_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p1_list_to_pay - 1]
+            #p1_list_to_pay = int(p1.list_to_pay)
+            print("P1 list_to_pay", p1.list_to_pay)
+            p1_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p1.list_to_pay - 1]
                              if j[0] == p1.choice_to_pay]
             p1_row_to_pay[0].append(p1.decision_to_pay)
             p1_row_to_pay[0].append(p1.id_in_group)
 
             p2_row_to_pay = []
 
-            p2_list_to_pay = int(p2.list_to_pay)
+            print("P2 list_to_pay", p2.list_to_pay)
+            #p2_list_to_pay = int(p2.list_to_pay)
             if Constants.role_uncertain or Constants.role_double:
-                p2_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p2_list_to_pay - 1]
+                p2_row_to_pay = [list(j) for j in p.participant.vars['xy_list'][p2.list_to_pay - 1]
                                  if j[0] == p2.choice_to_pay]
                 p2_row_to_pay[0].append(p2.decision_to_pay)
                 p2_row_to_pay[0].append(p2.id_in_group)
@@ -445,6 +447,7 @@ class Player(BasePlayer):
     )
 
     list_to_pay = models.IntegerField()
+    print("Creado list_to_pay para este jugador")
     choice_to_pay = models.StringField()
     decision_to_pay = models.StringField()
 
@@ -465,7 +468,9 @@ class Player(BasePlayer):
 
         # randomly determine which row to pay
         self.list_to_pay = random.randint(1, Constants.m)
+        print("Este jugador para pagarle:", self.list_to_pay, " | m", Constants.m)
         self.participant.vars['row_to_pay'] = random.choice(self.participant.vars['xy_list'][self.list_to_pay - 1])
+        print("Variables del jugador:", self.participant.vars['row_to_pay'])
 
         # set choice to pay
         self.choice_to_pay = self.participant.vars['row_to_pay'][0]

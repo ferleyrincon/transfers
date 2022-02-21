@@ -95,12 +95,19 @@ input[type="radio"] {
 }
 
 .slider{
-    border-radius: 5px;
+    -webkit-appearance: none;
     min-width: 250px;
-    width:100%;
-    background: #d3d3d3;
+    width: 100%;
     outline: none;
     transition: opacity .2s;
+    border: 3px solid green;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 0px;
+}
+
+.slider:hover{
+    opacity: 1;
 }
 
 .table_question{

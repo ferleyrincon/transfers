@@ -171,6 +171,8 @@ class Constants(BaseConstants):
         m = len(g)
         num_rounds *= m
 
+    print("Valor de constante.m =", m)
+
     # revise decision
     if revise_decision:
         num_rounds += m
