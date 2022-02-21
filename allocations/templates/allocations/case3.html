@@ -3,6 +3,8 @@
 {% block scripts %}
     <!-- custom style sheet-->
     <link href="{% static 'allocations/css/styles.css' %}" rel="stylesheet">
+    <!-- functions and more -->
+    <script src="{% static 'allocations/js/consistency.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -17,22 +19,25 @@
             HERMANOS    
         {% endif %} </h1>
 
-    <p> Por favor suponga que {% if julia %}
+    <p> Por favor suponga que 
+        {% if julia %}
             Julia
         {% else %}
             Julio
-        {% endif %} y {% if luisa %}
+        {% endif %} y 
+        {% if luisa %}
             Luisa
         {% else %}
             Luis
-        {% endif %} son {% if julia %}
+        {% endif %} son 
+        {% if julia %}
             {% if luisa %}
                 hermanas
             {% else %}
                 hermanos
             {% endif %}
         {% else %}
-        hermanos   
+            hermanos   
         {% endif %}. 
         Sus padres tienen 65 años, y ya no pueden trabajar. 
         Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones, y no tienen ahorros distintos a una casa que están considerando vender para tener dinero en efectivo. 
@@ -41,7 +46,8 @@
             Julia
         {% else %}
             Julio
-        {% endif %} y {% if luisa %}
+        {% endif %} y 
+        {% if luisa %}
             Luisa
         {% else %}
             Luis
@@ -67,20 +73,22 @@
                     Luisa
                 {% else %}
                     Luis
-                {% endif %}., su {% if luisa %}
+                {% endif %} su 
+                {% if luisa %}
                     hermana
                 {% else %}
                     hermano
                 {% endif %}, para que ayude a sus padres durante 8 horas a la semana.</p>
     
             <p>
-                <i>Por favor haga <b>click</b> el círculo que está al lado del monto de dinero a partir del cual 
-                cree que {% if julia %}
+                <i>Por favor haga <b>click</b> el círculo que está al lado del monto de dinero a partir del cual cree que 
+                {% if julia %}
                     Julia
                 {% else %}
                     Julio
                 {% endif %} debería dedicar 8 horas a la semana a ayudar sus padres <b>-Opción A-</b> 
-                en lugar de pagarle a {% if luisa %}
+                en lugar de pagarle a 
+                {% if luisa %}
                     Luisa
                 {% else %}
                     Luis
@@ -88,17 +96,18 @@
             </p>
     
             <p>
-                La cantidad de dinero en la Opción <b>B</b> va a ir variando de $0 a $90.000. Entre más alto el valor, 
-                quiere decir que usted cree que {% if julia %}
+                La cantidad de dinero en la Opción <b>B</b> va a ir variando de $0 a $90.000. Entre más alto el valor, quiere decir que usted cree que 
+            {% if julia %}
                 Julia
             {% else %}
                 Julio
-            {% endif % debería estar dispuesto a hacer una transferencia de 
-                dinero más alta a {% if luisa %}
+            {% endif %} debería estar dispuesto a hacer una transferencia de dinero más alta a 
+            {% if luisa %}
                 Luisa
             {% else %}
                 Luis
-            {% endif %}., su {% if luisa %}
+            {% endif %}, su 
+            {% if luisa %}
                 hermana
             {% else %}
                 hermano
@@ -223,7 +232,8 @@
             </p>
             <h3 class="intermedio">PREGUNTA 10</h3>
             <p>
-                Ahora piense que solo {% if julia %}
+                Ahora piense que solo 
+                {% if julia %}
                     Julia
                 {% else %}
                     Julio
@@ -238,11 +248,11 @@
             <div class="card_table" id="h-slider-div" style="text-align: center;">
                 <table class="table_question">
                     <tr>
-                        <td style="text-align: center;"><b id="d_pa">$</b></td>
+                        <td style="text-align: center;"><b id="d_pa">Horas: 4</b></td>
                         <td style="text-align: center; width: 45%; min-width: 250px;" rowspan="2">
-                            <input type="range" min="0" max="8" value="4" step="1" id="sliderDinero" class="slider" name="p10">
+                            <input type="range" min="0" max="8" value="4" step="1" id="sliderHora_p10" class="slider_hora" name="p10">
                         </td>
-                        <td style="text-align: center;"><b id="d_pb">$</b></td>
+                        <td style="text-align: center;"><b id="d_pb">Horas: 4</b></td>
                     </tr>
                     <tr>
                         <td style="text-align: center;">{% if julia %}
@@ -258,23 +268,6 @@
                     </tr>
                 </table>
             </div>
-    
-            <script>
-                var value_slider = document.getElementById("sliderDinero");
-                var dinero_pa = document.getElementById("d_pa");
-                var dinero_pb = document.getElementById("d_pb");
-    
-                dinero_pa.innerHTML = "Horas: "+numberWithPoints(value_slider.value);
-                dinero_pb.innerHTML = "Horas: "+numberWithPoints(8-value_slider.value);
-                sliderDinero.oninput = function() {
-                    dinero_pa.innerHTML = "Horas: "+numberWithPoints(value_slider.value);
-                    dinero_pb.innerHTML = "Horas: "+numberWithPoints(8-value_slider.value);
-                }
-    
-                function numberWithPoints(x) {
-                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                }
-            </script>
 
             <h3 class="intermedio">PREGUNTA 11</h3>
             <p>

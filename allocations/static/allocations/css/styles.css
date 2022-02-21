@@ -94,7 +94,7 @@ input[type="radio"] {
     margin-top: 35px;
 }
 
-.slider{
+.slider_dinero, .slider_hora{
     -webkit-appearance: none;
     min-width: 250px;
     width: 100%;
@@ -106,7 +106,7 @@ input[type="radio"] {
     height: 0px;
 }
 
-.slider:hover{
+.slider_dinero:hover, .slider_hora:hover{
     opacity: 1;
 }
 

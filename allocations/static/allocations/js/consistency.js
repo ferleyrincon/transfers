@@ -123,18 +123,38 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.slider').click(
+    $('.slider_dinero').click(
         function (event) {
             var slider_id = event.target.id;
             var parent_slider = document.getElementById(slider_id).parentElement.parentElement;
             var childs = parent_slider.children;
 
             var dinero_pa = childs[0].firstElementChild;
+            var slider_max = childs[1].firstElementChild.max;
             var slider_value = childs[1].firstElementChild.value;
             var dinero_pb = childs[2].firstElementChild;
 
             dinero_pa.innerHTML = "$ "+numberWithPoints(slider_value);
-            dinero_pb.innerHTML = "$ "+numberWithPoints(600000-slider_value);
+            dinero_pb.innerHTML = "$ "+numberWithPoints(slider_max-slider_value);
+        }
+    );
+});
+
+$(document).ready(function () {
+    $('.slider_hora').click(
+        function (event) {
+            var slider_id = event.target.id;
+            var parent_slider = document.getElementById(slider_id).parentElement.parentElement;
+            var childs = parent_slider.children;
+
+            var dinero_pa = childs[0].firstElementChild;
+            var slider_max = childs[1].firstElementChild.max;
+            var slider_value = childs[1].firstElementChild.value;
+            var dinero_pb = childs[2].firstElementChild;
+            console.log("Max slider: "+slider_max);
+
+            dinero_pa.innerHTML = "Horas: "+slider_value;
+            dinero_pb.innerHTML = "Horas: "+(slider_max-slider_value);
         }
     );
 });
