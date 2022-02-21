@@ -34,6 +34,9 @@ class case2(Page):
         }
 
 class case3(Page):
+    form_model = 'player'
+    form_fields = ['p8_1','p8_2','p8_3','p8_4','p8_5','p8_6','p8_7','p8_8','p8_9','p8_10','p9','p9_1','p9_2','p10','p11_1','p11_2']
+
     def vars_for_template(self): 
         return {
             "julia" : Constants.julia,
