@@ -109,5 +109,49 @@ class Player(BasePlayer):
     p7_1 =  models.IntegerField()
     p7_2 =  models.StringField(label='Escriba una solución adicional:')
 
+    p8_1 =  models.StringField()
+    p8_2 =  models.StringField()
+    p8_3 =  models.StringField()
+    p8_4 =  models.StringField()
+    p8_5 =  models.StringField()
+    p8_6 =  models.StringField()
+    p8_7 =  models.StringField()
+    p8_8 =  models.StringField()
+    p8_9 =  models.StringField()
+    p8_10 =  models.StringField()
+    p10 =  models.IntegerField()
+
+    p9 = models.IntegerField(
+    choices=[
+        [1,'A un banco o entidad financiera.'],
+        [2,'A una persona diferente a los hijos.'],
+        [3,'A los hijos, a un precio menor al que recibirían de alguien que no sea de la familia.'],
+        [4,'A los hijos, al mismo precio que recibirían de alguien que no sea de la familia. '],
+    ], label="Si los padres deciden vender la casa ¿A quién deberían vendérsela?")
+
+    p9_1 = models.IntegerField(
+    choices=[
+        [1,'Solicitar un pago único correspondiente al valor total de la casa.'],
+        [2,'Solicitar un pago cada mes, de un monto acordado con la entidad financiera, por un número determinado de años.'],
+        [3,'Solicitar un pago cada mes, hasta que fallezcan, de un monto acordado con la entidad financiera. Este monto es más bajo que si lo escogen por un número determinado de años.'],
+    ], label="Si los padres deciden vender la casa a una entidad financiera, ¿cuál de estas opciones deberían escoger?")
+
+    p9_2 = models.IntegerField(
+    choices=[
+        [1,'Solicitar un pago único correspondiente al valor total de la casa.'],
+        [2,'Solicitar un pago cada mes, de un monto acordado con los hijos, por un número determinado de años.'],
+        [3,'Solicitar un pago cada mes, hasta que fallezcan, de un monto acordado con los hijos. Este monto es más bajo que si lo escogen por un número determinado de años.'],
+    ], label="Si los padres deciden vender la casa a los hijos, ¿cuál de estas opciones deberían escoger?")
+
+    p11_1 = models.IntegerField(
+    choices=[
+        [1,'Solicitar un pago único correspondiente al valor total de la casa.'],
+        [2,'Solicitar un pago cada mes, de un monto acordado con los hijos, por un número determinado de años.'],
+        [3,'Solicitar un pago cada mes, hasta que fallezcan, de un monto acordado con los hijos. Este monto es más bajo que si lo escogen por un número determinado de años.'],
+    ], label="¿Qué cree que debería hacerse en ese caso?")
+
+    p11_2 =  models.StringField(label='Escriba una solución adicional:')
+
+
 
 
