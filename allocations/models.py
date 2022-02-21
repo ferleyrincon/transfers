@@ -43,11 +43,11 @@ class Constants(BaseConstants):
     luisa = random.choice([True, False])
 
 class Subsession(BaseSubsession):
-    camila = models.BooleanField()
-    daniela = models.BooleanField()
-    manuela = models.BooleanField()
-    julia = models.BooleanField()
-    luisa = models.BooleanField()
+    camila = models.BooleanField() #Hija 1
+    daniela = models.BooleanField()#Hermana 2.1
+    manuela = models.BooleanField()#Hermana 2.2
+    julia = models.BooleanField()  #Hermana 3.1
+    luisa = models.BooleanField()  #Hermana 3.2
 
 
 def creating_session(self):
