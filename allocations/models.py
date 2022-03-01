@@ -50,16 +50,16 @@ class Subsession(BaseSubsession):
     luisa = models.BooleanField()  #Hermana 3.2
 
 
-def creating_session(self):
-        """Esta función define los valores iniciales para cada ronda
-        incluye la subsession y demás clases.
-        Este método se ejecuta al comiezo de la sesion tantas veces como
-        rondas haya"""
-        self.camila = Constants.camila
-        self.daniela = Constants.daniela
-        self.manuela = Constants.manuela
-        self.julia = Constants.julia
-        self.luisa = Constants.luisa
+    def creating_session(self):
+            """Esta función define los valores iniciales para cada ronda
+            incluye la subsession y demás clases.
+            Este método se ejecuta al comiezo de la sesion tantas veces como
+            rondas haya"""
+            self.camila = Constants.camila
+            self.daniela = Constants.daniela
+            self.manuela = Constants.manuela
+            self.julia = Constants.julia
+            self.luisa = Constants.luisa
 
 class Group(BaseGroup):
     pass
