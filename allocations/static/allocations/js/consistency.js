@@ -51,30 +51,18 @@ $(document).ready(function () {
             for (i = 0; i < radios.length; ++i) {
                 var radio = radios[i];
 
-                if (!afterClickedRadio && clickedRadio.value === 'B' && radio.value === 'B') {
-                    radio.checked = true;
-                }
-
-                if (!afterClickedRadio && clickedRadio.value === 'A' && radio.value === 'A') {
-                    radio.checked = true;
-                }
-
-                if (!afterClickedRadio && clickedRadio.value === 'A' && radio.value === 'A' && radio === clickedRadio) {
-                    radio.checked = true;
-                }
-
-                if (afterClickedRadio && clickedRadio.value === 'A' && radio.value === 'B' && i_clicked != (i-1)) {
-                    radio.checked = true;
-                }
-
-                if (afterClickedRadio && clickedRadio.value === 'B' && radio.value === 'A') {
-                    radio.checked = true;
-                }
-
-                if (radio === clickedRadio) {
-                    afterClickedRadio = true;
-                    i_clicked = i;
-                    continue;
+                if(clickedRadio.value === 'B'){
+                    if (!afterClickedRadio && radio.value === 'B') {
+                        radio.checked = true;
+                    }
+                    if (afterClickedRadio && radio.value === 'A') {
+                        radio.checked = true;
+                    }
+                    if (radio === clickedRadio) {
+                        afterClickedRadio = true;
+                        i_clicked = i;
+                        continue;
+                    }
                 }
             }
         }
@@ -92,30 +80,18 @@ $(document).ready(function () {
             for (i = 0; i < radios.length; ++i) {
                 var radio = radios[i];
 
-                if (!afterClickedRadio && clickedRadio.value === 'B' && radio.value === 'B') {
-                    radio.checked = true;
-                }
-
-                if (!afterClickedRadio && clickedRadio.value === 'A' && radio.value === 'A') {
-                    radio.checked = true;
-                }
-
-                if (!afterClickedRadio && clickedRadio.value === 'A' && radio.value === 'A' && radio === clickedRadio) {
-                    radio.checked = true;
-                }
-
-                if (afterClickedRadio && clickedRadio.value === 'A' && radio.value === 'B' && i_clicked != (i-1)) {
-                    radio.checked = true;
-                }
-
-                if (afterClickedRadio && clickedRadio.value === 'B' && radio.value === 'A') {
-                    radio.checked = true;
-                }
-
-                if (radio === clickedRadio) {
-                    afterClickedRadio = true;
-                    i_clicked = i;
-                    continue;
+                if(clickedRadio.value === 'B'){
+                    if (!afterClickedRadio && radio.value === 'B') {
+                        radio.checked = true;
+                    }
+                    if (afterClickedRadio && radio.value === 'A') {
+                        radio.checked = true;
+                    }
+                    if (radio === clickedRadio) {
+                        afterClickedRadio = true;
+                        i_clicked = i;
+                        continue;
+                    }
                 }
             }
         }
@@ -162,3 +138,25 @@ $(document).ready(function () {
 function numberWithPoints(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+$(document).ready(function () {
+    $('.otree-btn-next').click(
+        function () {
+            var radios = $('.items1');
+            for (i = 0; i < radios.length; ++i) {
+                var radio = radios[i];
+                radio.disabled = false;
+            }
+            var radios = $('.items2');
+            for (i = 0; i < radios.length; ++i) {
+                var radio = radios[i];
+                radio.disabled = false;
+            }
+            var radios = $('.items3');
+            for (i = 0; i < radios.length; ++i) {
+                var radio = radios[i];
+                radio.disabled = false;
+            }
+        }
+    );
+});

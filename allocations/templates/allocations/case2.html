@@ -61,11 +61,11 @@
         <div class="card_table" id="h-slider-div" style="text-align: center;">
             <table class="table_question">
                 <tr>
-                    <td style="text-align: center;" id="td_pa"><b id="d_pa">$ 300.000</b></td>
+                    <td class="text_slider"><b id="d_pa">$ 300.000</b></td>
                     <td style="text-align: center; width: 45%; min-width: 250px;" rowspan="2">
                         <input type="range" min="0" max="600000" value="300000" step="10000" id="sliderDinero_p4" class="slider_dinero" name="p4">
                     </td>
-                    <td style="text-align: center;" id="td_pb"><b id="d_pb">$ 300.000</b></td>
+                    <td class="text_slider"><b id="d_pb">$ 300.000</b></td>
                 </tr>
                 <tr>
                     <td style="text-align: center;">{% if daniela %}
@@ -101,11 +101,11 @@
         <div class="card_table" id="h-slider-div" style="text-align: center;">
             <table class="table_question">
                 <tr>
-                    <td style="text-align: center;"><b id="d_pa">$ 300.000</b></td>
+                    <td class="text_slider"><b id="d_pa">$ 300.000</b></td>
                     <td style="text-align: center; width: 45%; min-width: 250px;" rowspan="2">
                         <input type="range" min="0" max="600000" value="300000" step="10000" id="sliderDinero_p5" class="slider_dinero" name="p5">
                     </td>
-                    <td style="text-align: center;"><b id="d_pb">$ 300.000</b></td>
+                    <td class="text_slider"><b id="d_pb">$ 300.000</b></td>
                 </tr>
                 <tr>
                     <td style="text-align: center;">
@@ -143,11 +143,11 @@
         <div class="card_table" id="h-slider-div" style="text-align: center;">
             <table class="table_question">
                 <tr>
-                    <td style="text-align: center;"><b id="d_pa">$ 300.000</b></td>
+                    <td class="text_slider"><b id="d_pa">$ 300.000</b></td>
                     <td style="text-align: center; width: 45%; min-width: 250px;" rowspan="2">
                         <input type="range" min="0" max="600000" value="300000" step="10000" id="sliderDinero_p6" class="slider_dinero" name="p6">
                     </td>
-                    <td style="text-align: center;"><b id="d_pb">$ 300.000</b></td>
+                    <td class="text_slider"><b id="d_pb">$ 300.000</b></td>
                 </tr>
                 <tr>
                     <td style="text-align: center;">
@@ -199,11 +199,11 @@
                 <div class="card_table" id="h-slider-div" style="text-align: center;">
                     <table class="table_question">
                         <tr>
-                            <td style="text-align: center;" id="td_pa"><b id="d_pa">$ 300.000</b></td>
+                            <td class="text_slider"><b id="d_pa">$ 300.000</b></td>
                             <td style="text-align: center; width: 45%; min-width: 250px;" rowspan="2">
                                 <input type="range" min="0" max="600000" value="300000" step="10000" id="sliderDinero_p7_1" class="slider_dinero" name="p7_1">
                             </td>
-                            <td style="text-align: center;" id="td_pb"><b id="d_pb">$ 300.000</b></td>
+                            <td class="text_slider"><b id="d_pb">$ 300.000</b></td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">
@@ -220,9 +220,10 @@
                     </table>
                 </div>
 
-    <p>           
-        {% formfield 'p7_2' %}
+    <p>
+    Escriba una solución adicional:
     </p>
+    <input type="text" name="p7_2" id="p7_2" class="form-control text_input" required>
      
     <p> Haga <I>clic</I> en "Siguiente" para continuar.</p>
     {% next_button %} 
