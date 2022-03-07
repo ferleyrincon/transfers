@@ -130,6 +130,11 @@ input[type="range"]::-webkit-range-thumb{
     border: none;
 }
 
+input[type="range"]::-ms-thumb{
+    background-color: #0000ff;
+    border: none;
+}
+
 .table_question{
     width: 100%;
 }
@@ -180,9 +185,8 @@ input[type="radio"]{
 }
 
 .text_input{
-    max-width: 100px;
+    max-width: 100% !important;
     width: 100%;
     margin-bottom: 10px;
     height: 100px;
-    
 }
