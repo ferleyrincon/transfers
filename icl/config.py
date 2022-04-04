@@ -16,20 +16,21 @@ class Constants(BaseConstants):
     # number of steps in the staircase procedure (see graph in the docs)
     # note that <num_choices = x> implies a choice list with <2^x> choices, i.e. <2^x> possible switching points
     # thus, for instance, <num_choice = 5> yields 32 different classifications for preferences towards risks
-    num_choices = 5
+    num_choices = 4
 
     # lottery payoffs (in currency units set in settings.py)  and probability (in %) for the high lottery outcome
     # <lottery_hi> and <lottery_lo> define the "high" and "low" outcomes of the lottery ("Option A")
     # <probability> determines the likelihood that the lottery pays the "high" outcome as percentage number
     # thus, <probability = x> implies that the lottery pays <lottery_hi> in <x>% and <lottery_lo> in <100-x>%
-    lottery_hi = 300
+    # lotttery_hi = horas
+    lottery_hi = 8 
     lottery_lo = 0
-    probability = 50
+    probability = 100
 
     # (initial) sure payoff, i.e. the certain payment in the first choice
     # <sure_payoff> defines the certain amount offered as "Option B" in the first of <num_choices> choices
     # the sure payoffs for subsequent choices are determined by <delta> (see below)
-    sure_payoff = 160
+    sure_payoff = 80000
 
     # (initial) increase/decrease in sure payoff
     # while the first choice offers a fix payment of <sure_payoff>, "Option B" in subsequent choices depend on <delta>
@@ -38,7 +39,7 @@ class Constants(BaseConstants):
     # thus, if a subject chooses "A" ("B"), <sure_payoff_i> increases (decreases) by half of the previous rounds <delta>
     # for example: if <sure_payoff = x> and <delta = y>, "Option B" offers <x +/- y/2> in choice 2, <x +/- y/2 +/- y/4>
     # in choice 3, etc.
-    delta = 80
+    delta = -40000
 
     # ---------------------------------------------------------------------------------------------------------------- #
     # --- Overall Settings and Appearance --- #
@@ -68,12 +69,12 @@ class Constants(BaseConstants):
     # show instructions page
     # if <instructions = True>, a separate template "Instructions.html" is rendered prior to the task
     # if <instructions = False>, the task starts immediately (e.g. in case of printed instructions)
-    instructions = True
+    instructions = False
 
     # show results page summarizing the task's outcome including payoff information
     # if <results = True>, a separate page containing all relevant information is displayed after finishing the task
     # if <results = False>, the template "Decision.html" will not be rendered
-    results = True
+    results = False
 
     # ---------------------------------------------------------------------------------------------------------------- #
     # --- oTree Settings (Don't Modify) --- #

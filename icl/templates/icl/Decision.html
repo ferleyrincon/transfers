@@ -48,23 +48,22 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div class="card">
             <div class="card-header">
-                {% trans "What do you prefer?" %}
+                {% trans "¿Qué debería hacer Camilo?" %}
             </div>
             <table class="table">
                 <tr>
-                    <th>{% trans "Option A:" %}</th>
+                    <th>{% trans "Opción A<br>Tiempo:" %}</th>
                     <td>
                         {% with hi=hi lo=lo p_hi=p_hi p_lo=p_lo %}
                             {% blocktrans trimmed %}
-                                a {{ p_hi }} chance of winning {{ hi }} and <br/>
-                                a {{ p_lo }} chance of winning {{ lo }}
+                            Encargarse personalmente de ayudar a sus padres durante {{ hi }} horas a la semana.
                             {% endblocktrans %}
                         {% endwith %}
                     </td>
                     <td>
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="A" required>
-                                {% trans "Option A" %}
+                                {% trans "8 horas" %}
                             </button>
                         {% else %}
                             <input type="radio" name="choice" value="A" required>
@@ -73,20 +72,19 @@
                 </tr>
                 <tr>
                     <th>
-                        {% trans "Option B:" %}
+                        {% trans "Opción B<br>Dinero:" %}
                     </th>
                     <td>
                         {% with sure_payoff=sure_payoff %}
                             {% blocktrans trimmed %}
-                                an amount of {{ sure_payoff }}
-                                as a sure payment
+                            Pagarle a un familiar {{ sure_payoff }} para que ayude a sus padres durante 8 horas a la semana.
                             {% endblocktrans %}
                         {% endwith %}
                     </td>
                     <td>
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="B" required>
-                                {% trans "Option B" %}
+                                {% trans "Pagar" %}
                             </button>
                         {% else %}
                             <input type="radio" name="choice" value="B" required>
