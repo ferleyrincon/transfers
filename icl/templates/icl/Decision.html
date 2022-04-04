@@ -15,7 +15,12 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Caso 1" %}
+<div class="card info">
+    {% trans "Caso 1" %}<br>
+    <span class="subtitle">
+        'camilo' debe escoger entre 
+    </span>
+</div>
 {% endblock %}
 
 
@@ -31,15 +36,12 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         {% if Constants.progress_bar == True %}
             <label>
+                <!--
                 {% blocktrans trimmed with page=page total=total %}
-                    Pregunta # {{ page }}
+                    {{ page }} de {{ total }}
                 {% endblocktrans %}
+                -->
             </label>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:{{ progress|json }}%;">
-                    <span class="sr-only"></span>
-                </div>
-            </div>
         {% endif %}
 
 
@@ -114,7 +116,14 @@
             </table>
         </div>
 
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width:{{ progress|json }}%;">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+
     </div>
+
 
     {% if Constants.buttons == False %}
         {% next_button %}
