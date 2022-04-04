@@ -83,6 +83,11 @@ input[type="radio"]{
     min-width: 100px;
 }
 
+.btn_cell{
+    text-align: center;
+    margin: 0 auto;
+}
+
 
 /* ****************************************************************************************************************** */
 /* *** Progress Bar *** */
@@ -103,3 +108,4 @@ label {
     font-weight: normal;
     margin-bottom: 4pt;
 }
+

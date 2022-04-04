@@ -5,6 +5,10 @@
     <link href="{% static 'allocations/css/styles.css' %}" rel="stylesheet">
     <!-- functions and more -->
     <script src="{% static 'allocations/js/consistency.js' %}"></script>
+    <!-- jquery UI -->
+    <script src="{% static 'allocations/jquery-ui/jquery.js' %}"></script>
+    <script src="{% static 'allocations/jquery-ui/jquery-ui.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'allocations/jquery-ui/jquery-ui.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -58,6 +62,14 @@
             la suma de los dos aportes debe ser igual a 600 mil.</u>
         </p>
         <!--slider --> 
+
+<div class="card_table" id="h-slider-div" style="text-align: center;">
+<div id="slider"></div>
+</div>
+<script>
+$("#slider").slider().slider("pips").slider("float");
+</script>
+
         <div class="card_table" id="h-slider-div" style="text-align: center;">
             <table class="table_question">
                 <tr>

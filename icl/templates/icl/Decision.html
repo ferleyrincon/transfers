@@ -15,7 +15,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Your Decision" %}
+    {% trans "Caso 1" %}
 {% endblock %}
 
 
@@ -32,7 +32,7 @@
         {% if Constants.progress_bar == True %}
             <label>
                 {% blocktrans trimmed with page=page total=total %}
-                    Page {{ page }} of {{ total }}
+                    Pregunta # {{ page }}
                 {% endblocktrans %}
             </label>
             <div class="progress">
@@ -48,7 +48,7 @@
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <div class="card">
             <div class="card-header">
-                {% trans "¿Qué debería hacer Camilo?" %}
+                {% trans "¿Qué debería hacer {{ camilo }}?" %}
             </div>
             <table class="table">
                 <tr>
@@ -60,10 +60,10 @@
                             {% endblocktrans %}
                         {% endwith %}
                     </td>
-                    <td>
+                    <td class="btn_cell">
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="A" required>
-                                {% trans "8 horas" %}
+                                Aportar 8 horas
                             </button>
                         {% else %}
                             <input type="radio" name="choice" value="A" required>
@@ -81,10 +81,10 @@
                             {% endblocktrans %}
                         {% endwith %}
                     </td>
-                    <td>
+                    <td class="btn_cell">
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="B" required>
-                                {% trans "Pagar" %}
+                                Aportar {{ sure_payoff }}
                             </button>
                         {% else %}
                             <input type="radio" name="choice" value="B" required>
@@ -100,7 +100,7 @@
                             I'm indifferent between Option A and Option B
                         {% endblocktrans %}
                     </td>
-                    <td>
+                    <td class="btn_cell">
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="I" required>
                                 {% trans "Indifferent" %}
