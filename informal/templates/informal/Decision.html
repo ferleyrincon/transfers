@@ -7,7 +7,7 @@
 {# *** STYLES *** #}
 {# ****************************************************************************************************************** #}
 {% block styles %}
-    <link href="{% static 'icl/css/custom.css' %}" rel="stylesheet">
+    <link href="{% static 'informal/css/custom.css' %}" rel="stylesheet">
 {% endblock %}
 
 
@@ -49,34 +49,20 @@
 {# ****************************************************************************************************************** #}
 {% block content %}
     <div class="wrapper">
-            <p><h5>PREGUNTA 1.</h5>
-            
+            <p><h5>PREGUNTA 2.</h5>
                 {% if camila %}
                     Camila
                 {% else %}
                     Camilo
-                {% endif %} debe decidir entre:
+                {% endif %} también debe decidir entre:
             <br>
             
             <b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.<br>
-            <b>Opción B:</b> Darle una cantidad de dinero semanal a sus padres para ellos busquen a alguien que los ayude.<br>
+            <b>Opción B:</b> Pagar a un familiar para que ayude a sus padres durante 8 horas a la semana.<br>
            </p>
 
+            <p> Tenga en cuenta que la cantidad de dinero en la Opción <b>B</b> irá cambiando.</p>
 
-
-        <p> Tenga en cuenta que la cantidad de dinero en la Opción <b>B</b> irá cambiando.</p>
-        <!-- ------------------------------------------------------------------------------------------------------- -->
-        <!-- Progress Bar -->
-        <!-- ------------------------------------------------------------------------------------------------------- -->
-        {% if Constants.progress_bar == True %}
-            <label>
-                <!--
-                {% blocktrans trimmed with page=page total=total %}
-                    {{ page }} de {{ total }}
-                {% endblocktrans %}
-                -->
-            </label>
-        {% endif %}
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <!-- Table - Lottery Decisions (Option A/B) -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
@@ -115,7 +101,7 @@
                     <td>
                         {% with sure_payoff=sure_payoff %}
                             {% blocktrans trimmed %}
-                            Darle {{ sure_payoff }} semanalmente a sus padres para ellos busquen a alguien que los ayude.
+                            Pagarle {{ sure_payoff }} a un familiar para que ayude a sus padres durante 8 horas a la semana.
                             {% endblocktrans %}
                         {% endwith %}
                     </td>
@@ -152,15 +138,22 @@
             </table>
         </div>
         <br>
-        {% blocktrans trimmed with page=page total=total %}
-            {{ page }} de {{ total }}
-        {% endblocktrans %} 
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width:{{ progress|json }}%;">
-                <span class="sr-only"></span>
-            </div>
-        </div>
 
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <!-- Progress Bar -->
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        {% if Constants.progress_bar == True %}
+            <label>
+                {% blocktrans trimmed with page=page total=total %}
+                    {{ page }} de {{ total }}
+                {% endblocktrans %}
+            </label>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width:{{ progress|json }}%;">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+        {% endif %}
     </div>
 
 

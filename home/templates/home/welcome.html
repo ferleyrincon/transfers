@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %} {% load otree static %} 
+
+{% block content %}
+    <h1>Instrucciones Generales</h1>
+
+    <p> La actividad se realizará de manera individual, por favor silencie su teléfono móvil y evite cualquier distracción en los siguientes 30 minutos.  </p> 
+
+    <p> En esta actividad responderá algunas preguntas sobre <i>tres casos hipotéticos</i>. 
+        Por responder esas preguntas recibirá entre $10.000 y $62.000. Su pago depende tanto de sus decisiones como de las decisiones de los demás participantes, y del azar. Los fondos para cubrir estos gastos han sido proporcionados por la Universidad del Rosario y MinCiencias. </p>
+
+    <h3>Pagos de la actividad</h3>
+
+        <p>
+            Su pago por completar la actividad y responder la encuesta final será mínimo de $10.000. 
+        </p>
+
+    <p> Si necesita ayuda, por favor levante la mano, uno de los monitores se acercará y tratará de ayudarlo de manera individual. </p> 
+    
+    <p><b>
+        {% formfields %}
+    </b></p>
+
+    <p> Haga <I>clic</I> en "Siguiente" para comenzar.</p>
+    {% next_button %} 
+    {% endblock %}

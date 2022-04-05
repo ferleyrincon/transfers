@@ -25,6 +25,13 @@ SESSION_CONFIGS = [
          'num_demo_participants':1,
          'app_sequence':['icl']
     },
+    {
+        'name': 'app',
+        'display_name': 'App',
+        'num_demo_participants': 1, 
+        #'app_sequence': ['home','parents','informal','formal','children']
+        'app_sequence': ['home','parents']
+    }
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs

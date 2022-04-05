@@ -55,7 +55,8 @@ class Decision(Page):
             'page':        page,
             'total':       total,
             'progress':    progress,
-            "camila" : self.participant.vars['camila'],
+            'julia' : self.participant.vars['julia'],
+            'luisa' : self.participant.vars['luisa'],
             'sure_payoff': "$"+format(int(str((self.participant.vars['icl_sure_payoffs'][page - 1])).split(",")[0]), ',d')
         }
 
