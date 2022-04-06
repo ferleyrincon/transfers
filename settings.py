@@ -29,7 +29,7 @@ SESSION_CONFIGS = [
         'name': 'app',
         'display_name': 'App',
         'num_demo_participants': 1, 
-        'app_sequence': ['home','formal','parents','informal','children']
+        'app_sequence': ['home','parents','informal','formal','children']
         #'app_sequence': ['home','parents']
     }
 ]

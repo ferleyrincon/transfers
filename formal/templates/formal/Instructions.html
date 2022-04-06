@@ -7,7 +7,7 @@
 {# *** STYLES *** #}
 {# ****************************************************************************************************************** #}
 {% block styles %}
-    <link href="{% static 'formal/css/custom.css' %}" rel="stylesheet"/>
+    <link href="{% static 'parents/css/custom.css' %}" rel="stylesheet"/>
 {% endblock %}
 
 
@@ -15,7 +15,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Instructions" %}
+    {% trans "Pregunta 3" %}
 {% endblock %}
 
 
@@ -23,28 +23,17 @@
 {# *** CONTENT *** #}
 {# ****************************************************************************************************************** #}
 {% block content %}
-
-    <div class="wrapper instructions">
-        <p>
-            {% blocktrans trimmed with p_hi=p_hi hi=hi p_lo=p_lo lo=lo %}
-                In the following, you can choose between a sure payment and a lottery.
-                The lottery gives you a {{ p_hi }} chance of receiving {{ hi }}
-                and a {{ p_lo }} chance of receiving {{ lo }}.
-            {% endblocktrans %}
-            {% blocktrans trimmed with n=Constants.num_choices %}
-                We will present to you {{ n }} different choices.
-                While the lottery is the same in all choices,
-                the sure payment will differ in every choice.
-            {% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans trimmed with n=Constants.num_choices %}
-                After completing all {{ n }} choices, one of the choices will be randomly picked to determine your
-                payoff. If you chose the lottery, a random draw will determine whether the high or low outcome will
-                constitute your payoff; otherwise, the sure payment will constitute your payoff.
-            {% endblocktrans %}
-        </p>
-    </div>
-
-    {% next_button %}
+<div class="wrapper">
+        <p>          
+        {% if camila %}
+            Camila
+        {% else %}
+            Camilo
+        {% endif %} debe decidir entre:
+    <br>
+    <b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.<br>
+    <b>Opción B:</b> Pagar a un profesional para que ayude a sus padres durante 8 horas a la semana.<br></p>
+    <p> Tenga en cuenta que la cantidad de dinero en la Opción <b>B</b> irá cambiando.</p>
+</div>
+{% next_button %}
 {% endblock %}

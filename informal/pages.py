@@ -24,7 +24,11 @@ class Instructions(Page):
     # ----------------------------------------------------------------------------------------------------------------
     def is_displayed(self):
         return self.subsession.round_number == 1
-
+        
+    def vars_for_template(self):
+        return {
+            "camila" : self.participant.vars['camila']
+        }
 
 # ******************************************************************************************************************** #
 # *** PAGE DECISION *** #
@@ -64,7 +68,7 @@ class Decision(Page):
     def before_next_page(self):
         self.player.set_sure_payoffs()
         self.player.update_switching_row()
-        self.player.set_payoffs()
+        #self.player.set_payoffs()
 
 
 # ******************************************************************************************************************** #

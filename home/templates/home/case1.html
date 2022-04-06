@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'parents/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+<div class="card info">
+    <span class="subtitle">
+        <h2>Caso 1: 
+        {% if camila %}
+        Hija única
+    {% else %}
+        Hijo único
+    {% endif %}</h2>
+
+<p> Por favor suponga que {% if camila %}
+        Camila
+    {% else %}
+        Camilo
+    {% endif %} es {% if camila %}
+        hija única.
+    {% else %}
+        hijo único.
+    {% endif %}
+
+    Los padres de  {% if camila %}
+        Camila
+    {% else %}
+        Camilo
+    {% endif %}  tienen 65 años, y ya no pueden trabajar. 
+    Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones y tampoco tienen otros ahorros. <br>
+    <i>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas. </i ></p> 
+</div>
+{% next_button %}
+{% endblock %}
+

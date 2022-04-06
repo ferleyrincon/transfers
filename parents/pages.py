@@ -13,8 +13,6 @@ def vars_for_all_templates(self):
         'hi':Constants.lottery_hi,
         'lo':Constants.lottery_lo
     }
-
-
 # ******************************************************************************************************************** #
 # *** CLASS INSTRUCTIONS *** #
 # ******************************************************************************************************************** #
@@ -25,6 +23,10 @@ class Instructions(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+    def vars_for_template(self):
+        return {
+            "camila" : self.participant.vars['camila']
+        }
 
 # ******************************************************************************************************************** #
 # *** PAGE DECISION *** #
@@ -55,7 +57,7 @@ class Decision(Page):
             'page':        page,
             'total':       total,
             'progress':    progress,
-            "camila" : self.participant.vars['camila'],
+            'camila' : self.participant.vars['camila'],
             'sure_payoff': "$"+format(int(str((self.participant.vars['icl_sure_payoffs'][page - 1])).split(",")[0]), ',d')
         }
 
@@ -64,7 +66,7 @@ class Decision(Page):
     def before_next_page(self):
         self.player.set_sure_payoffs()
         self.player.update_switching_row()
-        self.player.set_payoffs()
+        #self.player.set_payoffs()
 
 
 # ******************************************************************************************************************** #

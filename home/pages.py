@@ -16,4 +16,13 @@ class welcome(Page):
     def is_displayed(self):
         return self.round_number == 1
 
-page_sequence = [consent, welcome]
+class case1(Page):
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        return {
+            "camila" : self.participant.vars['camila']
+        }
+
+page_sequence = [consent, welcome,case1]

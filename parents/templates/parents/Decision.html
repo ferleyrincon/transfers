@@ -15,53 +15,28 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-<div class="card info">
-    <span class="subtitle">
-        <b>Caso 1: 
-        {% if camila %}
-        Hija única
-    {% else %}
-        Hijo único
-    {% endif %}</b>
-
-<p> Por favor suponga que {% if camila %}
-        Camila
-    {% else %}
-        Camilo
-    {% endif %} es {% if camila %}
-        hija única.
-    {% else %}
-        hijo único.
-    {% endif %}
-
-    Los padres de  {% if camila %}
-        Camila
-    {% else %}
-        Camilo
-    {% endif %}  tienen 65 años, y ya no pueden trabajar. 
-    Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones y tampoco tienen otros ahorros. <br>
-    <i>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas. </i ></p> 
-</div>
 {% endblock %}
 
 {# ****************************************************************************************************************** #}
 {# *** CONTENT *** #}
 {# ****************************************************************************************************************** #}
 {% block content %}
-    <div class="wrapper">
-            <p><h5>PREGUNTA 1.</h5>
-            
-                {% if camila %}
-                    Camila
-                {% else %}
-                    Camilo
-                {% endif %} debe decidir entre:
-            <br>
-            
-            <b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.<br>
-            <b>Opción B:</b> Darle una cantidad de dinero semanal a sus padres para ellos busquen a alguien que los ayude.<br></p>
-
-            <p> Tenga en cuenta que la cantidad de dinero en la Opción <b>B</b> irá cambiando.</p>
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        <!-- Progress Bar -->
+        <!-- ------------------------------------------------------------------------------------------------------- -->
+        {% if Constants.progress_bar == True %}
+            <label>
+                {% blocktrans trimmed with page=page total=total %}
+                    {{ page }} de {{ total }}
+                {% endblocktrans %}
+            </label>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width:{{ progress|json }}%;">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+        {% endif %}
+    </div>
 
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <!-- Table - Lottery Decisions (Option A/B) -->
@@ -138,24 +113,6 @@
             </table>
         </div>
         <br>
-        <!-- ------------------------------------------------------------------------------------------------------- -->
-        <!-- Progress Bar -->
-        <!-- ------------------------------------------------------------------------------------------------------- -->
-        {% if Constants.progress_bar == True %}
-            <label>
-                {% blocktrans trimmed with page=page total=total %}
-                    {{ page }} de {{ total }}
-                {% endblocktrans %}
-            </label>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:{{ progress|json }}%;">
-                    <span class="sr-only"></span>
-                </div>
-            </div>
-        {% endif %}
-    </div>
-
-
     {% if Constants.buttons == False %}
         {% next_button %}
     {% endif %}
