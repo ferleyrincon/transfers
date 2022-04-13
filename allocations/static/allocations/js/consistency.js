@@ -110,8 +110,11 @@ $(document).ready(function () {
             var slider_value = childs[1].firstElementChild.value;
             var dinero_pb = childs[2].firstElementChild;
 
+            var check_sli = childs[1].lastElementChild;
+
             dinero_pa.innerHTML = "$ "+numberWithPoints(slider_value);
             dinero_pb.innerHTML = "$ "+numberWithPoints(slider_max-slider_value);
+            check_sli.value = 1;
         }
     );
 });

@@ -94,51 +94,80 @@ input[type="radio"] {
     margin-top: 35px;
 }
 
-.slider_dinero, .slider_hora{
-    -webkit-appearance: none;
-    min-width: 250px;
-    width: 100%;
-    outline: none;
-    transition: opacity .2s;
-    border: 3px solid #000000;
-    border-radius: 8px;
-    cursor: pointer;
-    height: 0px;
-}
-
 .text_slider{
     text-align: center;
     color: #0032c8;
+    width: 27%;
+    min-width: 100px;
+}
+
+.td_text_slider{
+    text-align: center;
+    width: 27%;
+    min-width: 100px;
+}
+
+.td_slider{
+    text-align: center;
+    width: 46%;
+    min-width: 250px;
+    padding: 10px;
+}
+
+.slider_dinero{
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+    background-color: #007bff;
+}
+
+.slider_dinero: focus{
+    outline: none;
+}   
+
+.slider_dinero::-webkit-slider-runnable-track{
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    animate: 0.2s;
+    {#box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;#}
+    background: #007afe;
+    border-radius: 0px;
+    border: 0.0px solid #ffffff;
+}
+
+.slider_dinero::-webkit-slider-thumb {
+    border: 0px;
+    height: 0px;
+    width: 0px;
+    border-radius: 0px;
+    -webkit-appearance: none;
 }
 
 .slider_dinero:hover, .slider_hora:hover{
     opacity: 1;
 }
 
-input[type="range"]::range-thumb{
-    background-color: #000000;
-    border: none;
-}
-
-input[type="range"]::-moz-range-thumb{
-    background-color: #000000;
-    border: none;
-}
-
-input[type="range"]::-webkit-range-thumb{
-    background-color: #000000;
-    border: none;
-}
-
-input[type="range"]::-ms-thumb{
-    background-color: #000000;
-    border: none;
+.myclass::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #007afe;
+    border: 1px solid #000000;
+    height: 21px !important;
+    width: 10px !important;
+    border-radius: 0px !important;
+    background: #ffffff !important;
+    cursor: pointer !important !important;
+    -webkit-appearance: none !important;
+    margin-top: -7px !important;
 }
 
 .table_question{
     width: 100%;
 }
 
+.errorlist{
+    color: #ff0000;
+    font-weight: bold;
+}
 
 input[type="radio"][disabled]{
     border: 2px solid #757575;
