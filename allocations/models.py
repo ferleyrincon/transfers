@@ -104,9 +104,13 @@ class Player(BasePlayer):
     p3_10 =  models.StringField()
 
     p4 =  models.IntegerField()
+    check_slider_p4 =  models.IntegerField()
     p5 =  models.IntegerField()
+    check_slider_p5 =  models.IntegerField()
     p6 =  models.IntegerField()
+    check_slider_p6 =  models.IntegerField()
     p7_1 =  models.IntegerField()
+    check_slider_p7_1 =  models.IntegerField()
     p7_2 =  models.StringField(label='Escriba una solución adicional:')
 
     p8_1 =  models.StringField()

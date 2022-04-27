@@ -25,7 +25,7 @@ class case1(Page):
 
 class case2(Page):
     form_model = 'player'
-    form_fields = ['p4','p5','p6','p7_1','p7_2']
+    form_fields = ['p4', 'check_slider_p4', 'p5', 'check_slider_p5', 'p6', 'check_slider_p6', 'p7_1', 'check_slider_p7_1', 'p7_2']
 
     def vars_for_template(self): 
         return {
