@@ -45,6 +45,8 @@ class Subsession(BaseSubsession):
             j.get_manuela()
             j.get_julia()
             j.get_luisa()
+            j.get_woman()
+
 
 class Group(BaseGroup):
     pass
@@ -60,6 +62,8 @@ class Player(BasePlayer):
     manuela = models.BooleanField()#Hermana 2.2
     julia = models.BooleanField()  #Hermana 3.1
     luisa = models.BooleanField()  #Hermana 3.2
+    woman = models.BooleanField()  #Hermana 3.2
+
 
     def get_camila(self):
         self.camila =random.choice([True, False])
@@ -85,3 +89,8 @@ class Player(BasePlayer):
         self.luisa =random.choice([True, False])
         self.participant.vars['luisa'] =self.luisa
         return self.luisa
+
+    def get_woman(self):
+        self.woman =random.choice([True, False])
+        self.participant.vars['woman'] =self.woman
+        return self.woman

@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'parents/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+<div class="card info">
+    <span class="subtitle">
+    <h2>Caso 2: 
+    {% if daniela %}
+        {% if manuela %}
+            Hermanas
+        {% else %}
+            Hermanos
+    {% endif %}
+    {% else %}
+        Hermanos    
+    {% endif %} </h2>
+
+<p> Por favor suponga que {% if daniela %}
+        Daniela
+    {% else %}
+        Daniel
+    {% endif %} y {% if manuela %}
+        Manuela
+    {% else %}
+        Manuel
+    {% endif %} son {% if daniela %}
+        {% if manuela %}
+            hermanas
+        {% else %}
+            hermanos
+        {% endif %}
+    {% else %}
+    hermanos   
+    {% endif %}. {% if daniela %}
+        Daniela
+    {% else %}
+        Daniel
+    {% endif %} gana $1’400.000 al mes  y {% if manuela %}
+        Manuela
+    {% else %}
+        Manuel
+    {% endif %} gana $2’800.000 al mes. Sus padres tienen 65 años y ya no pueden trabajar. 
+    Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones y tampoco tienen otros ahorros.</p>
+    <p><i>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas y $600.000 mensuales para solventar sus necesidades. </i></p> 
+
+</div>
+{% next_button %}
+{% endblock %}
