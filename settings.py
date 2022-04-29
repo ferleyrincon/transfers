@@ -3,24 +3,6 @@ import os
 
 SESSION_CONFIGS = [
     {
-         'name':'allocations',
-         'display_name':"allocations",
-         'num_demo_participants':1,
-         'app_sequence':['allocations']
-    },
-    {
-         'name':'eet_transfers',
-         'display_name':"eet_transfers",
-         'num_demo_participants':2,
-         'app_sequence':['eet_transfers']
-    },
-    {
-         'name':'icl',
-         'display_name':"icl_transfers",
-         'num_demo_participants':1,
-         'app_sequence':['icl']
-    },
-    {
         'name': 'parents',
         'display_name': 'App',
         'num_demo_participants': 1, 
