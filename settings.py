@@ -1,12 +1,7 @@
 from os import environ
+import os
 
 SESSION_CONFIGS = [
-    {
-         'name':'eet',
-         'display_name':"eet",
-         'num_demo_participants':2,
-         'app_sequence': ['eet']
-    },
     {
          'name':'allocations',
          'display_name':"allocations",
