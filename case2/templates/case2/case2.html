@@ -16,18 +16,9 @@
 {% block content %}
 <div class="card info">
     <span class="subtitle">
-    <h2>Caso 2: 
-    {% if daniela %}
-        {% if manuela %}
-            Hermanas
-        {% else %}
-            Hermanos
-    {% endif %}
-    {% else %}
-        Hermanos    
-    {% endif %} </h2>
+    <h3>Caso 2</h3>
 
-<p> Por favor suponga que {% if daniela %}
+<p> {% if daniela %}
         Daniela
     {% else %}
         Daniel
@@ -52,8 +43,8 @@
     {% else %}
         Manuel
     {% endif %} gana $2’800.000 al mes. Sus padres tienen 65 años y ya no pueden trabajar. 
-    Durante su vida NINGÚN padre hizo aportes a los fondos de pensiones y tampoco tienen otros ahorros.</p>
-    <p><i>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas y $600.000 mensuales para solventar sus necesidades. </i></p> 
+    Durante su vida, ni su padre ni su madre hicieron aportes a los fondos de pensiones y tampoco tienen otros ahorros.
+    <i>Los padres necesitan la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas y $600.000 mensuales para solventar sus necesidades. </i></p> 
 
 </div>
 {% next_button %}

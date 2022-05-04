@@ -21,14 +21,27 @@
 {# *** CONTENT *** #}
 {# ****************************************************************************************************************** #}
 {% block content %}
-    <div class="wrapper">
+<p>Por favor haga clic en el recuadro <b><span style="color: #3344FF;">azul</span></b> que está frente a la opción que cree {% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} debería elegir. <br>
+Recuerde que {% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} debe decidir entre: <br>
+<i>dedicar 8 horas a la semana para ayudar a sus padres</i> -<b>Opción A</b>- o <br>
+<i>pagarle a un profesional para que los ayude </i> -<b>Opción B</b>-.</p>
+
+<br>
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <!-- Progress Bar -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
         {% if Constants.progress_bar == True %}
             <label>
                 {% blocktrans trimmed with page=page total=total %}
-                    {{ page }} de {{ total }}
+                    Pregunta 3 | Situación <b>{{ page }}</b> de {{ total }}
                 {% endblocktrans %}
             </label>
             <div class="progress">
@@ -37,6 +50,8 @@
                 </div>
             </div>
         {% endif %}
+    </div>
+
         <!-- ------------------------------------------------------------------------------------------------------- -->
         <!-- Table - Lottery Decisions (Option A/B) -->
         <!-- ------------------------------------------------------------------------------------------------------- -->
@@ -50,7 +65,7 @@
             </div>
             <table class="table">
                 <tr>
-                    <th>{% trans "Opción A<br>Tiempo:" %}</th>
+                    <th>{% trans "Opción A" %}</th>
                     <td>
                         {% with hi=hi lo=lo p_hi=p_hi p_lo=p_lo %}
                             {% blocktrans trimmed %}
@@ -61,7 +76,7 @@
                     <td class="btn_cell">
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="A" required>
-                                Aportar 8 horas
+                                Poner 8 horas
                             </button>
                         {% else %}
                             <input type="radio" name="choice" value="A" required>
@@ -70,7 +85,7 @@
                 </tr>
                 <tr>
                     <th>
-                        {% trans "Opción B<br>Dinero:" %}
+                        {% trans "Opción B" %}
                     </th>
                     <td>
                         {% with sure_payoff=sure_payoff %}
@@ -82,7 +97,7 @@
                     <td class="btn_cell">
                         {% if Constants.buttons == True %}
                             <button class="btn btn-primary choice" name="choice" value="B" required>
-                                Aportar {{ sure_payoff }}
+                                Poner {{ sure_payoff }}
                             </button>
                         {% else %}
                             <input type="radio" name="choice" value="B" required>
@@ -112,7 +127,9 @@
             </table>
         </div>
         <br>
-    </div>
+    {% if Constants.buttons == False %}
+        {% next_button %}
+    {% endif %}
 
 
     {% if Constants.buttons == False %}

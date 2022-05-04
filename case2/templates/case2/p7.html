@@ -101,15 +101,15 @@
         </div>
         <!--slider --> 
         <br>       
-    <p> Encima de cada nombre aparece el aporte de cada 
-        {% if daniela %}
-            {% if manuela %}
-                hija,
-            {% else %}
-                hijo,
-            {% endif %}
-            {% else %}
-                hijo,    
-            {% endif %} la suma de los aportes debe ser igual a $600.000.</p>
+        <p> Encima de cada nombre aparece el aporte que usted cree debería hacer cada 
+            {% if daniela %}
+                {% if manuela %}
+                    hija.
+                {% else %}
+                    hijo.
+                {% endif %}
+                {% else %}
+                    hijo.    
+                {% endif %}</p>
     {% next_button %} 
     {% endblock %}

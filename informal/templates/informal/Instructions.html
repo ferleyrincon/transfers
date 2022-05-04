@@ -25,19 +25,38 @@
 {% block content %}
 
 <div class="wrapper">
-        <p> Suponga que
-        {% if camila %}
-            Camila
-        {% else %}
-            Camilo
-        {% endif %} también debe decidir entre:
-    <br>
-    
-    <b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.<br>
-    <b>Opción B:</b> Pagar a un familiar para que ayude a sus padres durante 8 horas a la semana.<br></p>
+<p>
+Ahora suponga que     
+{% if camila %}
+   Camila
+{% else %}
+   Camilo
+{% endif %} debe decidir entre encargarse personalmente de ayudar a sus padres o <b>pagarle a un familiar</b>.  
+En esta pregunta asuma que{% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} es quien le paga al familiar para que ayude a sus padres durante 8 horas a la semana.</p>
 
-    <p> Tenga en cuenta que la cantidad de dinero en la Opción <b>B</b> irá cambiando.</p>
+<p>A continuación, le presentaremos dos opciones: un monto de dinero que{% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} puede <b>pagarle a un familiar</b> para que ayude a sus padres, 
+o la opción de que{% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} dedique 8 horas a ayudarles. 
+Cuando el monto es bajo, es más “barato” pagarle al familiar que le ayude a sus padres; 
+y cuando el monto es alto, es más “barato” ayudarles las 8 horas que pagarle al familiar.</p>
 
+<p>De nuevo, le presentaremos 4 situaciones diferentes. 
+<b>En todas las situaciones el número de horas que debería dedicar {% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} es de 8 horas, pero la cantidad de dinero que deberá pagarle al familiar irá cambiando</b>.
 </div>
 {% next_button %}
 {% endblock %}

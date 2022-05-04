@@ -25,18 +25,42 @@
 {% block content %}
 
 <div class="wrapper">
-        <p>
-        {% if camila %}
-            Camila
-        {% else %}
-            Camilo
-        {% endif %} debe decidir entre:
-    <br>
-    <b>Opción A:</b> Encargarse personalmente de ayudar a sus padres durante 8 horas a la semana.<br>
-    <b>Opción B:</b> Darle una cantidad de dinero semanal a sus padres para ellos busquen a alguien que los ayude.<br></p>
+<p>
+{% if camila %}
+   Camila
+{% else %}
+   Camilo
+{% endif %} debe decidir entre encargarse personalmente de ayudar a sus padres o darles dinero.  
+En esta pregunta, asuma que el dinero que {% if camila %}
+   Camila
+{% else %}
+   Camilo
+{% endif %} les entrega a sus padres es para que ellos busquen a alguien que los ayude durante 8 horas a la semana.</p> 
 
-    <p> Tenga en cuenta que la cantidad de dinero en la Opción <b>B</b> irá cambiando.</p>
-
+<p>A continuación, le presentaremos dos opciones: un monto de dinero que  {% if camila %}
+   Camila
+{% else %}
+  Camilo
+{% endif %} puede pagar para que alguien ayude a sus padres, o la opción de que {% if camila %}
+  Camila
+{% else %}
+  Camilo
+{% endif %} dedique 8 horas a ayudarles. Cuando el monto es bajo, es más “barato” pagar para que le ayuden a sus padres; y cuando el monto es alto, es más “barato” ayudarles las 8 horas que pagarle a una persona.</p>
+  
+  Como queremos entender cuándo le parece a usted mejor que {% if camila %}
+  Camila
+{% else %}
+  Camilo
+{% endif %} pague por la ayuda, o cuándo {% if camila %}
+  Camila
+{% else %}
+  Camilo
+{% endif %} debería ayudar por 8 horas en vez de pagar, le presentaremos <b>4</b> situaciones diferentes. <b>En todas las situaciones el número de horas que debería dedicar {% if camila %}
+Camila
+{% else %}
+Camilo
+{% endif %} es de 8 horas, pero la cantidad de dinero irá cambiando</b>.
+  
 </div>
 {% next_button %}
 {% endblock %}
