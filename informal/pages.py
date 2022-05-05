@@ -60,7 +60,7 @@ class Decision(Page):
             'total':       total,
             'progress':    progress,
             "camila" : self.participant.vars['camila'],
-            'sure_payoff': "$"+format(int(str((self.participant.vars['icl_sure_payoffs'][page - 1])).split(",")[0]), ',d')
+            'sure_payoff': "$"+format(int(str((self.participant.vars['icl_sure_payoffs_p2'][page - 1])).split(",")[0]), ',d')
         }
 
     # set sure payoffs for next choice, payoffs, and switching row
@@ -89,7 +89,7 @@ class Results(Page):
         choice_to_pay = self.participant.vars['icl_choice_to_pay']
         option_to_pay = self.player.in_round(choice_to_pay).choice
         payoff_relevant = self.player.in_round(choice_to_pay).payoff_relevant
-        sure_payoff = self.player.participant.vars['icl_sure_payoffs'][choice_to_pay - 1]
+        sure_payoff = self.player.participant.vars['icl_sure_payoffs_p2'][choice_to_pay - 1]
 
         return {
             'sure_payoff':     "$"+format(int(str(sure_payoff*100).split(",")[0]), ',d'),

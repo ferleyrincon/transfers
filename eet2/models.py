@@ -34,6 +34,7 @@ class Group(BaseGroup):
     pass
 
 
+
 # ******************************************************************************************************************** #
 # *** CLASS PLAYER
 # ******************************************************************************************************************** #
@@ -42,9 +43,13 @@ class Player(BasePlayer):
     # add model fields to class player
     # ----------------------------------------------------------------------------------------------------------------
     random_draw = models.IntegerField()
+    sender= models.IntegerField()
     payoff_relevant = models.StringField()
     payoffA = models.CurrencyField()
+    payoff_s = models.CurrencyField()
+    payoff_r = models.CurrencyField()
     choice = models.StringField()
+    choice_to_pay = models.IntegerField()
     switching_row = models.IntegerField()
 
     # set sure payoff for next choice
@@ -96,14 +101,16 @@ class Player(BasePlayer):
             # randomly determine which choice to pay
             # --------------------------------------------------------------------------------------------------------
             completed_choices = len(self.participant.vars['icl_payoffA'])
-            self.participant.vars['icl_choice_to_pay'] = random.randint(1, completed_choices)
+            self.participant.vars['icl_choice_to_pay'] = random.randint(1,completed_choices)
             choice_to_pay = self.participant.vars['icl_choice_to_pay']
 
-            # random draw to determine whether to pay the "high" or "low" lottery outcome
+            # random draw to determine whether to pay the "sender (1)" or "receiver (2)" decision
             # --------------------------------------------------------------------------------------------------------
-            self.in_round(choice_to_pay).random_draw = random.randint(1, 100)
+            #self.in_round(choice_to_pay).random_draw = random.randint(1, 100)
+            self.participant.vars['sender'] = random.randint(1,2)
+            sender = self.participant.vars['sender']
 
-            # determine whether the lottery or sure payoff is relevant for payment
+            # determine whether the Option A or Option B is relevant for payment
             # --------------------------------------------------------------------------------------------------------
             self.in_round(choice_to_pay).payoff_relevant = random.choice(['A','B']) \
                 if self.in_round(choice_to_pay).choice == 'I' \
@@ -112,11 +119,14 @@ class Player(BasePlayer):
             # set player's payoff
             # --------------------------------------------------------------------------------------------------------
             if self.in_round(choice_to_pay).payoff_relevant == 'A':
-                self.in_round(choice_to_pay).payoff = Constants.lottery_hi \
-                    if self.in_round(choice_to_pay).random_draw <= Constants.probability \
-                    else Constants.lottery_lo
+                self.in_round(choice_to_pay).payoff_s = self.participant.vars['icl_payoffA'][choice_to_pay - 1]
+                if choice_to_pay < 4 : 
+                    self.in_round(choice_to_pay).payoff_r = 65000
+                else:
+                    self.in_round(choice_to_pay).payoff_r = 35000
             elif self.in_round(choice_to_pay).payoff_relevant == 'B':
-                self.in_round(choice_to_pay).payoff = self.participant.vars['icl_payoffA'][choice_to_pay - 1]
+                self.in_round(choice_to_pay).payoff_s = Constants.optionB
+                self.in_round(choice_to_pay).payoff_r = Constants.optionB
 
             # set payoff as global variable
             # --------------------------------------------------------------------------------------------------------

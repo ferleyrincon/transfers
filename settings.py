@@ -3,10 +3,10 @@ import os
 
 SESSION_CONFIGS = [
     {
-        'name': 'allocations',
-        'display_name': 'allocations',
+        'name': 'eet2',
+        'display_name': 'eet2',
         'num_demo_participants': 1, 
-        'app_sequence': ['allocations']
+        'app_sequence': ['eet2']
     },
     {
         'name': 'parents',

@@ -52,7 +52,6 @@ class Decision(Page):
             'page':        page+3,
             'total':       total,
             'progress':    progress,
-            'woman' : self.participant.vars['woman'],
             'payoffA': "$"+format(int(str((self.participant.vars['icl_payoffA'][page - 1])).split(",")[0]), ',d')
         }
 
@@ -61,7 +60,7 @@ class Decision(Page):
     def before_next_page(self):
         self.player.set_payoffA()
         self.player.update_switching_row()
-        #self.player.set_payoffs()
+        self.player.set_payoffs()
 
 
 # ******************************************************************************************************************** #
@@ -77,18 +76,17 @@ class Results(Page):
     # variables for template
     # ----------------------------------------------------------------------------------------------------------------
     def vars_for_template(self):
-
-        # payoff information
         choice_to_pay = self.participant.vars['icl_choice_to_pay']
         option_to_pay = self.player.in_round(choice_to_pay).choice
         payoff_relevant = self.player.in_round(choice_to_pay).payoff_relevant
         payoffA = self.player.participant.vars['icl_payoffA'][choice_to_pay - 1]
 
         return {
-            'payoffA':     "$"+format(int(str(payoffA*100).split(",")[0]), ',d'),
+            'payoffA':     "$"+format(int(str(payoffA).split(",")[0]), ',d'),
             'option_to_pay':   option_to_pay,
             'payoff_relevant': payoff_relevant,
-            'payoff':          "$"+format(int(str(self.player.in_round(choice_to_pay).payoff).split(",")[0]), ',d')
+            'payoff_s':        "$"+format(int(str(self.player.in_round(choice_to_pay).payoff_s).split(",")[0]), ',d'),
+            'payoff_r':        "$"+format(int(str(self.player.in_round(choice_to_pay).payoff_r).split(",")[0]), ',d')
         }
 
 # ******************************************************************************************************************** #

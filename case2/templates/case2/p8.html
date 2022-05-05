@@ -7,18 +7,119 @@
 {% endblock %}
 
 {% block content %}
-
+<p>Si los padres deciden vender la casa ¿A quién deberían vendérsela?</p>
 <div class="wrapper">
     <p>           
-        {% formfield 'p8' %}
+        <table>
+            <tr style="text-align: center; vertical-align: middle;">
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc2" name="8" value="2" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc1">A un banco o entidad financiera.</label><br>
+                </td>
+            </tr>
+            <tr style="text-align: center; vertical-align: middle;">
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc2" name="8" value="2" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc2">A una persona diferente a {% if julia %}Julia{% else %}Julio{% endif %} y {% if luisa %}Luisa{% else %}Luis{% endif %}.</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc3" name="8" value="3" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc3">A {% if julia %}Julia{% else %}Julio{% endif %} ó a {% if luisa %}Luisa{% else %}Luis{% endif %}, a un precio menor al que recibirían de alguien que no sea de la familia.</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc4" name="8" value="4" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc4">A {% if julia %}Julia{% else %}Julio{% endif %} ó a {% if luisa %}Luisa{% else %}Luis{% endif %}, al mismo precio que recibirían de alguien que no sea de la familia. </label><br>
+                </td>
+            </tr>
+        </table>
     </p>
     <h3 class="intermedio">Pregunta 8.1</h3>
+    <p>Si los padres deciden vender la casa a una <b>entidad financiera</b>, ¿cuál de estas opciones deberían escoger?</p>
+
     <p>           
-        {% formfield 'p8_1' %}
+        <table>
+            <tr style="text-align: center; vertical-align: middle;">
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc1" name="8_1" value="1" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc1">Solicitar un pago único correspondiente al valor total de la casa.</label><br>
+                </td>
+            </tr>
+            <tr style="text-align: center; vertical-align: middle;">
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc2" name="8_1" value="2" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc2">Solicitar un pago cada mes, de un monto acordado con la entidad financiera, por un número determinado de años.</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc3" name="8_1" value="3" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc3">Solicitar un pago cada mes, hasta que fallezcan, de un monto acordado con la entidad financiera.<br> <small>Este monto es más bajo que si lo escogen por un número determinado de años</small>.</label><br>
+                </td>
+            </tr>
+        </table>
     </p>
     <h3 class="intermedio">Pregunta 8.2</h3>
+    <p>Si los padres deciden vender la casa a <b>{% if julia %}
+        {% if luisa %}
+        una las hijas,
+        {% else %}
+        uno de los hijos,
+        {% endif %}
+        {% else %}
+        uno de los hijos,    
+        {% endif %}</b> ¿cuál de estas opciones deberían escoger? </p>
+
     <p>           
-        {% formfield 'p8_2' %}
+        <table>
+            <tr style="text-align: center; vertical-align: middle;">
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc1" name="8_2" value="1" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc1">Solicitar un pago único correspondiente al valor total de la casa.</label><br>
+                </td>
+            </tr>
+            <tr style="text-align: center; vertical-align: middle;">
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc2" name="8_2" value="2" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc2">Solicitar un pago cada mes, de un monto acordado con  {% if julia %}
+                        {% if luisa %}
+                            la hija,
+                        {% else %}
+                            el hijo/la hija,
+                        {% endif %}
+                        {% else %}
+                            el hijo,    
+                        {% endif %} por un número determinado de años.</label><br>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20px; text-align: center; vertical-align: middle;">
+                    <input type="radio" id="opc3" name="8_2" value="3" required="">
+                </td><td style="text-align: left; vertical-align: middle;">
+                    <label for="opc3">Solicitar un pago cada mes, hasta que fallezcan, de un monto acordado con {% if julia %}
+                        {% if luisa %}
+                            la hija.
+                        {% else %}
+                            el hijo/la hija.
+                        {% endif %}
+                        {% else %}
+                            el hijo.    
+                        {% endif %} <br> <small>Este monto es más bajo que si lo escogen por un número determinado de años</small>.</label><br>
+                </td>
+            </tr>
+        </table>
     </p>
 </div>
 {% next_button %}

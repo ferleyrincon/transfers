@@ -57,6 +57,11 @@ class case3(Page):
 class p8(Page):
     form_model = 'player'
     form_fields = ['p8','p8_1','p8_2']
+    def vars_for_template(self): 
+        return {
+            'julia' : self.participant.vars['julia'],
+            'luisa' : self.participant.vars['luisa']
+        }
 
 class p9(Page):
     form_model = 'player'
