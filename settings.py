@@ -6,7 +6,7 @@ SESSION_CONFIGS = [
         'name': 'eet2',
         'display_name': 'eet2',
         'num_demo_participants': 1, 
-        'app_sequence': ['eet2']
+        'app_sequence': ['eet1','eet2']
     },
     {
         'name': 'parents',
