@@ -1,0 +1,106 @@
+{% extends "global/Page.html" %} {% load otree static %} 
+
+{% block scripts %}
+    <!-- custom style sheet-->
+    <link href="{% static 'case2/css/styles.css' %}" rel="stylesheet">
+    <!-- functions and more -->
+    <script src="{% static 'case2/js/consistency.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('input[id=sliderTiempo_p9]').on('input change', function () {
+                $('input[id=sliderTiempo_p9]').addClass('myclass');
+            });
+        });
+    </script> 
+
+    <style>
+        .otree-btn-next{
+            display: none !important;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}
+    Pregunta 9
+{% endblock %}
+
+{% block content %}
+<p>
+    Si solamente  
+    {% if julia %}
+        Julia
+    {% else %}
+        Julio
+    {% endif %} tiene los 200 millones para poder comprarle la casa a sus padres, <br> 
+    ¿cuánto tiempo cree que debería poner cada 
+    {% if julia %}
+    {% if luisa %}
+        hija
+    {% else %}
+        hijo
+    {% endif %}
+    {% else %}
+    hijo   
+    {% endif %} para completar las 8 horas a la semana de ayuda que necesitan los padres? 
+</p>
+
+<p>
+            <i>Haga clic sobre la línea y luego mueva el punto para decidir cuánto debería poner cada         
+                {% if julia %}
+                {% if luisa %}
+                    hija
+                {% else %}
+                    hijo
+                {% endif %}
+                {% else %}
+               hijo   
+                {% endif %} .</i>
+        </p>
+        <!--slider --> 
+        <div class="card_table" id="h-slider-div" style="text-align: center;">
+            <div id="slider"></div>
+            </div>
+            
+                    {{ form.check_slider_p9.errors }}
+                    <div class="card_table" id="h-slider-div" style="text-align: center;">
+                        <table class="table_question">
+                            <tr>
+                                <td class="text_slider"><b id="d_pa"> - </b></td>
+                                <td class="td_slider" rowspan="2">
+                                    <input type="range" name="p9" value="" min="0" max="8" step="1" id="sliderTiempo_p9" class="slider_tiempo" required>
+                                    <input type="hidden" name="check_slider_p9" value="" id="id_check_slider_p9" required>
+                                </td>
+                                <td class="text_slider"><b id="d_pb"> - </b></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">{% if julia %}
+                                    Julia
+                                {% else %}
+                                    Julio
+                                {% endif %}<br>Puede comprar<br>la casa</td>
+                                <td style="text-align: center;">{% if luisa %}
+                                    Luisa
+                                {% else %}
+                                    Luis
+                                {% endif %}</td>
+                            </tr>
+                        </table>
+                    </div>
+        <!--slider --> 
+
+        <div class="card_table" id="h-slider-div" style="text-align: center;">
+            <div id="slider"></div>
+            </div>
+    <br>      
+    <p> Encima de cada nombre aparece el aporte de cada 
+        {% if julia %}
+        {% if luisa %}
+            hija.
+        {% else %}
+            hijo.
+        {% endif %}
+        {% else %}
+       hijo.   
+        {% endif %}</p>
+    {% next_button %} 
+    {% endblock %}

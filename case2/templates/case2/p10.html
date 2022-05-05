@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Pregunta 10" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <p>
+        Si {% if julia %}
+            Julia
+        {% else %}
+            Julio
+        {% endif %} puede comprar la casa, pero {% if julia %}
+            ella
+        {% else %}
+            el
+        {% endif %} no tiene tiempo para ayudar a los padres, ¿qué debería hacerse en este caso? 
+    </p>
+    <p>           
+        {% formfield 'p10_1' %}
+    </p>
+</div>
+<p><span style="color: #ff0000;">Escriba una frase para justificar su respuesta:</span></p>
+<textarea name="p10_2" id="p10_2" class="form-control text_input" placeholder="Coloque una frase aquí por favor" required></textarea>
+{% next_button %}
+{% endblock %}

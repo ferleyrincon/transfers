@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Pregunta 8" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <p>           
+        {% formfield 'p8' %}
+    </p>
+    <h3 class="intermedio">Pregunta 9.1</h3>
+    <p>           
+        {% formfield 'p8_1' %}
+    </p>
+    <h3 class="intermedio">Pregunta 9.2</h3>
+    <p>           
+        {% formfield 'p8_2' %}
+    </p>
+</div>
+{% next_button %}
+{% endblock %}

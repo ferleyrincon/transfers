@@ -10,15 +10,6 @@
             $('input[id=sliderDinero_p4]').on('input change', function () {
                 $('input[id=sliderDinero_p4]').addClass('myclass');
             });
-            $('input[id=sliderDinero_p5]').on('input change', function () {
-                $('input[id=sliderDinero_p5]').addClass('myclass');
-            });
-            $('input[id=sliderDinero_p6]').on('input change', function () {
-                $('input[id=sliderDinero_p6]').addClass('myclass');
-            });
-            $('input[id=sliderDinero_p7]').on('input change', function () {
-                $('input[id=sliderDinero_p7]').addClass('myclass');
-            });
         });
     </script> 
 
@@ -80,9 +71,6 @@
                             <tr>
                                 <td class="text_slider"><b id="d_pa"> - </b></td>
                                 <td class="td_slider" rowspan="2">
-                                    <!-- 
-                                    <input type="range" min="0" max="600000" value="300000" step="10000" id="sliderDinero_p4" class="slider_dinero" name="p4">
-                                    -->
                                     <input type="range" name="p4" value="" min="0" max="600000" step="10000" id="sliderDinero_p4" class="slider_dinero" required>
                                     <input type="hidden" name="check_slider_p4" value="" id="id_check_slider_p4" required>
                                 </td>
@@ -90,14 +78,15 @@
                             </tr>
                             <tr>
                                 <td class="td_text_slider">{% if daniela %}
-                        Daniela
-                    {% else %}
-                        Daniel{% endif %}<br>gana 1.4 millones<br>ayuda <b>4</b> horas<br>a los padres</td>
+                                    Daniela
+                                {% else %}
+                                    Daniel
+                                {% endif %}<br>gana 1.4 millones<br>ayuda <b>4</b> horas<br>a los padres</td>
                                 <td class="td_text_slider">{% if manuela %}
-                        Manuela
-                    {% else %}
-                        Manuel
-                    {% endif %}<br>gana 2.8 millones<br>ayuda <b>4</b> horas<br>a los padres</td>
+                                    Manuela
+                                {% else %}
+                                    Manuel
+                                {% endif %}<br>gana 2.8 millones<br>ayuda <b>4</b> horas<br>a los padres</td>
                             </tr>
                         </table>
                     </div>
