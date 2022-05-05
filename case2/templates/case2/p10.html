@@ -20,11 +20,31 @@
             el
         {% endif %} no tiene tiempo para ayudar a los padres, ¿qué debería hacerse en este caso? 
     </p>
-    <p>           
-        {% formfield 'p10_1' %}
-    </p>
+    <table>
+        <tr style="text-align: center; vertical-align: middle;">
+            <td style="width: 20px; text-align: center; vertical-align: middle;">
+                <input type="radio" id="opc1" name="p10_1" value="1" required="">
+            </td><td style="text-align: left; vertical-align: middle;">
+                <label for="opc1">No se le debería vender la casa a {% if julia %}Julia{% else %}Julio{% endif %}, pues no tiene tiempo para cuidar a los padres.</label><br>
+            </td>
+        </tr>
+        <tr style="text-align: center; vertical-align: middle;">
+            <td style="width: 20px; text-align: center; vertical-align: middle;">
+                <input type="radio" id="opc2" name="p10_1" value="2" required="">
+            </td><td style="text-align: left; vertical-align: middle;">
+                <label for="opc2">{% if julia %}Julia{% else %}Julio{% endif %} debería poder comprar la casa, y {% if luisa %}Luisa{% else %}Luis{% endif %} podría cuidar a los padres sin necesidad de recibir dinero de parte de {% if julia %}Julia{% else %}Julio{% endif %}.</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 20px; text-align: center; vertical-align: middle;">
+                <input type="radio" id="opc3" name="p10_1" value="3" required="">
+            </td><td style="text-align: left; vertical-align: middle;">
+                <label for="opc3">{% if julia %}Julia{% else %}Julio{% endif %}  debería poder comprar la casa, y pagarle a {% if luisa %}Luisa{% else %}Luis{% endif %} para que {% if luisa %}ella{% else %}el{% endif %} se encargue de poner las 8 horas a la semana de ayuda que necesitan los padres.</label><br>
+            </td>
+        </tr>
+    </table>
 </div>
 <p><span style="color: #ff0000;">Escriba una frase para justificar su respuesta:</span></p>
-<textarea name="p10_2" id="p10_2" class="form-control text_input" placeholder="Coloque una frase aquí por favor" required></textarea>
+<textarea name="p10_2" id="p10_2" class="form-control text_input" placeholder="Coloque una frase aquí por favor" required style="margin-bottom: 10px;"></textarea>
 {% next_button %}
 {% endblock %}
