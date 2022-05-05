@@ -12,7 +12,7 @@ class case2(Page):
 
 class p4(Page):
     form_model = 'player'
-    form_fields = ['p4']
+    form_fields = ['p4','check_slider_p4']
 
     def vars_for_template(self): 
         return {
@@ -21,6 +21,8 @@ class p4(Page):
         }
 
 class p5(Page):
+    form_model = 'player'
+    form_fields = ['p5','check_slider_p5']
     def vars_for_template(self): 
         return {
             'daniela' : self.participant.vars['daniela'],
@@ -28,6 +30,8 @@ class p5(Page):
         }
 
 class p6(Page):
+    form_model = 'player'
+    form_fields = ['p6','check_slider_p6']
     def vars_for_template(self): 
         return {
             'daniela' : self.participant.vars['daniela'],
@@ -35,6 +39,8 @@ class p6(Page):
         }
 
 class p7(Page):
+    form_model = 'player'
+    form_fields = ['p7_1','check_slider_p7_1','p7_2']
     def vars_for_template(self): 
         return {
             'daniela' : self.participant.vars['daniela'],
