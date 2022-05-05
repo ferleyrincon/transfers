@@ -33,7 +33,7 @@
         {% if Constants.progress_bar == True %}
             <label>
                 {% blocktrans trimmed with page=page total=total %}
-                    {{ page }} de {{ total }}
+                    Situación {{ page }} de 6
                 {% endblocktrans %}
             </label>
             <div class="progress">
@@ -55,10 +55,10 @@
                 <tr>
                     <th>{% trans "Opción A" %}</th>
                     <td>
-                        {% with otherA=otherA payoffA=payoffA %}
+                        {% with otherA_2=otherA_2 payoffA=payoffA %}
                             {% blocktrans trimmed %}
                             Lo que usted recibe: {{ payoffA }} <br>
-                            Lo que la otra persona recibe: {{ otherA }}
+                            Lo que la otra persona recibe: {{ otherA_2 }}
                             {% endblocktrans %}
                         {% endwith %}
                     </td>

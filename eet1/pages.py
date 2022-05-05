@@ -11,7 +11,7 @@ def vars_for_all_templates(self):
         #'p_hi': "{0:.0f}".format(Constants.probability) + "%",
         #'p_lo': "{0:.0f}".format(100 - Constants.probability) + "%",
         'optionB':"$"+format(int(str(Constants.optionB).split(",")[0]), ',d'),
-        'otherA': "$"+format(int(str(Constants.otherA).split(",")[0]), ',d')        
+        'otherA_1': "$"+format(int(str(Constants.otherA_1).split(",")[0]), ',d')        
     }
 # ******************************************************************************************************************** #
 # *** CLASS INSTRUCTIONS *** #

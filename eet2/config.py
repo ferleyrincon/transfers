@@ -20,7 +20,7 @@ class Constants(BaseConstants):
 
 
     optionB = 50000 
-    otherA = 35000
+    otherA_2 = 35000
     probability = 100
 
     # (initial) sure payoff, i.e. the certain payment in the first choice
@@ -35,7 +35,7 @@ class Constants(BaseConstants):
     # thus, if a subject chooses "A" ("B"), <sure_payoff_i> increases (decreases) by half of the previous rounds <delta>
     # for example: if <sure_payoff = x> and <delta = y>, "Option B" offers <x +/- y/2> in choice 2, <x +/- y/2 +/- y/4>
     # in choice 3, etc.
-    delta = -10000
+    delta_2 = -10000
 
     # ---------------------------------------------------------------------------------------------------------------- #
     # --- Overall Settings and Appearance --- #

@@ -24,7 +24,7 @@ class Subsession(BaseSubsession):
         if self.round_number == 1:
             for p in self.get_players():
                 p.participant.vars['icl_sure_payoffs'] = [c(Constants.sure_payoff)]
-                p.participant.vars['icl_switching_row'] = 2 ** Constants.num_choices
+                p.participant.vars['icl_switching_row_p2'] = 2 ** Constants.num_choices
 
 
 # ******************************************************************************************************************** #
@@ -77,10 +77,10 @@ class Player(BasePlayer):
     def update_switching_row(self):
 
         if self.choice == 'B':
-            self.participant.vars['icl_switching_row'] -= 2 ** (Constants.num_choices - self.round_number)
+            self.participant.vars['icl_switching_row_p2'] -= 2 ** (Constants.num_choices - self.round_number)
 
         elif self.choice == 'I':
-            self.participant.vars['icl_switching_row'] /= 2
+            self.participant.vars['icl_switching_row_p2'] /= 2
 
     # set payoffs
     # ----------------------------------------------------------------------------------------------------------------
@@ -124,4 +124,4 @@ class Player(BasePlayer):
 
             # implied switching row
             # --------------------------------------------------------------------------------------------------------
-            self.in_round(choice_to_pay).switching_row = self.participant.vars['icl_switching_row']
+            self.in_round(choice_to_pay).switching_row = self.participant.vars['icl_switching_row_p2']
