@@ -39,13 +39,16 @@ class Player(BasePlayer):
         [1, 'Hombre'],
         [2, 'Mujer'],
         [3, 'Otro'],
-    ], label="2. ¿Cuál es su sexo?")
-    p_age = models.IntegerField(label="3. Edad")
-    p_student = models.IntegerField(
+    ], label="1. ¿Cuál es su sexo?")
+    p_age = models.IntegerField(label="2. Edad")
+    p_married = models.IntegerField(
     choices=[
-        [1, 'Sí'],
-        [2, 'No'],
-    ], label="4. ¿Es usted estudiante?")
+        [1, 'Unión libre'],
+        [2, 'Casado (a)'],
+        [3, 'Viudo (a)'],
+        [4, 'Soltero (a)'],
+        [5, 'Divorciado (a)/Separado(a)'],
+    ], label="3. Estado civil")
     p_job = models.IntegerField(
     choices=[
         [1,'Solo estudio'],
@@ -57,7 +60,7 @@ class Player(BasePlayer):
         [7,'Retirado/pensionado'],
         [8,'Otro'],
         [9,'No sabe']
-    ], label="5. ¿Cuál es su situación laboral actual?")
+    ], label="4. ¿Cuál es su situación laboral actual?")
     p_educ = models.IntegerField(
     choices=[
         [1,'Ninguno'],
@@ -66,9 +69,9 @@ class Player(BasePlayer):
         [4,'Técnico o Tecnólogo'],
         [5,'Pregrado'],
         [6,'Posgrado (Especialización, Maestría, Doctorado)']
-    ], label="6. ¿Cuál es el nivel educativo más alto que cursó o está cursando?")
-    p_educ1 = models.IntegerField(label="7.¿Cuántos años de educación ha cursado en el nivel educativo que indicó previamente? (por ejemplo, si antes seleccionó Bachillerato debe escribir el número de años de Bachillerato que ha completado)")
-    p_ocupation = models.StringField(label="8.Escriba el nombre de su profesión/ocupación/carrera")
+    ], label="5. ¿Cuál es el nivel educativo más alto que cursó o está cursando?")
+    p_educ1 = models.IntegerField(label="6.¿Cuántos años de educación ha cursado en el nivel educativo que indicó previamente? (por ejemplo, si antes seleccionó Bachillerato debe escribir el número de años de Bachillerato que ha completado)")
+    p_ocupation = models.StringField(label="7.Escriba el nombre de su profesión/ocupación/carrera")
     p_health = models.IntegerField(
     choices=[
         [1,'Subsidiado'],
@@ -81,60 +84,111 @@ class Player(BasePlayer):
         [3,'Entre $ 1.500.000 - $ 2.000.000'],
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
         [5,'Mayor a $ 4.000.000'],
-    ], label="10. ¿Cuál es el rango de su ingreso mensual?")
-    p_risk = models.IntegerField(widget=widgets.RadioSelectHorizontal, 
-                                 label="", 
-                                 choices=[  [0, "0"],
-                                            [1, "1"],
-                                            [2, "2"],
-                                            [3, "3"],
-                                            [4, "4"],
-                                            [5, "5"],
-                                            [6, "6"],
-                                            [7, "7"],
-                                            [8, "8"],
-                                            [9, "9"],
-                                            [10, "10"]])
+    ], label="8. ¿Cuál es el rango de su ingreso mensual?")
 
     p_pc = models.IntegerField(
     choices=[
         [1,'Portátil'],
         [2,'Equipo de escritorio']
-    ], label="12. ¿Qué tipo de computador usó durante la actividad?")
-    p_mouse = models.IntegerField(
-    choices=[
-        [1,'Sí (no incluye el mouse incorporado en el computador portátil).'],
-        [2,'No']
-    ], label="13. ¿Durante la actividad usted utilizó un “mouse/ratón” no incorporado al equipo?") 
-    p_mouse1 = models.IntegerField(
-    choices=[
-        [1,'Bueno (funcionó adecuadamente).'],
-        [2,'Regular (no funcionó bien en algunos momentos)'],
-        [3,'Malo (dejó de funcionar en algún momento)'],
-    ], label="14. ¿Cómo califica el funcionamiento del “mouse/ratón” que usó durante la actividad?") 
-    p_wifi = models.IntegerField(
-    choices=[
-        [1,'Bueno (funcionó adecuadamente).'],
-        [2,'Regular (no funcionó bien en algunos momentos)'],
-        [3,'Malo (dejó de funcionar en algún momento)'],
-    ], label="15. ¿Cómo califica el funcionamiento de su conexión a internet durante la actividad?") 
+    ], label="10. ¿Qué tipo de computador usó durante la actividad?")
 
-    pnorm_1 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+    p_daughter = models.IntegerField(label="11.1. Número de hijas")
+    p_son = models.IntegerField(label="11.2. Número de hijos ")
+
+    p_sister = models.IntegerField(label="12.1. Número de hermanas vivas")
+    p_brother= models.IntegerField(label="12.2. Número de hermanos vivos")
+
+    p_parents = models.IntegerField(
+    choices=[
+        [1, 'Fallecieron'],
+        [2, 'Viven en su misma casa'],
+        [3, 'Viven en una casa en la misma ciudad'],
+        [4, 'Viven en otra ciudad'],
+    ], label="13. Sus padres:")
+
+    p_mother_age= models.IntegerField(label="15.1. ¿Cuántos años tiene(alcanzó) su papá?")
+    p_father_age= models.IntegerField(label="15.2. ¿Cuántos años tiene(alcanzó) su mamá?")
+
+    p_parents_married = models.IntegerField(
+    choices=[
+        [1, 'Viven (vivían) juntos [casados, unión libre]'],
+        [2, 'Son (eran) separados [divorciados]'],
+    ], label="14. Estado civil de sus padres:")
+
+    p_women1 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Es justo que el talento determine los ingresos de una persona."
+                                       verbose_name="Los hombres son mejores en matemáticas que las mujeres."
                                        )
-    pnorm_2 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+    p_women2 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Es justo que la suerte determine los ingresos de una persona. "
+                                       verbose_name="Una madre que trabaja puede formar una relación tan cálida y segura con sus hijos como una madre que no trabaja."
                                        )
-    pnorm_3 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+    p_women3 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Es justo que el esfuerzo determine los ingresos de una persona."
+                                       verbose_name="Ambos, el hombre y la mujer, deberían contribuir al ingreso del hogar. "
                                        )
-    p_emp = models.PositiveIntegerField(choices=[1,2,3,4],
+    p_women4 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="En nuestra sociedad, tipicamente las personas con ingresos más altos se esfuerzan más que las personas con ingresos más bajos."
+                                       verbose_name="El deber de un hombre es ganar dinero, el deber de la mujer es cuidar del hogar y la familia."
                                        )
+    p_women5 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Las mujeres son mejores para el trabajo doméstico que los hombres."
+                                       )
+    p_women6 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="El esposo debe tomar las decisiones relacionadas con la vida de la esposa."
+                                       )
+    p_women7 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="La cabeza del hogar debe ser el hombre."
+                                       )
+    p_women8 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Los hombres son mejores para manejar el dinero que las mujeres"
+                                       )
+    
+    p_risk = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="¿Qué tan dispuesto (a) está o no está usted a tomar riesgos?"
+                                       )
+    p_time = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="¿Qué tan dispuesto está a renunciar a algo que es beneficioso para usted en este momento a fin de obtener mayores beneficios en el futuro?"
+                                       )
+    p_you = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="¿Qué tan dispuesto está a castigar a alguien que lo(a) trata injustamente, incluso cuando existan riesgos de sufrir consecuencias? "
+                                       )
+    p_others = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="¿Qué tan dispuesto(a) está a castigar a alguien que trata a los demás injustamente, incluso cuando exista el riesgo de sufrir consecuencias?"
+                                       )
+    p_altruism = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="¿Qué tan dispuesto(a) está a hacer donaciones a causas benéficas sin esperar nada a cambio?"
+                                       )
+    p_reciprocity = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Cuando alguien me hace un favor, estoy dispuesto a devolverlo."
+                                       )
+    p_inequality = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Si me tratan muy injustamente, tomaré revancha en la primera ocasión, incluso aunque deba pagar un costo por ello."
+                                       )
+    p_beliefs = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Supongo que la gente tiene sólo las mejores intenciones."
+                                       )
+    p_math = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Soy bueno(a) en matemáticas."
+                                       )
+    p_time2 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+                                       widget=widgets.RadioSelectHorizontal(),
+                                       verbose_name="Tiendo a posponer las tareas, incluso cuando sé que sería mejor hacerlas de inmediato."
+                                       )
+    
     p_pension = models.IntegerField(
     choices=[
         [1,'Aportando en un fondo de pensiones obligatorias'],
@@ -155,7 +209,7 @@ class Player(BasePlayer):
         [5,'Pagando un seguro por su cuenta'],
         [6,'Preparando a los hijos para que puedan ayudarlos en su vejez'],
         [7,'Nada'],
-    ], label="11. ¿Qué están haciendo (hicieron) sus padres para mantenerse económicamente en la vejez?")
+    ], label="¿Qué están haciendo (hicieron) sus padres para mantenerse económicamente en la vejez?")
 
     def payoff_complete(self):
         self.pago_total =  self.participant.vars['payoff_complete']+(self.participant.vars["icl_pago"]*100)
