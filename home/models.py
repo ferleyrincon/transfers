@@ -107,8 +107,7 @@ class Player(BasePlayer):
         return self.old
 
     def get_pagovariable(self):
-        self.random_draw_pagovariable = 10
-    #    self.random_draw_pagovariable = random.randint(1, 100)
+        self.random_draw_pagovariable = random.randint(1, 100)
         if self.random_draw_pagovariable <= Constants.likelihood_pago:
             self.pagovariable = True
         else:
