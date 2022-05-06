@@ -157,26 +157,59 @@
                 {% endblocktrans %}
                 <br/>
                     Escriba en el siguiente cuadro, cómo reasignaría el dinero si fuese emparejado con una persona. Sólo tiene que escribir cuanto asignaría para usted en el cuadro azul y el computador calculará cuanto recibiría la otra persona.
-
-                    <table>
+                    <br>
+                    <table class="table_reasignacion">
                         <tr>
-                            <td rowspan="2"><b>Total a reasignar</b><td>
+                            <td rowspan="2"><b>Total a reasignar</b></td>
                             <td colspan="2"><b>Reasignación</b></td>
                         </tr>
                         <tr>
                             <td>Lo que usted recibirá</td>
-                            <td>Lo que la otra persona </td>
+                            <td>Lo que la otra persona recibirá</td>
                         </tr>
                         <tr>
-                            <td>{{ payoff_total }}</td>
-                            <td><input type="number"></td>
-                            <td></td>
+                            <td>{{ payoff_total }}<input type="hidden" name="payoff_total" id="payoff_total" value="{{ payoff_total_int }}"></td>
+                            <td>$ <input type="number" name="payoff_resignation" id="payoff_resignation" required="" min="0" max="{{ payoff_total_int }}" onkeyup="calcularDinero()"></td>
+                            <td><p id="payoff_otherPlayer_str">$ 0</p><input type="hidden" name="payoff_otherPlayer" id="payoff_otherPlayer"></td>
                         </tr>
                     </table>
             {% endif %}
         </div>
 
     </div>
+    <script>
+        var total_pagar = {{ payoff_total_int }};
+
+        document.getElementById('payoff_resignation').addEventListener('keypress', function (e){
+            if (!soloNumeros(event)){
+                e.preventDefault();
+            }
+        })
+
+        function soloNumeros(e) {
+            var key = e.charCode;
+            return key >= 48 && key <= 57;
+        }
+
+        function calcularDinero() {
+            var dineroResignacion = document.getElementById('payoff_resignation').value;
+            if(dineroResignacion < 0){
+                document.getElementById('payoff_resignation').value = 0;
+                dineroResignacion = 0;
+            }
+            if(dineroResignacion > total_pagar){
+                document.getElementById('payoff_resignation').value = total_pagar;
+                dineroResignacion = total_pagar;
+            }
+            var dineroOther = total_pagar - dineroResignacion;
+            document.getElementById('payoff_otherPlayer').value = dineroOther;
+            document.getElementById('payoff_otherPlayer_str').innerHTML = '$ '+numberWithCommas(dineroOther);
+        }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    </script>
 
     {% next_button %}
 
