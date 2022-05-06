@@ -10,8 +10,8 @@ def vars_for_all_templates(self):
     return {
         #'p_hi': "{0:.0f}".format(Constants.probability) + "%",
         #'p_lo': "{0:.0f}".format(100 - Constants.probability) + "%",
-        'optionB':"$"+format(int(str(Constants.optionB).split(",")[0]), ',d'),
-        'otherA_2': "$"+format(int(str(Constants.otherA_2).split(",")[0]), ',d')        
+        'optionB':"$ "+format(int(str(Constants.optionB).split(",")[0]), ',d'),
+        'otherA_2': "$ "+format(int(str(Constants.otherA_2).split(",")[0]), ',d')        
     }
 # ******************************************************************************************************************** #
 # *** CLASS INSTRUCTIONS *** #
@@ -52,7 +52,7 @@ class Decision(Page):
             'page':        page+3,
             'total':       total,
             'progress':    progress,
-            'payoffA': "$"+format(int(str((self.participant.vars['icl_payoffA_2'][page - 1])).split(",")[0]), ',d')
+            'payoffA': "$ "+format(int(str((self.participant.vars['icl_payoffA_2'][page - 1])).split(",")[0]), ',d')
         }
 
     # set sure payoffs for next choice, payoffs, and switching row
@@ -68,6 +68,8 @@ class Decision(Page):
 # *** PAGE RESULTS *** #
 # ******************************************************************************************************************** #
 class Results(Page):
+    form_model = 'player'
+    form_fields = ['payoff_total', 'payoff_resignation', 'payoff_otherPlayer']
 
     # skip results until last page
     # ----------------------------------------------------------------------------------------------------------------
@@ -83,12 +85,13 @@ class Results(Page):
 
         return {
             #"old" : self.participant.vars['old'],
-            'payoffA':     "$"+format(int(str(self.participant.vars['eet_payoffA']).split(",")[0]), ',d'),
-            'choice_to_pay':   self.participant.vars['eet_round_to_pay'],
-            'option_to_pay':self.participant.vars['eet_choice'],
-            'payoff_s':        "$"+format(int(str(self.player.payoff_s).split(",")[0]), ',d'),
-            'payoff_r':        "$"+format(int(str(self.player.payoff_r).split(",")[0]), ',d'),
-            'payoff_total':     "$"+format(int(str(self.player.payoff_r+self.player.payoff_s).split(",")[0]), ',d')
+            'payoffA':          "$ "+format(int(str(self.participant.vars['eet_payoffA']).split(",")[0]), ',d'),
+            'choice_to_pay':    self.participant.vars['eet_round_to_pay'],
+            'option_to_pay':    self.participant.vars['eet_choice'],
+            'payoff_s':         "$ "+format(int(str(self.player.payoff_s).split(",")[0]), ',d'),
+            'payoff_r':         "$ "+format(int(str(self.player.payoff_r).split(",")[0]), ',d'),
+            'payoff_total':     "$ "+format(int(str(self.player.payoff_r+self.player.payoff_s).split(",")[0]), ',d'),
+            'payoff_total_int': int(str(self.player.payoff_r+self.player.payoff_s).split(",")[0])
         }
 
 # ******************************************************************************************************************** #

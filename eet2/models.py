@@ -56,7 +56,9 @@ class Player(BasePlayer):
     choice_to_pay = models.IntegerField()
     switching_row = models.IntegerField()
     situation = models.IntegerField()
-
+    payoff_total = models.IntegerField()
+    payoff_resignation = models.IntegerField()
+    payoff_otherPlayer = models.IntegerField()
 
     # set sure payoff for next choice
     # ----------------------------------------------------------------------------------------------------------------
@@ -154,3 +156,7 @@ class Player(BasePlayer):
             # implied switching row
             # --------------------------------------------------------------------------------------------------------
             self.in_round(choice_to_pay).switching_row = self.participant.vars['icl_switching_row_2']
+
+    def set_payoff_total(self, value):
+        self.payoff_total = value
+
