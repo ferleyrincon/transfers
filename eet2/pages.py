@@ -61,6 +61,7 @@ class Decision(Page):
         self.player.set_payoffA()
         self.player.update_switching_row()
         self.player.set_payoffs()
+        self.subsession.set_eet()
 
 
 # ******************************************************************************************************************** #
@@ -76,17 +77,18 @@ class Results(Page):
     # variables for template
     # ----------------------------------------------------------------------------------------------------------------
     def vars_for_template(self):
-        choice_to_pay = self.participant.vars['icl_choice_to_pay']
-        option_to_pay = self.player.in_round(choice_to_pay).choice
-        payoff_relevant = self.player.in_round(choice_to_pay).payoff_relevant
-        payoffA = self.player.participant.vars['icl_payoffA_2'][choice_to_pay - 1]
+        choice_to_pay = self.participant.vars['eet_round_to_pay']
+        payoff_relevant = self.participant.vars['eet_choice']
+        payoffA = self.participant.vars['eet_payoffA']
 
         return {
-            'payoffA':     "$"+format(int(str(payoffA).split(",")[0]), ',d'),
-            'option_to_pay':   option_to_pay,
-            'payoff_relevant': payoff_relevant,
-            'payoff_s':        "$"+format(int(str(self.player.in_round(choice_to_pay).payoff_s).split(",")[0]), ',d'),
-            'payoff_r':        "$"+format(int(str(self.player.in_round(choice_to_pay).payoff_r).split(",")[0]), ',d')
+            #"old" : self.participant.vars['old'],
+            'payoffA':     "$"+format(int(str(self.participant.vars['eet_payoffA']).split(",")[0]), ',d'),
+            'choice_to_pay':   self.participant.vars['eet_round_to_pay'],
+            'option_to_pay':self.participant.vars['eet_choice'],
+            'payoff_s':        "$"+format(int(str(self.player.payoff_s).split(",")[0]), ',d'),
+            'payoff_r':        "$"+format(int(str(self.player.payoff_r).split(",")[0]), ',d'),
+            'payoff_total':     "$"+format(int(str(self.player.payoff_r+self.player.payoff_s).split(",")[0]), ',d')
         }
 
 # ******************************************************************************************************************** #

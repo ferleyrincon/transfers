@@ -25,6 +25,13 @@ class Subsession(BaseSubsession):
             for p in self.get_players():
                 p.participant.vars['icl_payoffA_1'] = [c(Constants.payoffA)]
                 p.participant.vars['icl_switching_row_1'] = 2 ** Constants.num_choices
+                p.participant.vars['eet_round_to_pay'] = random.randint(1,6)
+
+    def set_eet(self):
+        for j in self.get_players():
+            j.set_choice_eet()
+            j.set_payoffA_eet()
+
 
 
 # ******************************************************************************************************************** #
@@ -49,13 +56,20 @@ class Player(BasePlayer):
 
     # set sure payoff for next choice
     # ----------------------------------------------------------------------------------------------------------------
+    def set_choice_eet(self):
+        if (self.round_number==self.participant.vars['eet_round_to_pay']):
+            self.participant.vars['eet_choice']= self.choice
+        
+
+    def set_payoffA_eet(self):
+        if (self.round_number==self.participant.vars['eet_round_to_pay']):
+            self.participant.vars['eet_payoffA']= self.payoffA 
+
     def set_payoffA(self):
 
         # add current round's sure payoff to model field
         # ------------------------------------------------------------------------------------------------------------
         self.payoffA = self.participant.vars['icl_payoffA_1'][self.round_number - 1]
-        self.participant.vars['eet_payoffA'][self.round_number - 1] = self.payoffA 
-        self.participant.vars['eet_choice'][self.round_number - 1] = self.choice
         
         # determine sure payoff for next choice and append list of sure payoffs
         # ------------------------------------------------------------------------------------------------------------

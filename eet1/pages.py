@@ -60,7 +60,7 @@ class Decision(Page):
     def before_next_page(self):
         self.player.set_payoffA()
         self.player.update_switching_row()
-        #self.player.set_payoffs()
+        self.subsession.set_eet()
 
 
 # ******************************************************************************************************************** #

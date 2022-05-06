@@ -26,6 +26,10 @@ class Subsession(BaseSubsession):
                 p.participant.vars['icl_payoffA_2'] = [c(Constants.payoffA)]
                 p.participant.vars['icl_switching_row_2'] = 2 ** Constants.num_choices
 
+    def set_eet(self):
+        for j in self.get_players():
+            j.set_choice_eet()
+            j.set_payoffA_eet()
 
 # ******************************************************************************************************************** #
 # *** CLASS GROUP
@@ -51,16 +55,29 @@ class Player(BasePlayer):
     choice = models.StringField()
     choice_to_pay = models.IntegerField()
     switching_row = models.IntegerField()
+    situation = models.IntegerField()
+
 
     # set sure payoff for next choice
     # ----------------------------------------------------------------------------------------------------------------
+    def set_choice_eet(self):
+        self.situation=self.round_number+3
+        if (self.situation==self.participant.vars['eet_round_to_pay']):
+            self.participant.vars['eet_choice']= self.choice
+        
+
+    def set_payoffA_eet(self):
+        self.situation=self.round_number+3
+        if (self.situation==self.participant.vars['eet_round_to_pay']):
+            self.participant.vars['eet_payoffA']= self.payoffA 
+
+
     def set_payoffA(self):
 
         # add current round's sure payoff to model field
         # ------------------------------------------------------------------------------------------------------------
         self.payoffA = self.participant.vars['icl_payoffA_2'][self.round_number - 1]
-        self.participant.vars['eet_payoffA'][self.round_number + 2] =self.payoffA
-        self.participant.vars['eet_choice'][self.round_number + 2] = self.choice
+
 
         # determine sure payoff for next choice and append list of sure payoffs
         # ------------------------------------------------------------------------------------------------------------
@@ -120,19 +137,19 @@ class Player(BasePlayer):
 
             # set player's payoff
             # --------------------------------------------------------------------------------------------------------
-            if self.in_round(choice_to_pay).payoff_relevant == 'A':
-                self.in_round(choice_to_pay).payoff_s = self.participant.vars['icl_payoffA_2'][choice_to_pay - 1]
-                if choice_to_pay < 4 : 
-                    self.in_round(choice_to_pay).payoff_r = 65000
+            if self.participant.vars['eet_choice'] == 'A':
+                self.payoff_s = self.participant.vars['eet_payoffA']
+                if self.participant.vars['eet_round_to_pay'] < 4 : 
+                    self.payoff_r = 65000
                 else:
-                    self.in_round(choice_to_pay).payoff_r = 35000
-            elif self.in_round(choice_to_pay).payoff_relevant == 'B':
-                self.in_round(choice_to_pay).payoff_s = Constants.optionB
-                self.in_round(choice_to_pay).payoff_r = Constants.optionB
+                    self.payoff_r = 35000
+            elif self.participant.vars['eet_choice'] =='B':
+                self.payoff_s = Constants.optionB
+                self.payoff_r = Constants.optionB
 
             # set payoff as global variable
             # --------------------------------------------------------------------------------------------------------
-            self.participant.vars['icl_payoff'] = self.in_round(choice_to_pay).payoff
+            #self.participant.vars['icl_payoff'] = self.in_round(choice_to_pay).payoff
 
             # implied switching row
             # --------------------------------------------------------------------------------------------------------

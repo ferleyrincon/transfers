@@ -151,24 +151,13 @@
                 {% endblocktrans %}
                 <br/>
             {% else %}
-                {% blocktrans trimmed with option_to_pay=option_to_pay %}
-                    As indicated above, you decided for "Opción {{ option_to_pay }}" in this choice.
+                {% blocktrans trimmed with option_to_pay=option_to_pay payoff_s=payoff_s payoff_r=payoff_r %}
+                    La situación {{ choice_to_pay }} usted prefirió la "Opción {{ option_to_pay }}".
+                    Usted recibiría {{ payoff_s }} y lo que la otra persona recibiría {{ payoff_r }}. <br> La suma de lo que usted recibiría y la otra persona recibiría es: {{ payoff_total }}
                 {% endblocktrans %}
                 <br/>
+                    Escriba en el siguiente cuadro, cómo reasignaría el dinero si fuese emparejado con una persona. Sólo tiene que escribir cuanto asignaría para usted en el cuadro azul y el computador calculará cuanto recibiría la otra persona. 
             {% endif %}
-
-            {% if payoff_relevant == "A" %}
-                <br/>
-                {% blocktrans trimmed %}
-                    For "Option A", one of the two possible outcomes has been
-                    randomly realized based on the corresponding probabilities.
-                {% endblocktrans %}
-            {% endif %}
-
-            <br/>
-            {% blocktrans trimmed with payoff_s=payoff_s payoff_r=payoff_r %}
-                Your payoff in this task equals {{ payoff_s }} and {{ payoff_r }}
-            {% endblocktrans %}
         </div>
 
     </div>
