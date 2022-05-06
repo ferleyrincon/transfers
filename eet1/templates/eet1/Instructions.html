@@ -15,7 +15,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Instrucciones de Pago" %}
+    {% trans "Parte final" %}
 {% endblock %}
 
 
@@ -25,16 +25,35 @@
 {% block content %}
 
 <div class="wrapper">
+    <p>En esta última parte del cuestionario, le presentaremos 6 situaciones diferentes sobre asignaciones de dinero. 
+        En cada situación puede elegir entre dos asignaciones: <b>Opción A</b> y <b>Opción B</b>. 
+        Cada asignación implica pagos para quién <b>envía</b> y quién <b>recibe</b>.</p>
+
+    <h5>Situaciones 1 a 3</h5>
+        <p>
+            En la <b>Opción A</b>, la asignación de dinero para quien <b>envía</b> irá cambiando, pero la asignación para quien recibe siempre será de $65.000.<br> 
+            En la <b>Opción B</b>, a quien <b>envía</b> y <b>recibe</b> siempre se le asignan $50.000.
+        </p>
+    
+    <h5>Situaciones 4 a 6</h5>
     <p>
-    <h6>Parejas</h6>
-            Usted será emparejado con una persona que no está en la sala.<br>
-            En cada pareja hay dos tipos, la persona que <i>envía</i> y la persona que <i>recibe</i>.<br>
-            Usted responderá las diez preguntas como la persona que <i>envía</i> y sólo al finalizar la actividad se definirá aleatoriamente si usted es la persona que <i>envía</i>, o la persona que <i>recibe</i>.<br>
-            De ninguna manera usted podrá conocer la identidad de la persona con la que fueron emparejado, y la persona de otro grupo con la que fue emparejado tampoco podrá conocer su identidad.<br>
-    <h6>Pagos</h6>
-            Le pediremos que responda algunas preguntas de asignación de recursos entre quién <i>envía</i> y quién recibe. Una de estas asignaciones será seleccionada al azar para calcular su pago. Esto quiere decir que en realidad hay dos sorteos: cuál tarea se paga, y si usted recibirá las ganancias como la persona que <i>envía</i>, o la persona que <i>recibe</i>.
+        En la <b>Opción A</b>, la asignación de dinero para quien <b>envía</b> irá cambiando, pero la asignación para quien recibe siempre será de $35.000.<br> 
+        En la <b>Opción B</b>, a quien <b>envía</b> y <b>recibe</b> siempre se le asignan $50.000.
     </p>
 
+    <h5>Sorteo de las ganancias adicionales</h5>
+    <p>Le pedimos que responda a estas 6 situaciones con mucha atención, 
+        pues seleccionaremos a 1 de cada 10 personas que respondan esta encuesta para que reciba ganancias adicionales a los $10.000 por completar la actividad.</p>
+    
+    <p>
+        La ganancia adicional se calcula con una serie de loterías consecutivas:
+        <ol>
+            <li>La primera lotería define si usted recibirá la ganancia: 1 de cada 10 la recibirán.</li>
+            <li>La segunda lotería define si usted recibe la ganancia de la persona que envía, o la persona que recibe. Es igual de probable cada opción, como lanzando una moneda.</li>
+            <li>La tercera y última lotería define cuál de las seis situaciones se utilizará para definir el pago.</li>
+        </ol>
+        Usted no podrá conocer la identidad de la persona con la que fue emparejado, y la persona con la que fue emparejado tampoco podrá conocer su identidad.
+    </p>
 </div>
 {% next_button %}
 {% endblock %}
