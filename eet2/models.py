@@ -123,12 +123,6 @@ class Player(BasePlayer):
             self.participant.vars['icl_choice_to_pay'] = random.randint(1,completed_choices)
             choice_to_pay = self.participant.vars['icl_choice_to_pay']
 
-            # random draw to determine whether to pay the "sender (1)" or "receiver (2)" decision
-            # --------------------------------------------------------------------------------------------------------
-            #self.in_round(choice_to_pay).random_draw = random.randint(1, 100)
-            self.participant.vars['sender'] = random.randint(1,2)
-            sender = self.participant.vars['sender']
-
             # determine whether the Option A or Option B is relevant for payment
             # --------------------------------------------------------------------------------------------------------
             self.in_round(choice_to_pay).payoff_relevant = random.choice(['A','B']) \
@@ -146,6 +140,7 @@ class Player(BasePlayer):
             elif self.participant.vars['eet_choice'] =='B':
                 self.payoff_s = Constants.optionB
                 self.payoff_r = Constants.optionB
+            self.participant.vars['pagototal']=self.payoff_s+15000
 
             # set payoff as global variable
             # --------------------------------------------------------------------------------------------------------

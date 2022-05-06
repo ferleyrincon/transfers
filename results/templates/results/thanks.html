@@ -9,9 +9,32 @@
 
 <p><b>Por favor lea cuidadosamente la información en esta página 
     y siga correctamente las instrucciones al final de la misma.</b></p>
-   <p> La ronda elegida al azar para calcular sus ganancias del torneo es: Ronda {{round_payoff}} </p>
-   <p> Usted ganó {{payoff_total}} en esa ronda. 
-       Por tanto, usted ganó en total {{payoff_complete}} (incluyendo los $10,000 por completar la actividad).  </p>
+
+    <p>
+        {% if pagovariable %}    
+            {% if sender %}
+                Usted fue seleccionado para recibir el pago de la ganancia adicional y será la persona que envía. Su ganancia adicional es de {{ganancia_adicional}}
+            {% else %}
+                Usted fue seleccionado para recibir el pago de la ganancia adicional y será la persona que recibe. El valor de su ganancia adicional le será informada por correo electrónico al finalizar el día. 
+            {% endif %}
+        {% else %}
+            Usted NO fue seleccionado para recibir el pago de la ganancia adicional. 
+        {% endif %}
+    </p>
+
+    <p> Por tanto, usted ganó en total 
+        {% if pagovariable %}    
+            {% if sender %}
+                {{pagototal}} (incluyendo los $10,000 por completar la actividad) 
+            {% else %}
+                {{pagofijo}} más lo que otra persona haya enviado.
+            {% endif %}
+        {% else %}
+            {{pagofijo}}
+        {% endif %}
+    </p>
+
+
 <p>Tenga en cuenta que, sus ganancias se transferirán de forma electrónica 
     en un lapso de 48 horas hábiles a partir del momento en que diligencie correctamente el formulario de pago.</p>
 

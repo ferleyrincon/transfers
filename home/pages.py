@@ -15,6 +15,9 @@ class welcome(Page):
 
     def is_displayed(self):
         return self.round_number == 1
+    
+    def before_next_page(self):
+        self.subsession.set_id_players()
 
 class case1(Page):
     def is_displayed(self):

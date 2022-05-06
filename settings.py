@@ -6,13 +6,13 @@ SESSION_CONFIGS = [
         'name': 'eet2',
         'display_name': 'eet2',
         'num_demo_participants': 1, 
-        'app_sequence': ['eet1','eet2']
+        'app_sequence': ['home','eet1','eet2','results',]
     },
     {
         'name': 'parents',
         'display_name': 'App',
         'num_demo_participants': 1, 
-        'app_sequence': ['results','home','parents','informal','formal','case2','eet1','eet2']
+        'app_sequence': ['home','results','parents','informal','formal','case2','eet1','eet2']
         #'app_sequence': ['home','parents']
     }
 ]

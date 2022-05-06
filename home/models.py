@@ -25,10 +25,9 @@ class Constants(BaseConstants):
     name_in_url = 'home'
     players_per_group = None
     num_rounds = 1
-    fixed_payoff = c(10000)
-    likelihood_pago= 0.1
-    likelihood_sender=0.5
-    likelihood_receiver=0.5
+    fixed_payoff = c(15000)
+    likelihood_pago= 10
+    likelihood_sender= 50
     age_category= {
     # "contract#" : [paymnet, insurance, bonus relative , alone ]    
         "r1" :  [18 , 34],
@@ -39,13 +38,21 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
+        if self.round_number == 1:
+            for j in self.get_players():
+                j.get_camila()
+                j.get_daniela()
+                j.get_manuela()
+                j.get_julia()
+                j.get_luisa()
+                j.get_old()
+                j.get_pagovariable()
+                j.get_sender()
+                j.participant.vars['pagofijo'] = Constants.fixed_payoff
+    
+    def set_id_players(self):
         for j in self.get_players():
-            j.get_camila()
-            j.get_daniela()
-            j.get_manuela()
-            j.get_julia()
-            j.get_luisa()
-            j.get_old()
+            j.set_id()
 
 
 class Group(BaseGroup):
@@ -63,6 +70,10 @@ class Player(BasePlayer):
     julia = models.BooleanField()  #Hermana 3.1
     luisa = models.BooleanField()  #Hermana 3.2
     old = models.BooleanField()  #Hermana 3.2
+    random_draw_pagovariable=models.IntegerField() 
+    random_draw_sender=models.IntegerField() 
+    pagovariable = models.BooleanField() 
+    sender = models.BooleanField() #Pago como quien envía
 
 
     def get_camila(self):
@@ -94,3 +105,27 @@ class Player(BasePlayer):
         self.old =random.choice([True, False])
         self.participant.vars['old'] =self.old
         return self.old
+
+    def get_pagovariable(self):
+        self.random_draw_pagovariable = 10
+    #    self.random_draw_pagovariable = random.randint(1, 100)
+        if self.random_draw_pagovariable <= Constants.likelihood_pago:
+            self.pagovariable = True
+        else:
+            self.pagovariable = False
+        self.participant.vars['pagovariable'] =self.pagovariable
+        return self.pagovariable
+
+    def get_sender(self):
+        if self.participant.vars['pagovariable'] == True:
+            self.random_draw_sender = random.randint(1, 100)
+            if self.random_draw_sender <= Constants.likelihood_sender:
+                self.sender = True
+            else:
+                self.sender = False
+            self.participant.vars['sender'] =self.sender
+            return self.sender
+    
+    def set_id(self):
+        if (self.round_number==Constants.num_rounds):
+            self.participant.vars['identificador'] = self.in_round(1).identificador
