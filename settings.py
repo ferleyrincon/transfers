@@ -12,8 +12,7 @@ SESSION_CONFIGS = [
         'name': 'parents',
         'display_name': 'App',
         'num_demo_participants': 1, 
-        'app_sequence': ['home','results','parents','informal','formal','case2','eet1','eet2']
-        #'app_sequence': ['home','parents']
+        'app_sequence': ['home','parents','informal','formal','case2','eet1','eet2','results']
     }
 ]
 

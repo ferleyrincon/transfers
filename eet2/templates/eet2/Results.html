@@ -46,12 +46,13 @@
                 <tr>
                     <th>{% trans "Opción A" %}</th>
                     <td>
-                        {% with otherA_2=otherA_2 payoffA=payoffA %}
-                            {% blocktrans trimmed %}
                             Lo que usted recibe: {{ payoffA }} <br>
-                            Lo que la otra persona recibe: {{ otherA_2 }}
-                            {% endblocktrans %}
-                        {% endwith %}
+                            Lo que la otra persona recibe: 
+                            {% if choice_to_pay < 4 %}
+                                $65,000
+                            {% else %}
+                                $35,000
+                            {% endif %}
                     </td>
                     <td>
                         {% if Constants.buttons == True %}
@@ -153,10 +154,15 @@
             {% else %}
                 {% blocktrans trimmed with option_to_pay=option_to_pay payoff_s=payoff_s payoff_r=payoff_r %}
                     En la situación {{ choice_to_pay }} usted prefirió la "Opción {{ option_to_pay }}".
-                    Usted recibiría {{ payoff_s }} y la otra persona recibiría {{ payoff_r }}. <br> La suma de lo que usted recibiría y la otra persona recibiría es: {{ payoff_total }}
+                    Usted recibiría {{ payoff_s }} y la otra persona recibiría {{ payoff_r }}. <br> La suma de lo que usted y la otra persona recibirían es: {{ payoff_total }}
                 {% endblocktrans %}
                 <br/>
-                    Escriba en el siguiente cuadro, cómo reasignaría el dinero si fuese emparejado con una persona. Sólo tiene que escribir cuanto asignaría para usted en el cuadro azul y el computador calculará cuanto recibiría la otra persona.
+                    Escriba en el siguiente cuadro, cómo reasignaría el dinero si fuese emparejado con una persona 
+                {% if old %}
+                mayor a los 64 años 
+                {% else %}
+                    entre los 35 y 64 años
+                {% endif %}. Sólo tiene que escribir cuanto asignaría para usted en el cuadro y el computador calculará cuanto recibiría la otra persona.
                     <br>
                     <table class="table_reasignacion">
                         <tr>

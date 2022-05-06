@@ -60,8 +60,9 @@ class Decision(Page):
     def before_next_page(self):
         self.player.set_payoffA()
         self.player.update_switching_row()
-        self.player.set_payoffs()
         self.subsession.set_eet()
+        self.player.set_payoffs()
+
 
 
 # ******************************************************************************************************************** #
@@ -88,6 +89,7 @@ class Results(Page):
             'payoffA':          "$ "+format(int(str(self.participant.vars['eet_payoffA']).split(",")[0]), ',d'),
             'choice_to_pay':    self.participant.vars['eet_round_to_pay'],
             'option_to_pay':    self.participant.vars['eet_choice'],
+            'old':    self.participant.vars['old'],
             'payoff_s':         "$ "+format(int(str(self.player.payoff_s).split(",")[0]), ',d'),
             'payoff_r':         "$ "+format(int(str(self.player.payoff_r).split(",")[0]), ',d'),
             'payoff_total':     "$ "+format(int(str(self.player.payoff_r+self.player.payoff_s).split(",")[0]), ',d'),
