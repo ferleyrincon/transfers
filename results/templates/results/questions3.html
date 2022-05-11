@@ -1,6 +1,11 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
 
+{% block scripts %}
+    <!-- custom style sheet-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block title %}
 Encuesta
 {% endblock %}
@@ -11,215 +16,215 @@ Encuesta
     <br/>
 <table class="table">
    <tr>
-     <td >Los hombres son mejores en matemáticas que las mujeres.</td>
+    <td class="td_q">Los hombres son mejores en matemáticas que las mujeres.</td>
      <td class="d-flex">
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women1" id="op1" value="1">
+             <input class="form-check-input" type="radio" name="p_women1" id="op1" value="1"><br>
              <label class="form-check-label" for="op1">1</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women1" id="op2" value="2">
+             <input class="form-check-input" type="radio" name="p_women1" id="op2" value="2"><br>
              <label class="form-check-label" for="op2">2</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women1" id="op3" value="3">
+             <input class="form-check-input" type="radio" name="p_women1" id="op3" value="3"><br>
              <label class="form-check-label" for="op3">3</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women1" id="op4" value="4">
+             <input class="form-check-input" type="radio" name="p_women1" id="op4" value="4"><br>
              <label class="form-check-label" for="op4">4</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women1" id="op5" value="5">
+             <input class="form-check-input" type="radio" name="p_women1" id="op5" value="5"><br>
              <label class="form-check-label" for="op5">5</label>
          </div>
      </td>
    </tr>
    <tr>
-     <td >Una madre que trabaja puede formar una relación tan cálida y segura con sus hijos como una madre que no trabaja.</td>
+     <td class="td_q">Una madre que trabaja puede formar una relación tan cálida y segura con sus hijos como una madre que no trabaja.</td>
      <td class="d-flex">
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women2" id="op1" value="1">
+             <input class="form-check-input" type="radio" name="p_women2" id="op1" value="1"><br>
              <label class="form-check-label" for="op1">1</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women2" id="op2" value="2">
+             <input class="form-check-input" type="radio" name="p_women2" id="op2" value="2"><br>
              <label class="form-check-label" for="op2">2</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women2" id="op3" value="3">
+             <input class="form-check-input" type="radio" name="p_women2" id="op3" value="3"><br>
              <label class="form-check-label" for="op3">3</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women2" id="op4" value="4">
+             <input class="form-check-input" type="radio" name="p_women2" id="op4" value="4"><br>
              <label class="form-check-label" for="op4">4</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women2" id="op5" value="5">
+             <input class="form-check-input" type="radio" name="p_women2" id="op5" value="5"><br>
              <label class="form-check-label" for="op5">5</label>
          </div>
      </td>
    </tr>
    <tr>
-     <td >Ambos, el hombre y la mujer, deberían contribuir al ingreso del hogar.</td>
+     <td class="td_q">Ambos, el hombre y la mujer, deberían contribuir al ingreso del hogar.</td>
      <td class="d-flex">
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women3" id="op1" value="1">
+             <input class="form-check-input" type="radio" name="p_women3" id="op1" value="1"><br>
              <label class="form-check-label" for="op1">1</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women3" id="op2" value="2">
+             <input class="form-check-input" type="radio" name="p_women3" id="op2" value="2"><br>
              <label class="form-check-label" for="op2">2</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women3" id="op3" value="3">
+             <input class="form-check-input" type="radio" name="p_women3" id="op3" value="3"><br>
              <label class="form-check-label" for="op3">3</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women3" id="op4" value="4">
+             <input class="form-check-input" type="radio" name="p_women3" id="op4" value="4"><br>
              <label class="form-check-label" for="op4">4</label>
          </div>
          <div class="form-check">
-             <input class="form-check-input" type="radio" name="p_women3" id="op5" value="5">
+             <input class="form-check-input" type="radio" name="p_women3" id="op5" value="5"><br>
              <label class="form-check-label" for="op5">5</label>
          </div>
      </td>
    </tr>
    <tr>
-    <td >El deber de un hombre es ganar dinero, el deber de la mujer es cuidar del hogar y la familia.</td>
+    <td class="td_q">El deber de un hombre es ganar dinero, el deber de la mujer es cuidar del hogar y la familia.</td>
     <td class="d-flex">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women4" id="op1" value="1">
+            <input class="form-check-input" type="radio" name="p_women4" id="op1" value="1"><br>
             <label class="form-check-label" for="op1">1</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women4" id="op2" value="2">
+            <input class="form-check-input" type="radio" name="p_women4" id="op2" value="2"><br>
             <label class="form-check-label" for="op2">2</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women4" id="op3" value="3">
+            <input class="form-check-input" type="radio" name="p_women4" id="op3" value="3"><br>
             <label class="form-check-label" for="op3">3</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women4" id="op4" value="4">
+            <input class="form-check-input" type="radio" name="p_women4" id="op4" value="4"><br>
             <label class="form-check-label" for="op4">4</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women6" id="op5" value="5">
+            <input class="form-check-input" type="radio" name="p_women6" id="op5" value="5"><br>
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
   </tr>
   <tr>
-    <td >Las mujeres son mejores para el trabajo doméstico que los hombres.</td>
+    <td class="td_q">Las mujeres son mejores para el trabajo doméstico que los hombres.</td>
     <td class="d-flex">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women5" id="op1" value="1">
+            <input class="form-check-input" type="radio" name="p_women5" id="op1" value="1"><br>
             <label class="form-check-label" for="op1">1</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women5" id="op2" value="2">
+            <input class="form-check-input" type="radio" name="p_women5" id="op2" value="2"><br>
             <label class="form-check-label" for="op2">2</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women5" id="op3" value="3">
+            <input class="form-check-input" type="radio" name="p_women5" id="op3" value="3"><br>
             <label class="form-check-label" for="op3">3</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women5" id="op4" value="4">
+            <input class="form-check-input" type="radio" name="p_women5" id="op4" value="4"><br>
             <label class="form-check-label" for="op4">4</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women5" id="op5" value="5">
+            <input class="form-check-input" type="radio" name="p_women5" id="op5" value="5"><br>
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
   </tr>
   <tr>
-    <td >El esposo debe tomar las decisiones relacionadas con la vida de la esposa.</td>
+    <td class="td_q">El esposo debe tomar las decisiones relacionadas con la vida de la esposa.</td>
     <td class="d-flex">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women6" id="op1" value="1">
+            <input class="form-check-input" type="radio" name="p_women6" id="op1" value="1"><br>
             <label class="form-check-label" for="op1">1</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women6" id="op2" value="2">
+            <input class="form-check-input" type="radio" name="p_women6" id="op2" value="2"><br>
             <label class="form-check-label" for="op2">2</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women6" id="op3" value="3">
+            <input class="form-check-input" type="radio" name="p_women6" id="op3" value="3"><br>
             <label class="form-check-label" for="op3">3</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women6" id="op4" value="4">
+            <input class="form-check-input" type="radio" name="p_women6" id="op4" value="4"><br>
             <label class="form-check-label" for="op4">4</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women6" id="op5" value="5">
+            <input class="form-check-input" type="radio" name="p_women6" id="op5" value="5"><br>
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
   </tr>
   <tr>
-    <td >La cabeza del hogar debe ser el hombre.</td>
+    <td class="td_q">La cabeza del hogar debe ser el hombre.</td>
     <td class="d-flex">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women7" id="op1" value="1">
+            <input class="form-check-input" type="radio" name="p_women7" id="op1" value="1"><br>
             <label class="form-check-label" for="op1">1</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women7" id="op2" value="2">
+            <input class="form-check-input" type="radio" name="p_women7" id="op2" value="2"><br>
             <label class="form-check-label" for="op2">2</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women7" id="op3" value="3">
+            <input class="form-check-input" type="radio" name="p_women7" id="op3" value="3"><br>
             <label class="form-check-label" for="op3">3</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women7" id="op4" value="4">
+            <input class="form-check-input" type="radio" name="p_women7" id="op4" value="4"><br>
             <label class="form-check-label" for="op4">4</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women7" id="op5" value="5">
+            <input class="form-check-input" type="radio" name="p_women7" id="op5" value="5"><br>
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
   </tr>
   <tr>
-    <td >Los hombres son mejores para manejar el dinero que las mujeres..</td>
+    <td class="td_q">Los hombres son mejores para manejar el dinero que las mujeres..</td>
     <td class="d-flex">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women8" id="op1" value="1">
+            <input class="form-check-input" type="radio" name="p_women8" id="op1" value="1"><br>
             <label class="form-check-label" for="op1">1</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women8" id="op2" value="2">
+            <input class="form-check-input" type="radio" name="p_women8" id="op2" value="2"><br>
             <label class="form-check-label" for="op2">2</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women8" id="op3" value="3">
+            <input class="form-check-input" type="radio" name="p_women8" id="op3" value="3"><br>
             <label class="form-check-label" for="op3">3</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women8" id="op4" value="4">
+            <input class="form-check-input" type="radio" name="p_women8" id="op4" value="4"><br>
             <label class="form-check-label" for="op4">4</label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="p_women8" id="op5" value="5">
+            <input class="form-check-input" type="radio" name="p_women8" id="op5" value="5"><br>
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
   </tr>
  </table>
- <br/><span>¿Qué están haciendo (hicieron) sus padres para mantenerse económicamente en la vejez?</span>
+ <br/><span>¿Qué están haciendo (hicieron) <b>sus padres</b> para mantenerse económicamente en la vejez?</span>
  <select class="form-select" aria-label="selectPension" name="p_pension2">
      <option selected>Seleccione</option>
-     <option value="1">Aportando en un fondo de pensiones obligatorias</option>
-     <option value="2">Aportando en un fondo de pensiones voluntarias (por ejemplo, BEPS)</option>
-     <option value="3">Ahorrando</option>
-     <option value="4">Haciendo inversiones</option>
-     <option value="5">Pagando un seguro por su cuenta</option>
-     <option value="6">Preparando a sus hijos para que puedan ayudarlo en su vejez</option>
+     <option value="1">Aportar en un fondo de pensiones obligatorias</option>
+     <option value="2">Aportar en un fondo de pensiones voluntarias (por ejemplo, BEPS)</option>
+     <option value="3">Ahorrar</option>
+     <option value="4">Hacer inversiones</option>
+     <option value="5">Pagar un seguro por su cuenta</option>
+     <option value="6">Preparar a sus hijos para que puedan ayudarlo en su vejez</option>
      <option value="7">Nada</option>
  </select>
  <p></p>

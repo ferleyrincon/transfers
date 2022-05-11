@@ -8,6 +8,11 @@ class questions1(Page):
     form_model = 'player'
     form_fields = ['A1','A2','A3_1','A3_2','A3_4','A3_4','A4','A5','A6','A7','A8','A9'] 
 
+    def vars_for_template(self): 
+        return {
+            "info" : self.participant.vars['info'],
+        }
+
 class questions2(Page):
     form_model = 'player'
     form_fields = ['p_risk','p_time','p_you','p_others','p_altruism','p_reciprocity','p_inequality','p_beliefs','p_math','p_time2','p_pension'] 

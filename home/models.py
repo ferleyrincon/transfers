@@ -28,13 +28,6 @@ class Constants(BaseConstants):
     fixed_payoff = c(15000)
     likelihood_pago= 10
     likelihood_sender= 50
-    age_category= {
-    # "contract#" : [paymnet, insurance, bonus relative , alone ]    
-        "r1" :  [18 , 34],
-        "r2" :  [35 , 56], #57: Edad de pensión mujeres
-        "r3" :  [57 , 90],
-    # More than 90 years: warning about the possibility of identity theft. 
-    }
 
 class Subsession(BaseSubsession):
     def creating_session(self):
@@ -46,6 +39,7 @@ class Subsession(BaseSubsession):
                 j.get_julia()
                 j.get_luisa()
                 j.get_old()
+                j.get_info()
                 j.get_pagovariable()
                 j.get_sender()
                 j.participant.vars['pagofijo'] = Constants.fixed_payoff
@@ -69,7 +63,8 @@ class Player(BasePlayer):
     manuela = models.BooleanField()#Hermana 2.2
     julia = models.BooleanField()  #Hermana 3.1
     luisa = models.BooleanField()  #Hermana 3.2
-    old = models.BooleanField()  #Hermana 3.2
+    old = models.BooleanField() 
+    info = models.BooleanField()  #info aspirations
     random_draw_pagovariable=models.IntegerField() 
     random_draw_sender=models.IntegerField() 
     pagovariable = models.BooleanField() 
@@ -105,6 +100,11 @@ class Player(BasePlayer):
         self.old =random.choice([True, False])
         self.participant.vars['old'] =self.old
         return self.old
+    
+    def get_info(self):
+        self.info =random.choice([True, False])
+        self.participant.vars['info'] =self.info
+        return self.info
 
     def get_pagovariable(self):
         self.random_draw_pagovariable = random.randint(1, 100)

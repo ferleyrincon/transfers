@@ -268,7 +268,7 @@ class Player(BasePlayer):
         [3,'Entre $ 1.500.000 - $ 2.000.000'],
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
         [5,'Mayor a $ 4.000.000']
-    ], label="7. ¿Cuál es el nivel educativo más alto que aspira alcancen sus hijos?")
+    ], label="7. ¿Cuál es el rango de su ingreso mensual que aspira reciban sus hijos?")
 
     A8 = models.IntegerField(
     choices=[
@@ -278,6 +278,6 @@ class Player(BasePlayer):
         [4,'Técnico o Tecnólogo'],
         [5,'Pregrado'],
         [6,'Posgrado (Especialización, Maestría, Doctorado)'],
-    ], label="8. ¿Cuál es el rango de su ingreso mensual que aspira reciban sus hijos?")
+    ], label="8. ¿Cuál es el nivel educativo más alto que aspira alcancen sus hijos?")
 
     A9 = models.IntegerField(label="9. ¿Cuántos años le gustaría vivir?")
