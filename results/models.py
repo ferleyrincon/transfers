@@ -210,6 +210,74 @@ class Player(BasePlayer):
         [6,'Preparando a los hijos para que puedan ayudarlos en su vejez'],
         [7,'Nada'],
     ], label="¿Qué están haciendo (hicieron) sus padres para mantenerse económicamente en la vejez?")
+    
+    A1 = models.IntegerField(
+    choices=[
+        [1,'Muy malo'],
+        [2,'Malo'],
+        [3,'Regular'],
+        [4,'Bueno'],
+        [5,'Excelente'],
+    ], label="1. A los 65 años, ¿cómo aspira se su estado de salud?")
 
-    def payoff_complete(self):
-        self.pago_total =  self.participant.vars['payoff_complete']+(self.participant.vars["icl_pago"]*100)
+    A2 = models.IntegerField(
+    choices=[
+        [1,'Actividades laborales'],
+        [2,'Jubilación ó pensión'],
+        [3,'Hijos'],
+        [4,'Familiares'],
+        [5,'Subsidios del gobierno'],
+        [6,'Ingresos de inversiones (por ejemplo, arriendos)'],
+        [7,'Ahorros'],
+    ], label="2. A los 65 años, ¿Cuál aspira sea su principal fuente de ingreso?")
+
+    A3_1 = models.IntegerField(label="3.1. A los 65 años, ¿Cuál aspira que sea su ingreso mensual?")
+    A3_2 = models.IntegerField(label="3.2. A los 65 años, ¿Cuántas horas a la semana aspira trabajar?")
+    A3_3 = models.IntegerField(label="3.3. A los 65 años, ¿Cuánto dinero espera recibir de sus hijos al mes?")
+    A3_4 = models.IntegerField(label="3.4. A los 65 años, ¿Cuántas horas de ayuda a la semana espera recibir de sus hijos?")
+
+    A4 = models.IntegerField(
+    choices=[
+        [1,'Casa propia'],
+        [2,'Casa en arriendo'],
+        [3,'Casa de un familiar'],
+        [4,'Hogar geriátrico público'],
+        [5,'Hogar geriátrico privado'],
+    ], label="4. A los 65 años, ¿Dónde aspira vivir?")
+
+    A5 = models.IntegerField(
+    choices=[
+        [1,'Zona urbana'],
+        [2,'Zona rural'],
+    ], label="5. A los 65 años, ¿En qué zona aspira vivir?")
+
+    A6 = models.IntegerField(
+    choices=[
+        [1,'Solo (a)'],
+        [2,'Con su pareja'],
+        [3,'Con alguno de sus hijos'],
+        [4,'Con otro familiar'],
+        [5,'Con conocidos'],
+        [6,'Otro'],
+    ], label="6. A los 65 años, ¿Con quién le gustaría vivir?")
+
+    A7 = models.IntegerField(
+    choices=[
+        [1,'Menos del Salario Mínimo Mensual (SMMLV)'],
+        [2,'Entre 1 SMMLV - $ 1.500.000'],
+        [3,'Entre $ 1.500.000 - $ 2.000.000'],
+        [4,'Entre $ 2.000.000 - $ 4.000.000'],
+        [5,'Mayor a $ 4.000.000']
+    ], label="7. ¿Cuál es el nivel educativo más alto que aspira alcancen sus hijos?")
+
+    A8 = models.IntegerField(
+    choices=[
+        [1,'Ninguno'],
+        [2,'Primaria'],
+        [3,'Bachillerato'],
+        [4,'Técnico o Tecnólogo'],
+        [5,'Pregrado'],
+        [6,'Posgrado (Especialización, Maestría, Doctorado)'],
+    ], label="8. ¿Cuál es el rango de su ingreso mensual que aspira reciban sus hijos?")
+
+    A9 = models.IntegerField(label="9. ¿Cuántos años le gustaría vivir?")

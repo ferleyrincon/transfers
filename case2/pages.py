@@ -80,4 +80,9 @@ class p10(Page):
             'julia' : self.participant.vars['julia'],
             'luisa' : self.participant.vars['luisa']
         }
-page_sequence = [case2, p4, p5, p6, p7, case3, p8, p9, p10]
+
+class p11(Page):
+    form_model = 'player'
+    form_fields = ['p11_1','p11_2']
+
+page_sequence = [case2, p4, p5, p6, p7, case3, p8, p9, p10, p11]

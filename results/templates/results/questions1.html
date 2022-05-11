@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-Encuesta
+Aspiraciones
 {% endblock %}
 
 {% block scripts %}
@@ -11,6 +11,8 @@ Encuesta
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
+=======
 <h4>Preguntas sobre su disposición a actuar de una determinada manera.</h4>
 <br/><span> En una escala del 0 al 5, donde <b>0</b> significa que "no está nada dispuesto(a) " y <b>5</b> significa que "está muy dispuesto(a)", por favor diga: </span>
     <br/>
@@ -271,19 +273,9 @@ Encuesta
     </td>
   </tr>
  </table>
+>>>>>>> 05c6b32c3555645253dd2666f1fa2d4fc5058be1
 
- <br/><span>¿Qué está haciendo usted actualmente para mantenerse económicamente en su vejez?</span>
- <select class="form-select" aria-label="selectPension" name="p_pension">
-     <option selected>Seleccione</option>
-     <option value="1">Aportando en un fondo de pensiones obligatorias</option>
-     <option value="2">Aportando en un fondo de pensiones voluntarias (por ejemplo, BEPS)</option>
-     <option value="3">Ahorrando</option>
-     <option value="4">Haciendo inversiones</option>
-     <option value="5">Pagando un seguro por su cuenta</option>
-     <option value="6">Preparando a sus hijos para que puedan ayudarlo en su vejez</option>
-     <option value="7">Nada</option>
- </select>
- <p></p>
+{% formfields %}
 
 {% next_button %}
 
