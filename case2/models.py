@@ -57,3 +57,6 @@ class Player(BasePlayer):
     p10_1 = models.IntegerField()
 
     p10_2 =  models.StringField()
+
+    p11_1 = models.IntegerField()
+    p11_2 =  models.StringField()
