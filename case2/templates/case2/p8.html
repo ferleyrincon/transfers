@@ -3,10 +3,30 @@
 {% load i18n %}
 
 {% block title %}
-    {% trans "Pregunta 8" %}
+    {% trans "Resumen Caso 3" %}
 {% endblock %}
 
 {% block content %}
+<p>El único ahorro que tienen los padres de {% if julia %}Julia{% else %}Julio{% endif %} y {% if luisa %}Luisa{% else %}Luis{% endif %} es una casa que vale 200 millones y corresponde al total de la herencia que podrían dejarle a sus 
+    {% if julia %}
+    {% if luisa %}
+    hijas.
+    {% else %}
+    hijos.
+    {% endif %}
+    {% else %}
+    hijos.   
+    {% endif %} 
+
+    <ul>
+        <li>Si los padres fallecieran sin vender la casa, cada hijo recibiría un poco menos de 100 millones.</li>
+        <li>Si venden la casa, los padres obtienen el dinero que necesitan para solventar sus necesidades. Sin embargo, seguirían necesitando la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas.</li>
+      </ul>
+</p>
+
+
+
+<h3 class="intermedio">Pregunta 8</h3>
 <p>Si los padres deciden vender la casa ¿A quién deberían vendérsela?</p>
 <div class="wrapper">
     <p>           

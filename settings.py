@@ -35,7 +35,13 @@ LANGUAGE_CODE = 'es'
 REAL_WORLD_CURRENCY_CODE = 'COP'
 USE_POINTS = False
 
-ROOMS = []
+ROOMS = [
+    dict(
+        name='NSS',
+        display_name='NSS',
+        participant_label_file='_rooms/Participantes_NSS.txt',
+    ),
+]
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
