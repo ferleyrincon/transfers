@@ -109,8 +109,9 @@ input[type="radio"] {
 
 .td_slider{
     text-align: center;
-    width: 46%;
-    min-width: 250px;
+    width: 60%;
+    min-width: 350px;
+    max-width: 850px;
     padding: 10px;
 }
 
@@ -218,4 +219,14 @@ input[type="radio"]{
     width: 100%;
     margin-bottom: 10px;
     height: 100px;
+}
+
+.form-check-label{
+    position: relative;
+    left: -17px;
+    top: -5px;
+}
+
+.td_q{
+    vertical-align: middle;
 }

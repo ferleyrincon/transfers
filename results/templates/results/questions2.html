@@ -5,12 +5,18 @@
 Encuesta
 {% endblock %}
 
+{% block scripts %}
+    <!-- custom style sheet-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <h4>Preguntas sobre su disposición a actuar de una determinada manera.</h4>
 <br/><span> En una escala del 1 al 5, donde <b>1</b> significa que "no está nada dispuesto(a) " y <b>5</b> significa que "está muy dispuesto(a)", por favor diga: </span>
     <br/>
 <table class="table">
    <tr>
+<<<<<<< HEAD
      <td >¿Qué tan dispuesto (a) está o no está usted a tomar riesgos?</td>
      <td class="d-flex">
          <div class="form-check">
@@ -31,11 +37,34 @@ Encuesta
          </div>
          <div class="form-check">
              <input class="form-check-input" type="radio" name="p_risk" id="op5" value="5">
+=======
+     <td class="td_q">Los hombres son mejores en matemáticas que las mujeres.</td>
+     <td class="d-flex">
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women1" id="op1" value="1"><br>
+             <label class="form-check-label" for="op1">1</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women1" id="op2" value="2"><br>
+             <label class="form-check-label" for="op2">2</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women1" id="op3" value="3"><br>
+             <label class="form-check-label" for="op3">3</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women1" id="op4" value="4"><br>
+             <label class="form-check-label" for="op4">4</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women1" id="op5" value="5"><br>
+>>>>>>> 05c6b32c3555645253dd2666f1fa2d4fc5058be1
              <label class="form-check-label" for="op5">5</label>
          </div>
      </td>
    </tr>
    <tr>
+<<<<<<< HEAD
      <td >¿Qué tan dispuesto está a renunciar a algo que es beneficioso para usted en este momento a fin de obtener mayores beneficios en el futuro?</td>
      <td class="d-flex">
          <div class="form-check">
@@ -56,11 +85,34 @@ Encuesta
          </div>
          <div class="form-check">
              <input class="form-check-input" type="radio" name="p_time" id="op5" value="5">
+=======
+     <td class="td_q">Una madre que trabaja puede formar una relación tan cálida y segura con sus hijos como una madre que no trabaja.</td>
+     <td class="d-flex">
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women2" id="op1" value="1"><br>
+             <label class="form-check-label" for="op1">1</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women2" id="op2" value="2"><br>
+             <label class="form-check-label" for="op2">2</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women2" id="op3" value="3"><br>
+             <label class="form-check-label" for="op3">3</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women2" id="op4" value="4"><br>
+             <label class="form-check-label" for="op4">4</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women2" id="op5" value="5"><br>
+>>>>>>> 05c6b32c3555645253dd2666f1fa2d4fc5058be1
              <label class="form-check-label" for="op5">5</label>
          </div>
      </td>
    </tr>
    <tr>
+<<<<<<< HEAD
      <td >¿Qué tan dispuesto está a castigar a alguien que lo(a) trata injustamente, incluso cuando existan riesgos de sufrir consecuencias?</td>
      <td class="d-flex">
          <div class="form-check">
@@ -81,11 +133,34 @@ Encuesta
          </div>
          <div class="form-check">
              <input class="form-check-input" type="radio" name="p_you" id="op5" value="5">
+=======
+     <td class="td_q">Ambos, el hombre y la mujer, deberían contribuir al ingreso del hogar.</td>
+     <td class="d-flex">
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women3" id="op1" value="1"><br>
+             <label class="form-check-label" for="op1">1</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women3" id="op2" value="2"><br>
+             <label class="form-check-label" for="op2">2</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women3" id="op3" value="3"><br>
+             <label class="form-check-label" for="op3">3</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women3" id="op4" value="4"><br>
+             <label class="form-check-label" for="op4">4</label>
+         </div>
+         <div class="form-check">
+             <input class="form-check-input" type="radio" name="p_women3" id="op5" value="5"><br>
+>>>>>>> 05c6b32c3555645253dd2666f1fa2d4fc5058be1
              <label class="form-check-label" for="op5">5</label>
          </div>
      </td>
    </tr>
    <tr>
+<<<<<<< HEAD
     <td >¿Qué tan dispuesto(a) está a castigar a alguien que trata a los demás injustamente, incluso cuando exista el riesgo de sufrir consecuencias?</td>
     <td class="d-flex">
         <div class="form-check">
@@ -106,11 +181,34 @@ Encuesta
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="p_others" id="op5" value="5">
+=======
+    <td class="td_q">El deber de un hombre es ganar dinero, el deber de la mujer es cuidar del hogar y la familia.</td>
+    <td class="d-flex">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women4" id="op1" value="1"><br>
+            <label class="form-check-label" for="op1">1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women4" id="op2" value="2"><br>
+            <label class="form-check-label" for="op2">2</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women4" id="op3" value="3"><br>
+            <label class="form-check-label" for="op3">3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women4" id="op4" value="4"><br>
+            <label class="form-check-label" for="op4">4</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women6" id="op5" value="5"><br>
+>>>>>>> 05c6b32c3555645253dd2666f1fa2d4fc5058be1
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
   </tr>
   <tr>
+<<<<<<< HEAD
     <td >¿Qué tan dispuesto(a) está a hacer donaciones a causas benéficas sin esperar nada a cambio?</td>
     <td class="d-flex">
         <div class="form-check">
@@ -131,6 +229,103 @@ Encuesta
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="p_altruism" id="op5" value="5">
+=======
+    <td class="td_q">Las mujeres son mejores para el trabajo doméstico que los hombres.</td>
+    <td class="d-flex">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women5" id="op1" value="1"><br>
+            <label class="form-check-label" for="op1">1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women5" id="op2" value="2"><br>
+            <label class="form-check-label" for="op2">2</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women5" id="op3" value="3"><br>
+            <label class="form-check-label" for="op3">3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women5" id="op4" value="4"><br>
+            <label class="form-check-label" for="op4">4</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women5" id="op5" value="5"><br>
+            <label class="form-check-label" for="op5">5</label>
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="td_q">El esposo debe tomar las decisiones relacionadas con la vida de la esposa.</td>
+    <td class="d-flex">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women6" id="op1" value="1"><br>
+            <label class="form-check-label" for="op1">1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women6" id="op2" value="2"><br>
+            <label class="form-check-label" for="op2">2</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women6" id="op3" value="3"><br>
+            <label class="form-check-label" for="op3">3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women6" id="op4" value="4"><br>
+            <label class="form-check-label" for="op4">4</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women6" id="op5" value="5"><br>
+            <label class="form-check-label" for="op5">5</label>
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="td_q">La cabeza del hogar debe ser el hombre.</td>
+    <td class="d-flex">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women7" id="op1" value="1"><br>
+            <label class="form-check-label" for="op1">1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women7" id="op2" value="2"><br>
+            <label class="form-check-label" for="op2">2</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women7" id="op3" value="3"><br>
+            <label class="form-check-label" for="op3">3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women7" id="op4" value="4"><br>
+            <label class="form-check-label" for="op4">4</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women7" id="op5" value="5"><br>
+            <label class="form-check-label" for="op5">5</label>
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="td_q">Los hombres son mejores para manejar el dinero que las mujeres..</td>
+    <td class="d-flex">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women8" id="op1" value="1"><br>
+            <label class="form-check-label" for="op1">1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women8" id="op2" value="2"><br>
+            <label class="form-check-label" for="op2">2</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women8" id="op3" value="3"><br>
+            <label class="form-check-label" for="op3">3</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women8" id="op4" value="4"><br>
+            <label class="form-check-label" for="op4">4</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="p_women8" id="op5" value="5"><br>
+>>>>>>> 05c6b32c3555645253dd2666f1fa2d4fc5058be1
             <label class="form-check-label" for="op5">5</label>
         </div>
     </td>
