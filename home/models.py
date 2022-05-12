@@ -120,8 +120,10 @@ class Player(BasePlayer):
             self.random_draw_sender = random.randint(1, 100)
             if self.random_draw_sender <= Constants.likelihood_sender:
                 self.sender = True
+            else:
+                self.sender = False
         else:
-            self.sender = False
+                self.sender = False
         self.participant.vars['sender'] =self.sender
         return self.sender
     

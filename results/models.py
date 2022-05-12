@@ -79,11 +79,12 @@ class Player(BasePlayer):
     ], label="9. ¿A qué régimen de seguridad social en salud pertenece?")
     p_inc = models.IntegerField(
     choices=[
-        [1,'Menos del Salario Mínimo Mensual (SMMLV)'],
-        [2,'Entre 1 SMMLV - $ 1.500.000'],
+        [1,'Menos de $ 1.000.000'],
+        [2,'Entre $ 1.000.000 - $ 1.500.000'],
         [3,'Entre $ 1.500.000 - $ 2.000.000'],
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
-        [5,'Mayor a $ 4.000.000'],
+        [5,'Entre $ 4.000.000 - $ 8.000.000'],
+        [6,'Mayor a $ 8.000.000'],
     ], label="8. ¿Cuál es el rango de su ingreso mensual?")
 
     p_pc = models.IntegerField(
@@ -218,11 +219,12 @@ class Player(BasePlayer):
 
     A1_2 = models.IntegerField(
     choices=[
-        [1,'Menos del Salario Mínimo Mensual (SMMLV)'],
-        [2,'Entre 1 SMMLV - $ 1.500.000'],
+        [1,'Menos de $ 1.000.000'],
+        [2,'Entre $ 1.000.000 - $ 1.500.000'],
         [3,'Entre $ 1.500.000 - $ 2.000.000'],
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
-        [5,'Mayor a $ 4.000.000']
+        [5,'Entre $ 4.000.000 - $ 8.000.000'],
+        [6,'Mayor a $ 8.000.000'],
     ], label="1.2 A los 65 años, ¿Cuál le gustaría que sea el rango de su ingreso mensual?")
 
     A2_1 = models.CurrencyField(label="2.1. A los 65 años, ¿Cuál le gustaría que sea su ingreso mensual?")
@@ -251,11 +253,12 @@ class Player(BasePlayer):
 
     A5 = models.IntegerField(
     choices=[
-        [1,'Menos del Salario Mínimo Mensual (SMMLV)'],
-        [2,'Entre 1 SMMLV - $ 1.500.000'],
+        [1,'Menos de $ 1.000.000'],
+        [2,'Entre $ 1.000.000 - $ 1.500.000'],
         [3,'Entre $ 1.500.000 - $ 2.000.000'],
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
-        [5,'Mayor a $ 4.000.000']
+        [5,'Entre $ 4.000.000 - $ 8.000.000'],
+        [6,'Mayor a $ 8.000.000'],
     ], label="5. ¿Cuál es el rango de su ingreso mensual que le gustaría reciban sus hijos?")
 
     A6 = models.IntegerField(
