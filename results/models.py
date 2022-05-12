@@ -215,7 +215,7 @@ class Player(BasePlayer):
         [5,'Subsidios del gobierno'],
         [6,'Ingresos de inversiones (por ejemplo, arriendos)'],
         [7,'Ahorros'],
-    ], label="1.1 A los 65 años, ¿Cuál le gustaría sea su principal fuente de ingreso?")
+    ], label="1.1 A los 65 años, ¿Cuál le gustaría que sea su principal fuente de ingreso?")
 
     A1_2 = models.IntegerField(
     choices=[
