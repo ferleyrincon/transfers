@@ -40,7 +40,7 @@ class p6(Page):
 
 class p7(Page):
     form_model = 'player'
-    form_fields = ['p7_1','check_slider_p7_1','p7_2']
+    form_fields = ['p7','check_slider_p7']
     def vars_for_template(self): 
         return {
             'daniela' : self.participant.vars['daniela'],
@@ -74,7 +74,7 @@ class p9(Page):
 
 class p10(Page):
     form_model = 'player'
-    form_fields = ['p10_1','p10_2']
+    form_fields = ['p10']
     def vars_for_template(self): 
         return {
             'julia' : self.participant.vars['julia'],

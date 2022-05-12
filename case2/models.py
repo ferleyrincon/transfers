@@ -43,9 +43,8 @@ class Player(BasePlayer):
     p6 =  models.IntegerField()
     check_slider_p6 =  models.IntegerField()
 
-    p7_1 =  models.IntegerField()
-    check_slider_p7_1 =  models.IntegerField()
-    p7_2 =  models.StringField()
+    p7 =  models.IntegerField()
+    check_slider_p7 =  models.IntegerField()
 
     p8 = models.IntegerField()
     p8_1 = models.IntegerField()
@@ -54,9 +53,7 @@ class Player(BasePlayer):
     p9=  models.IntegerField()
     check_slider_p9 =  models.IntegerField()
 
-    p10_1 = models.IntegerField()
-
-    p10_2 =  models.StringField()
+    p10 = models.IntegerField()
 
     p11_1 = models.IntegerField()
     p11_2 =  models.StringField()

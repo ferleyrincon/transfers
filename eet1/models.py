@@ -32,8 +32,6 @@ class Subsession(BaseSubsession):
             j.set_choice_eet()
             j.set_payoffA_eet()
 
-
-
 # ******************************************************************************************************************** #
 # *** CLASS GROUP
 # ******************************************************************************************************************** #
@@ -48,18 +46,16 @@ class Player(BasePlayer):
 
     # add model fields to class player
     # ----------------------------------------------------------------------------------------------------------------
-    random_draw = models.IntegerField()
     payoff_relevant = models.StringField()
     payoffA = models.CurrencyField()
     choice = models.StringField()
-    switching_row = models.IntegerField()
+    switching_row_1 = models.IntegerField()
 
     # set sure payoff for next choice
     # ----------------------------------------------------------------------------------------------------------------
     def set_choice_eet(self):
         if (self.round_number==self.participant.vars['eet_round_to_pay']):
-            self.participant.vars['eet_choice']= self.choice
-        
+            self.participant.vars['eet_choice']= self.choice     
 
     def set_payoffA_eet(self):
         if (self.round_number==self.participant.vars['eet_round_to_pay']):
@@ -87,6 +83,10 @@ class Player(BasePlayer):
                 )
             else:
                 pass
+
+        # implied switching row
+        # --------------------------------------------------------------------------------------------------------
+        self.in_round(3).switching_row_1 = self.participant.vars['icl_switching_row_1']
 
     # update implied switching row each round
     # ----------------------------------------------------------------------------------------------------------------

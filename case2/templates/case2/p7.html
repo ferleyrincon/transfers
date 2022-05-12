@@ -100,14 +100,14 @@
         {% endif %}.</i>
     </p>
         <!--slider --> 
-        {{ form.check_slider_p7_1.errors }}
+        {{ form.check_slider_p7.errors }}
         <div class="card_table" id="h-slider-div" style="text-align: center;">
             <table class="table_question">
                 <tr>
                     <td class="text_slider"><b id="d_pa"> - </b></td>
                     <td class="td_slider" rowspan="2">
-                        <input type="range" name="p7_1" value="" min="0" max="600000" step="10000" id="sliderDinero_p7" class="slider_dinero" required>
-                        <input type="hidden" name="check_slider_p7_1" value="" id="id_check_slider_p7_1"/>
+                        <input type="range" name="p7" value="" min="0" max="600000" step="10000" id="sliderDinero_p7" class="slider_dinero" required>
+                        <input type="hidden" name="check_slider_p7" value="" id="id_check_slider_p7"/>
                     </td>
                     <td class="text_slider"><b id="d_pb"> - </b></td>
                 </tr>
@@ -137,8 +137,5 @@
                 {% else %}
                     hijo.    
                 {% endif %}</p>
-
-    <p><span style="color: #ff0000;">Escriba una frase para justificar su respuesta:</span></p>
-        <textarea name="p7_2" id="p7_2" class="form-control text_input" placeholder="Coloque una frase aquí por favor" required></textarea>
     {% next_button %} 
     {% endblock %}

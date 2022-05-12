@@ -89,8 +89,9 @@ class Player(BasePlayer):
     p_pc = models.IntegerField(
     choices=[
         [1,'Portátil'],
-        [2,'Equipo de escritorio']
-    ], label="10. ¿Qué tipo de computador usó durante la actividad?")
+        [2,'Equipo de escritorio'],
+        [3,'Tableta']
+    ], label="10. ¿Qué tipo de equipo usó durante la actividad?")
 
     p_daughter = models.IntegerField(label="11.1. Número de hijas")
     p_son = models.IntegerField(label="11.2. Número de hijos ")
@@ -100,10 +101,11 @@ class Player(BasePlayer):
 
     p_parents = models.IntegerField(
     choices=[
-        [1, 'Fallecieron'],
-        [2, 'Viven en su misma casa'],
-        [3, 'Viven en una casa en la misma ciudad'],
-        [4, 'Viven en otra ciudad'],
+        [1, 'Falleció uno'],
+        [2, 'Fallecieron ambos'],
+        [3, 'Viven en su misma casa'],
+        [4, 'Viven en una casa en la misma ciudad'],
+        [5, 'Viven en otra ciudad'],
     ], label="13. Sus padres:")
 
     p_mother_age= models.IntegerField(label="15.1. ¿Cuántos años tiene(alcanzó) su papá?")
@@ -121,29 +123,21 @@ class Player(BasePlayer):
                                        )
     p_women2 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Una madre que trabaja puede formar una relación tan cálida y segura con sus hijos como una madre que no trabaja."
+                                       verbose_name="Ambos, el hombre y la mujer, deberían contribuir al ingreso del hogar. "
                                        )
     p_women3 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Ambos, el hombre y la mujer, deberían contribuir al ingreso del hogar. "
+                                       verbose_name="El deber de un hombre es ganar dinero, el deber de la mujer es cuidar del hogar y la familia."
                                        )
     p_women4 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="El deber de un hombre es ganar dinero, el deber de la mujer es cuidar del hogar y la familia."
+                                       verbose_name="Las mujeres son mejores para el trabajo doméstico que los hombres."
                                        )
     p_women5 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Las mujeres son mejores para el trabajo doméstico que los hombres."
-                                       )
-    p_women6 = models.PositiveIntegerField(choices=[1,2,3,4,5],
-                                       widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="El esposo debe tomar las decisiones relacionadas con la vida de la esposa."
-                                       )
-    p_women7 = models.PositiveIntegerField(choices=[1,2,3,4,5],
-                                       widget=widgets.RadioSelectHorizontal(),
                                        verbose_name="La cabeza del hogar debe ser el hombre."
                                        )
-    p_women8 = models.PositiveIntegerField(choices=[1,2,3,4,5],
+    p_women6 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
                                        verbose_name="Los hombres son mejores para manejar el dinero que las mujeres"
                                        )
@@ -174,7 +168,7 @@ class Player(BasePlayer):
                                        )
     p_inequality = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Si me tratan muy injustamente, tomaré revancha en la primera ocasión, incluso aunque deba pagar un costo por ello."
+                                       verbose_name="Si me tratan muy injustamente, tomaré revancha en la primera ocasión, incluso cuando deba pagar un costo por ello."
                                        )
     p_beliefs = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
@@ -213,15 +207,6 @@ class Player(BasePlayer):
     
     A1 = models.IntegerField(
     choices=[
-        [1,'Muy malo'],
-        [2,'Malo'],
-        [3,'Regular'],
-        [4,'Bueno'],
-        [5,'Excelente'],
-    ], label="1. A los 65 años, ¿cómo aspira se su estado de salud?")
-
-    A2 = models.IntegerField(
-    choices=[
         [1,'Actividades laborales'],
         [2,'Jubilación ó pensión'],
         [3,'Hijos'],
@@ -229,29 +214,23 @@ class Player(BasePlayer):
         [5,'Subsidios del gobierno'],
         [6,'Ingresos de inversiones (por ejemplo, arriendos)'],
         [7,'Ahorros'],
-    ], label="2. A los 65 años, ¿Cuál aspira sea su principal fuente de ingreso?")
+    ], label="1. A los 65 años, ¿Cuál le gustaría sea su principal fuente de ingreso?")
 
-    A3_1 = models.IntegerField(label="3.1. A los 65 años, ¿Cuál aspira que sea su ingreso mensual?")
-    A3_2 = models.IntegerField(label="3.2. A los 65 años, ¿Cuántas horas a la semana aspira trabajar?")
-    A3_3 = models.IntegerField(label="3.3. A los 65 años, ¿Cuánto dinero espera recibir de sus hijos al mes?")
-    A3_4 = models.IntegerField(label="3.4. A los 65 años, ¿Cuántas horas de ayuda a la semana espera recibir de sus hijos?")
+    A2_1 = models.IntegerField(label="2.1. A los 65 años, ¿Cuál le gustaría que sea su ingreso mensual?")
+    A2_2 = models.IntegerField(label="2.2. A los 65 años, ¿Cuántas horas a la semana le gustaría trabajar?")
+    A2_3 = models.IntegerField(label="2.3. A los 65 años, ¿Cuánto dinero al mes le gustaría recibir de sus hijos?")
+    A2_4 = models.IntegerField(label="2.4. A los 65 años, ¿Cuántas horas de ayuda a la semana le gustaría recibir de sus hijos?")
 
-    A4 = models.IntegerField(
+    A3 = models.IntegerField(
     choices=[
         [1,'Casa propia'],
         [2,'Casa en arriendo'],
         [3,'Casa de un familiar'],
         [4,'Hogar geriátrico público'],
         [5,'Hogar geriátrico privado'],
-    ], label="4. A los 65 años, ¿Dónde aspira vivir?")
+    ], label="3. A los 65 años, ¿Dónde le gustaría vivir?")
 
-    A5 = models.IntegerField(
-    choices=[
-        [1,'Zona urbana'],
-        [2,'Zona rural'],
-    ], label="5. A los 65 años, ¿En qué zona aspira vivir?")
-
-    A6 = models.IntegerField(
+    A4 = models.IntegerField(
     choices=[
         [1,'Solo (a)'],
         [2,'Con su pareja'],
@@ -259,18 +238,18 @@ class Player(BasePlayer):
         [4,'Con otro familiar'],
         [5,'Con conocidos'],
         [6,'Otro'],
-    ], label="6. A los 65 años, ¿Con quién le gustaría vivir?")
+    ], label="4. A los 65 años, ¿Con quién le gustaría vivir?")
 
-    A7 = models.IntegerField(
+    A5 = models.IntegerField(
     choices=[
         [1,'Menos del Salario Mínimo Mensual (SMMLV)'],
         [2,'Entre 1 SMMLV - $ 1.500.000'],
         [3,'Entre $ 1.500.000 - $ 2.000.000'],
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
         [5,'Mayor a $ 4.000.000']
-    ], label="7. ¿Cuál es el rango de su ingreso mensual que aspira reciban sus hijos?")
+    ], label="5. ¿Cuál es el rango de su ingreso mensual que le gustaría reciban sus hijos?")
 
-    A8 = models.IntegerField(
+    A6 = models.IntegerField(
     choices=[
         [1,'Ninguno'],
         [2,'Primaria'],
@@ -278,6 +257,4 @@ class Player(BasePlayer):
         [4,'Técnico o Tecnólogo'],
         [5,'Pregrado'],
         [6,'Posgrado (Especialización, Maestría, Doctorado)'],
-    ], label="8. ¿Cuál es el nivel educativo más alto que aspira alcancen sus hijos?")
-
-    A9 = models.IntegerField(label="9. ¿Cuántos años le gustaría vivir?")
+    ], label="6. ¿Cuál es el nivel educativo más alto que le gustaría alcancen sus hijos?")

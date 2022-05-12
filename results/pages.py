@@ -6,7 +6,7 @@ import string
 
 class questions1(Page):
     form_model = 'player'
-    form_fields = ['A1','A2','A3_1','A3_2','A3_3','A3_4','A4','A5','A6','A7','A8','A9'] 
+    form_fields = ['A1','A2_1','A2_2','A2_3','A2_4','A3','A4','A5','A6'] 
 
     def vars_for_template(self): 
         return {
@@ -22,7 +22,7 @@ class questions2(Page):
 
 class questions3(Page):
     form_model = 'player'
-    form_fields = ['p_women1','p_women2','p_women3','p_women4','p_women5','p_women6','p_women7','p_women8','p_pension2'] 
+    form_fields = ['p_women1','p_women2','p_women3','p_women4','p_women5','p_women6','p_pension2'] 
 
 class questions4(Page):
     form_model = 'player'

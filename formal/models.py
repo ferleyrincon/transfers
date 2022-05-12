@@ -95,8 +95,8 @@ class Player(BasePlayer):
             # randomly determine which choice to pay
             # --------------------------------------------------------------------------------------------------------
             completed_choices = len(self.participant.vars['icl_sure_payoffs_p3'])
-            self.participant.vars['icl_choice_to_pay'] = random.randint(1, completed_choices)
-            choice_to_pay = self.participant.vars['icl_choice_to_pay']
+            self.participant.vars['icl_choice_to_pay_p3'] = random.randint(1, completed_choices)
+            choice_to_pay = self.participant.vars['icl_choice_to_pay_p3']
 
             # determine whether the lottery or sure payoff is relevant for payment
             # --------------------------------------------------------------------------------------------------------

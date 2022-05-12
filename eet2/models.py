@@ -46,17 +46,14 @@ class Player(BasePlayer):
 
     # add model fields to class player
     # ----------------------------------------------------------------------------------------------------------------
-    random_draw = models.IntegerField()
-    sender= models.IntegerField()
     payoff_relevant = models.StringField()
     payoffA = models.CurrencyField()
     payoff_s = models.CurrencyField()
     payoff_r = models.CurrencyField()
     choice = models.StringField()
-    choice_to_pay = models.IntegerField()
-    switching_row = models.IntegerField()
+    switching_row_2 = models.IntegerField()
     situation = models.IntegerField()
-    payoff_total = models.IntegerField()
+    payoff_total = models.CurrencyField()
     payoff_resignation = models.IntegerField()
     payoff_otherPlayer = models.IntegerField()
 
@@ -119,18 +116,6 @@ class Player(BasePlayer):
         # ------------------------------------------------------------------------------------------------------------
         if current_round == Constants.num_rounds or current_choice == 'I':
 
-            # randomly determine which choice to pay
-            # --------------------------------------------------------------------------------------------------------
-            completed_choices = len(self.participant.vars['icl_payoffA_2'])
-            self.participant.vars['icl_choice_to_pay'] = random.randint(1,completed_choices)
-            choice_to_pay = self.participant.vars['icl_choice_to_pay']
-
-            # determine whether the Option A or Option B is relevant for payment
-            # --------------------------------------------------------------------------------------------------------
-            self.in_round(choice_to_pay).payoff_relevant = random.choice(['A','B']) \
-                if self.in_round(choice_to_pay).choice == 'I' \
-                else self.in_round(choice_to_pay).choice
-
             # set player's payoff
             # --------------------------------------------------------------------------------------------------------
             if self.participant.vars['eet_choice'] == 'A':
@@ -150,8 +135,9 @@ class Player(BasePlayer):
 
             # implied switching row
             # --------------------------------------------------------------------------------------------------------
-            self.in_round(choice_to_pay).switching_row = self.participant.vars['icl_switching_row_2']
+            self.in_round(3).switching_row_2 = self.participant.vars['icl_switching_row_2']
 
-    def set_payoff_total(self, value):
-        self.payoff_total = value
+            self.payoff_total = self.payoff_r+self.payoff_s
+
+        
 

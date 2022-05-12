@@ -81,7 +81,7 @@ class Results(Page):
     def vars_for_template(self):
 
         # payoff information
-        choice_to_pay = self.participant.vars['icl_choice_to_pay']
+        choice_to_pay = self.participant.vars['icl_choice_to_pay_p1']
         option_to_pay = self.player.in_round(choice_to_pay).choice
         payoff_relevant = self.player.in_round(choice_to_pay).payoff_relevant
         sure_payoff = self.player.participant.vars['icl_sure_payoffs_p1'][choice_to_pay - 1]
