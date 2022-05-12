@@ -2,6 +2,10 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+class device(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
 class consent(Page):
     form_model = 'player'
     form_fields = ['consent','consent_account']
@@ -28,4 +32,4 @@ class case1(Page):
             "camila" : self.participant.vars['camila']
         }
 
-page_sequence = [consent, welcome,case1]
+page_sequence = [device, consent, welcome,case1]

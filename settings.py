@@ -3,14 +3,8 @@ import os
 
 SESSION_CONFIGS = [
     {
-        'name': 'eet2',
-        'display_name': 'eet2',
-        'num_demo_participants': 1, 
-        'app_sequence': ['home','eet1','eet2','results',]
-    },
-    {
-        'name': 'parents',
-        'display_name': 'App',
+        'name': 'transferencias',
+        'display_name': 'Transferencias',
         'num_demo_participants': 1, 
         'app_sequence': ['home','parents','informal','formal','case2','eet1','eet2','results']
     }
@@ -53,13 +47,13 @@ DEMO_PAGE_INTRO_HTML = """"""
 SECRET_KEY = '6k75xea8!xbc+)g%)zu&em-^(#*u38$5h1mu8o8t)7i4k5czsk'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = ['otree' , 'django_user_agents']
 # 
 
 STATIC_URL = '/static/'
 
-#MIDDLEWARE_CLASSES = (
-#    # other middlewares...
-#    'django_user_agents.middleware.UserAgentMiddleware',
-#)
+MIDDLEWARE_CLASSES = (
+    # other middlewares...
+    'django_user_agents.middleware.UserAgentMiddleware',
+)
 

@@ -6,7 +6,7 @@ import string
 
 class questions1(Page):
     form_model = 'player'
-    form_fields = ['A1','A2','A3_1','A3_2','A3_4','A3_4','A4','A5','A6','A7','A8','A9'] 
+    form_fields = ['A1','A2','A3_1','A3_2','A3_3','A3_4','A4','A5','A6','A7','A8','A9'] 
 
     def vars_for_template(self): 
         return {
@@ -39,4 +39,4 @@ class thanks(Page):
             "pagototal" : "$"+format(int(str(self.participant.vars['pagototal']).split(",")[0]),',d')
         }
         
-page_sequence = [questions1,questions2, questions3, thanks]
+page_sequence = [questions1,questions2, questions3, questions4, thanks]
