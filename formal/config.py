@@ -19,13 +19,11 @@ class Constants(BaseConstants):
     num_choices = 4
 
     # lottery payoffs (in currency units set in settings.py)  and probability (in %) for the high lottery outcome
-    # <lottery_hi> and <lottery_lo> define the "high" and "low" outcomes of the lottery ("Option A")
+    # <hours> and <lottery_lo> define the "high" and "low" outcomes of the lottery ("Option A")
     # <probability> determines the likelihood that the lottery pays the "high" outcome as percentage number
-    # thus, <probability = x> implies that the lottery pays <lottery_hi> in <x>% and <lottery_lo> in <100-x>%
+    # thus, <probability = x> implies that the lottery pays <hours> in <x>% and <lottery_lo> in <100-x>%
     # lotttery_hi = horas
-    lottery_hi = 8 
-    lottery_lo = 0
-    probability = 100
+    hours = 8 
 
     # (initial) sure payoff, i.e. the certain payment in the first choice
     # <sure_payoff> defines the certain amount offered as "Option B" in the first of <num_choices> choices

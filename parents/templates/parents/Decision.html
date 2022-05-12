@@ -67,7 +67,11 @@ Camilo
                 <tr>
                     <th>{% trans "Opción A" %}</th>
                     <td>
-                            Encargarse personalmente de ayudar a sus padres durante {{ hi }} horas a la semana.
+                        {% with hours=hours %}
+                            {% blocktrans trimmed %}
+                            Encargarse personalmente de ayudar a sus padres durante {{ hours }} horas a la semana.
+                            {% endblocktrans %}
+                        {% endwith %}
                     </td>
                     <td class="btn_cell">
                         {% if Constants.buttons == True %}

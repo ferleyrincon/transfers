@@ -23,9 +23,7 @@ class Constants(BaseConstants):
     # <probability> determines the likelihood that the lottery pays the "high" outcome as percentage number
     # thus, <probability = x> implies that the lottery pays <lottery_hi> in <x>% and <lottery_lo> in <100-x>%
     # lotttery_hi = horas
-    lottery_hi = 8 
-    lottery_lo = 0
-    probability = 100
+    hours = 8 
 
     # (initial) sure payoff, i.e. the certain payment in the first choice
     # <sure_payoff> defines the certain amount offered as "Option B" in the first of <num_choices> choices

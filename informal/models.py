@@ -41,11 +41,10 @@ class Player(BasePlayer):
 
     # add model fields to class player
     # ----------------------------------------------------------------------------------------------------------------
-    random_draw = models.IntegerField()
     payoff_relevant = models.StringField()
     sure_payoff = models.CurrencyField()
     choice = models.StringField()
-    switching_row = models.IntegerField()
+    switching_row_p2 = models.IntegerField()
 
     # set sure payoff for next choice
     # ----------------------------------------------------------------------------------------------------------------
@@ -99,10 +98,6 @@ class Player(BasePlayer):
             self.participant.vars['icl_choice_to_pay'] = random.randint(1, completed_choices)
             choice_to_pay = self.participant.vars['icl_choice_to_pay']
 
-            # random draw to determine whether to pay the "high" or "low" lottery outcome
-            # --------------------------------------------------------------------------------------------------------
-            self.in_round(choice_to_pay).random_draw = random.randint(1, 100)
-
             # determine whether the lottery or sure payoff is relevant for payment
             # --------------------------------------------------------------------------------------------------------
             self.in_round(choice_to_pay).payoff_relevant = random.choice(['A','B']) \
@@ -112,16 +107,14 @@ class Player(BasePlayer):
             # set player's payoff
             # --------------------------------------------------------------------------------------------------------
             if self.in_round(choice_to_pay).payoff_relevant == 'A':
-                self.in_round(choice_to_pay).payoff = Constants.lottery_hi \
-                    if self.in_round(choice_to_pay).random_draw <= Constants.probability \
-                    else Constants.lottery_lo
+                self.in_round(choice_to_pay).payoff = Constants.hours
             elif self.in_round(choice_to_pay).payoff_relevant == 'B':
                 self.in_round(choice_to_pay).payoff = self.participant.vars['icl_sure_payoffs_p2'][choice_to_pay - 1]
 
             # set payoff as global variable
             # --------------------------------------------------------------------------------------------------------
-            self.participant.vars['icl_payoff'] = self.in_round(choice_to_pay).payoff
+            self.participant.vars['icl_payoff_p2'] = self.in_round(choice_to_pay).payoff
 
             # implied switching row
             # --------------------------------------------------------------------------------------------------------
-            self.in_round(choice_to_pay).switching_row = self.participant.vars['icl_switching_row_p2']
+            self.in_round(choice_to_pay).switching_row_p2 = self.participant.vars['icl_switching_row_p2']

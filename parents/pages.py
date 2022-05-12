@@ -8,10 +8,7 @@ from .models import Constants
 # --------------------------------------------------------------------------------------------------------------------
 def vars_for_all_templates(self):
     return {
-        'p_hi': "{0:.0f}".format(Constants.probability) + "%",
-        'p_lo': "{0:.0f}".format(100 - Constants.probability) + "%",
-        'hi':Constants.lottery_hi,
-        'lo':Constants.lottery_lo
+        'hours':Constants.hours,
     }
 # ******************************************************************************************************************** #
 # *** CLASS INSTRUCTIONS *** #
@@ -66,7 +63,7 @@ class Decision(Page):
     def before_next_page(self):
         self.player.set_sure_payoffs()
         self.player.update_switching_row()
-        #self.player.set_payoffs()
+        self.player.set_payoffs()
 
 
 # ******************************************************************************************************************** #
