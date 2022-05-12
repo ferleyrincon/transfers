@@ -205,7 +205,7 @@ class Player(BasePlayer):
         [7,'Nada'],
     ], label="¿Qué están haciendo (hicieron) sus padres para mantenerse económicamente en la vejez?")
     
-    A1 = models.IntegerField(
+    A1_1 = models.IntegerField(
     choices=[
         [1,'Actividades laborales'],
         [2,'Jubilación ó pensión'],
@@ -214,11 +214,20 @@ class Player(BasePlayer):
         [5,'Subsidios del gobierno'],
         [6,'Ingresos de inversiones (por ejemplo, arriendos)'],
         [7,'Ahorros'],
-    ], label="1. A los 65 años, ¿Cuál le gustaría sea su principal fuente de ingreso?")
+    ], label="1.1 A los 65 años, ¿Cuál le gustaría sea su principal fuente de ingreso?")
 
-    A2_1 = models.IntegerField(label="2.1. A los 65 años, ¿Cuál le gustaría que sea su ingreso mensual?")
+    A1_2 = models.IntegerField(
+    choices=[
+        [1,'Menos del Salario Mínimo Mensual (SMMLV)'],
+        [2,'Entre 1 SMMLV - $ 1.500.000'],
+        [3,'Entre $ 1.500.000 - $ 2.000.000'],
+        [4,'Entre $ 2.000.000 - $ 4.000.000'],
+        [5,'Mayor a $ 4.000.000']
+    ], label="1.2 A los 65 años, ¿Cuál le gustaría que sea el rango de su ingreso mensual?")
+
+    A2_1 = models.CurrencyField(label="2.1. A los 65 años, ¿Cuál le gustaría que sea su ingreso mensual?")
     A2_2 = models.IntegerField(label="2.2. A los 65 años, ¿Cuántas horas a la semana le gustaría trabajar?")
-    A2_3 = models.IntegerField(label="2.3. A los 65 años, ¿Cuánto dinero al mes le gustaría recibir de sus hijos?")
+    A2_3 = models.CurrencyField(label="2.3. A los 65 años, ¿Cuánto dinero al mes le gustaría recibir de sus hijos?")
     A2_4 = models.IntegerField(label="2.4. A los 65 años, ¿Cuántas horas de ayuda a la semana le gustaría recibir de sus hijos?")
 
     A3 = models.IntegerField(
