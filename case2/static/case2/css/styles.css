@@ -97,21 +97,21 @@ input[type="radio"] {
 .text_slider{
     text-align: center;
     color: #0032c8;
-    width: 27%;
-    min-width: 100px;
+    width: 22%;
+    min-width: 120px;
 }
 
 .td_text_slider{
     text-align: center;
-    width: 27%;
-    min-width: 100px;
+    width: 22%;
+    min-width: 120px;
 }
 
 .td_slider{
     text-align: center;
-    width: 60%;
+    width: 56%;
     min-width: 350px;
-    max-width: 850px;
+    max-width: 890px;
     padding: 10px;
 }
 
