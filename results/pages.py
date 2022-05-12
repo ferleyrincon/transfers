@@ -6,7 +6,7 @@ import string
 
 class questions1(Page):
     form_model = 'player'
-    form_fields = ['A1_1','A2_1','A2_1','A2_2','A2_3','A2_4','A3','A4','A5','A6'] 
+    form_fields = ['A1_1','A1_2','A2_1','A2_2','A2_3','A2_4','A3','A4','A5','A6'] 
 
     def vars_for_template(self): 
         return {
