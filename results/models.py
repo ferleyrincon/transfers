@@ -259,7 +259,7 @@ class Player(BasePlayer):
         [4,'Entre $ 2.000.000 - $ 4.000.000'],
         [5,'Entre $ 4.000.000 - $ 8.000.000'],
         [6,'Mayor a $ 8.000.000'],
-    ], label="5. ¿Cuál es el rango de su ingreso mensual que le gustaría reciban sus hijos?")
+    ], label="5. ¿Cuál es el rango de ingreso mensual que le gustaría reciban sus hijos?")
 
     A6 = models.IntegerField(
     choices=[
