@@ -99,7 +99,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.slider_dinero').click(
+    $('.slider_dinero').onchange(
         function (event) {
             var slider_id = event.target.id;
             var parent_slider = document.getElementById(slider_id).parentElement.parentElement;
@@ -123,7 +123,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.slider_tiempo').click(
+    $('.slider_tiempo').onchange(
         function (event) {
             var slider_id = event.target.id;
             var parent_slider = document.getElementById(slider_id).parentElement.parentElement;
