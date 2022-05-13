@@ -94,11 +94,11 @@ class Player(BasePlayer):
         [3,'Tableta']
     ], label="10. ¿Qué tipo de equipo usó durante la actividad?")
 
-    p_daughter = models.IntegerField(label="11.1. Número de hijas")
-    p_son = models.IntegerField(label="11.2. Número de hijos ")
+    p_daughter = models.IntegerField(min=0, max=20, label="11.1. Número de hijas")
+    p_son = models.IntegerField(min=0, max=20, label="11.2. Número de hijos ")
 
-    p_sister = models.IntegerField(label="12.1. Número de hermanas vivas")
-    p_brother= models.IntegerField(label="12.2. Número de hermanos vivos")
+    p_sister = models.IntegerField(min=0, max=20, label="12.1. Número de hermanas vivas")
+    p_brother= models.IntegerField(min=0, max=20, label="12.2. Número de hermanos vivos")
 
     p_parents = models.IntegerField(
     choices=[
@@ -109,8 +109,8 @@ class Player(BasePlayer):
         [5, 'Viven en otra ciudad'],
     ], label="13. Sus padres:")
 
-    p_mother_age= models.IntegerField(label="15.1. ¿Cuántos años tiene(alcanzó) su papá?")
-    p_father_age= models.IntegerField(label="15.2. ¿Cuántos años tiene(alcanzó) su mamá?")
+    p_mother_age= models.IntegerField(min=0, max=150, label="15.1. ¿Cuántos años tiene(alcanzó) su papá?")
+    p_father_age= models.IntegerField(min=0, max=150, label="15.2. ¿Cuántos años tiene(alcanzó) su mamá?")
 
     p_parents_married = models.IntegerField(
     choices=[
@@ -227,10 +227,10 @@ class Player(BasePlayer):
         [6,'Mayor a $ 8.000.000'],
     ], label="1.2 A los 65 años, ¿Cuál le gustaría que sea el rango de su ingreso mensual?")
 
-    A2_1 = models.CurrencyField(label="2.1. A los 65 años, ¿Cuánto le gustaría que sea su ingreso mensual?")
-    A2_2 = models.IntegerField(label="2.2. A los 65 años, ¿Cuántas horas a la semana le gustaría trabajar?")
-    A2_3 = models.CurrencyField(label="2.3. A los 65 años, ¿Cuánto dinero al mes le gustaría recibir de sus hijos?")
-    A2_4 = models.IntegerField(label="2.4. A los 65 años, ¿Cuántas horas de ayuda a la semana le gustaría recibir de sus hijos?")
+    A2_1 = models.CurrencyField(min=c(0), max=c(100000000), label="2.1. A los 65 años, ¿Cuánto le gustaría que sea su ingreso mensual?")
+    A2_2 = models.IntegerField(min=0, max=168, label="2.2. A los 65 años, ¿Cuántas horas a la semana le gustaría trabajar?")
+    A2_3 = models.CurrencyField(min=c(0), max=c(100000000), label="2.3. A los 65 años, ¿Cuánto dinero al mes le gustaría recibir de sus hijos?")
+    A2_4 = models.IntegerField(min=0, max=168, label="2.4. A los 65 años, ¿Cuántas horas de ayuda a la semana le gustaría recibir de sus hijos?")
 
     A3 = models.IntegerField(
     choices=[
