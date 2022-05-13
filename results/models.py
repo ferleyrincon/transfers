@@ -140,7 +140,7 @@ class Player(BasePlayer):
                                        )
     p_women6 = models.PositiveIntegerField(choices=[1,2,3,4,5],
                                        widget=widgets.RadioSelectHorizontal(),
-                                       verbose_name="Los hombres son mejores para manejar el dinero que las mujeres"
+                                       verbose_name="Los hombres son mejores para manejar el dinero que las mujeres."
                                        )
     
     p_risk = models.PositiveIntegerField(choices=[1,2,3,4,5],
@@ -227,7 +227,7 @@ class Player(BasePlayer):
         [6,'Mayor a $ 8.000.000'],
     ], label="1.2 A los 65 años, ¿Cuál le gustaría que sea el rango de su ingreso mensual?")
 
-    A2_1 = models.CurrencyField(label="2.1. A los 65 años, ¿Cuál le gustaría que sea su ingreso mensual?")
+    A2_1 = models.CurrencyField(label="2.1. A los 65 años, ¿Cuánto le gustaría que sea su ingreso mensual?")
     A2_2 = models.IntegerField(label="2.2. A los 65 años, ¿Cuántas horas a la semana le gustaría trabajar?")
     A2_3 = models.CurrencyField(label="2.3. A los 65 años, ¿Cuánto dinero al mes le gustaría recibir de sus hijos?")
     A2_4 = models.IntegerField(label="2.4. A los 65 años, ¿Cuántas horas de ayuda a la semana le gustaría recibir de sus hijos?")
