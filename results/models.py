@@ -270,3 +270,12 @@ class Player(BasePlayer):
         [5,'Pregrado'],
         [6,'Posgrado (Especialización, Maestría, Doctorado)'],
     ], label="6. ¿Cuál es el nivel educativo más alto que le gustaría alcancen sus hijos?")
+
+    def payoff_complete(self):
+        if self.participant.vars['pagovariable']:  
+            if self.participant.vars['sender']:
+                self.pago_total = self.participant.vars['pagototal']
+            else:
+                self.pago_total = self.participant.vars['pagofijo']
+        else:
+            self.pago_total = self.participant.vars['pagofijo']

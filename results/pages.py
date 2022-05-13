@@ -12,6 +12,9 @@ class questions1(Page):
         return {
             "info" : self.participant.vars['info'],
         }
+    
+    def before_next_page(self):
+        self.player.payoff_complete()
 
 class questions2(Page):
     form_model = 'player'

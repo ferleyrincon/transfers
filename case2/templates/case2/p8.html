@@ -19,7 +19,15 @@
     {% endif %} 
 
     <ul>
-        <li>Si los padres fallecieran sin vender la casa, cada hijo recibiría un poco menos de 100 millones.</li>
+        <li>Si los padres fallecieran sin vender la casa, cada {% if julia %}
+            {% if luisa %}
+                hija
+            {% else %}
+                hijo
+            {% endif %}
+            {% else %}
+           hijo   
+            {% endif %} recibiría un poco menos de 100 millones.</li>
         <li>Si venden la casa, los padres obtienen el dinero que necesitan para solventar sus necesidades. Sin embargo, seguirían necesitando la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas.</li>
       </ul>
 </p>

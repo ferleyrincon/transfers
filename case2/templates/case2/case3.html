@@ -51,7 +51,15 @@
         {% else %}
             Luis
         {% endif %}. 
-        Si los padres fallecieran sin venderla, cada hijo recibiría un poco menos de 100 millones.</p> 
+        Si los padres fallecieran sin venderla, cada {% if julia %}
+        {% if luisa %}
+            hija
+        {% else %}
+            hijo
+        {% endif %}
+        {% else %}
+            hijo   
+        {% endif %} recibiría un poco menos de 100 millones.</p> 
         <p>Si venden la casa, los padres obtienen el dinero que necesitan para pagar sus necesidades. 
         Pero seguirían <i>necesitando la ayuda de una persona durante 8 horas a la semana para hacer ciertas tareas.</i></p> 
 
